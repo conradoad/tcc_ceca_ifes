@@ -1,0 +1,6 @@
+[submodule "ObjectDetectionAnalyzer/object-detection-analyzer_user-interface"]
+	path = ObjectDetectionAnalyzer/object-detection-analyzer_user-interface
+	url = git@github.com:conradoad/object-detection-analyzer_user-interface.git
+[submodule "ObjectDetectionAnalyzer/object-detection-analyzer_device-side"]
+	path = ObjectDetectionAnalyzer/object-detection-analyzer_device-side
+	url = git@github.com:conradoad/object-detection-analyzer_device-side.git
