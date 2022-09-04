@@ -1,0 +1,267 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Aazam e Huh 2014]{Aazam2014}
+\abntrefinfo{Aazam e Huh}{AAZAM; HUH}{2014}
+{AAZAM, M.; HUH, E.~N. {Fog computing and smart gateway based communication for
+  cloud of things}. In:  \emph{Proceedings - 2014 International Conference on
+  Future Internet of Things and Cloud, FiCloud 2014}. [S.l.: s.n.], 2014.
+ISBN 9781479943586.}
+
+\bibitem[Aggarwal 2018]{Aggarwal2018}
+\abntrefinfo{Aggarwal}{AGGARWAL}{2018}
+{AGGARWAL, C.~C. \emph{{Neural Networks and Deep Learning}}. [S.l.: s.n.],
+  2018.}
+
+\bibitem[Anderson 1999]{Anderson1999}
+\abntrefinfo{Anderson}{ANDERSON}{1999}
+{ANDERSON, D.~A. {The aggregate burden of crime}.
+\emph{Journal of Law and Economics}, 1999.
+ISSN 00222186.}
+
+\bibitem[Atzori, Iera e Morabito 2010]{Atzori2010}
+\abntrefinfo{Atzori, Iera e Morabito}{ATZORI; IERA; MORABITO}{2010}
+{ATZORI, L.; IERA, A.; MORABITO, G. The internet of things: A survey.
+\emph{Computer networks}, Elsevier, v.~54, n.~15, p. 2787--2805, 2010.}
+
+\bibitem[{Bellavista} et al. 2013]{Bellavista2013}
+\abntrefinfo{{Bellavista} et al.}{{Bellavista} et al.}{2013}
+{{Bellavista}, P. et al. Convergence of manet and wsn in iot urban scenarios.
+\emph{IEEE Sensors Journal}, v.~13, n.~10, p. 3558--3567, 2013.}
+
+\bibitem[Brownlee 2019]{Brownlee2019}
+\abntrefinfo{Brownlee}{BROWNLEE}{2019}
+{BROWNLEE, J. \emph{{What is Deep Learning?}} 2019.
+Dispon{\'\i}vel em:
+  \url{https://machinelearningmastery.com/what-is-deep-learning/}.}
+
+\bibitem[Brunelli e Poggio 1992]{Brunelli1992}
+\abntrefinfo{Brunelli e Poggio}{BRUNELLI; POGGIO}{1992}
+{BRUNELLI, R.; POGGIO, T. {Face recognition through geometrical features}. In:
+  \emph{Lecture Notes in Computer Science (including subseries Lecture Notes in
+  Artificial Intelligence and Lecture Notes in Bioinformatics)}. [S.l.: s.n.],
+  1992.
+ISBN 9783540554264.
+ISSN 16113349.}
+
+\bibitem[Cendrillon e Lovell 2000]{Cendrillon2000}
+\abntrefinfo{Cendrillon e Lovell}{CENDRILLON; LOVELL}{2000}
+{CENDRILLON, R.; LOVELL, B. {Real-time face recognition using eigenfaces}. In:
+  \emph{Visual Communications and Image Processing 2000}. [S.l.: s.n.], 2000.
+ISSN 0277786X.}
+
+\bibitem[Cenedese et al. 2014]{Cenedese2014}
+\abntrefinfo{Cenedese et al.}{CENEDESE et al.}{2014}
+{CENEDESE, A. et al. {Padova smart City: An urban Internet of Things
+  experimentation}. In:  \emph{Proceeding of IEEE International Symposium on a
+  World of Wireless, Mobile and Multimedia Networks 2014, WoWMoM 2014}. [S.l.:
+  s.n.], 2014.
+ISBN 9781479947867.}
+
+\bibitem[Cerqueira et al. 2007]{Cerqueira2007}
+\abntrefinfo{Cerqueira et al.}{CERQUEIRA et al.}{2007}
+{CERQUEIRA, D. R.~C. et al. {AN{\'{A}}LISE DOS CUSTOS e Consequencias da
+  viol{\^{e}}ncia no Brasil}.
+\emph{Texto Para Discuss{\~{a}}o}, 2007.}
+
+\bibitem[Chen et al. 2016]{Chen2016}
+\abntrefinfo{Chen et al.}{CHEN et al.}{2016}
+{CHEN, N. et al. {Dynamic urban surveillance video stream processing using fog
+  computing}. In:  \emph{Proceedings - 2016 IEEE 2nd International Conference
+  on Multimedia Big Data, BigMM 2016}. [S.l.: s.n.], 2016.
+ISBN 9781509021789.}
+
+\bibitem[Cox, Ghosn e Yianilos 1996]{Cox1996}
+\abntrefinfo{Cox, Ghosn e Yianilos}{COX; GHOSN; YIANILOS}{1996}
+{COX, I.~J.; GHOSN, J.; YIANILOS, P.~N. {Feature-based face recognition using
+  mixture-distance}. In:  \emph{Proceedings of the IEEE Computer Society
+  Conference on Computer Vision and Pattern Recognition}. [S.l.: s.n.], 1996.
+ISSN 10636919.}
+
+\bibitem[Dlib C++ Library]{Dlib}
+\abntrefinfo{Dlib\ldots}{DLIB\ldots}{}
+{DLIB C++ Library.
+Dispon{\'\i}vel em: \url{http://dlib.net/}.}
+
+\bibitem[Dolui e Datta 2017]{Dolui2017}
+\abntrefinfo{Dolui e Datta}{DOLUI; DATTA}{2017}
+{DOLUI, K.; DATTA, S.~K. {Comparison of edge computing implementations: Fog
+  computing, cloudlet and mobile edge computing}. In:  \emph{GIoTS 2017 -
+  Global Internet of Things Summit, Proceedings}. [S.l.: s.n.], 2017.
+ISBN 9781509058730.}
+
+\bibitem[Fischler e Elschlager 1973]{Fischler1973}
+\abntrefinfo{Fischler e Elschlager}{FISCHLER; ELSCHLAGER}{1973}
+{FISCHLER, M.~A.; ELSCHLAGER, R.~A. {The Representation and Matching of
+  Pictorial Structures Representation}.
+\emph{IEEE Transactions on Computers}, 1973.
+ISSN 00189340.}
+
+\bibitem[G1 2013]{G12013}
+\abntrefinfo{G1}{G1}{2013}
+{G1. \emph{{Brasil tem a terceira maior taxa de roubos da Am{\'{e}}rica Latina,
+  diz Pnud}}. 2013.}
+
+\bibitem[He et al. 2016]{He2016}
+\abntrefinfo{He et al.}{HE et al.}{2016}
+{HE, K. et al. {Deep residual learning for image recognition}. In:
+  \emph{Proceedings of the IEEE Computer Society Conference on Computer Vision
+  and Pattern Recognition}. [S.l.: s.n.], 2016.
+ISBN 9781467388504.
+ISSN 10636919.}
+
+\bibitem[Heller 2019]{Heller2019}
+\abntrefinfo{Heller}{HELLER}{2019}
+{HELLER, M. \emph{{Melhores bibliotecas de Machine e Deep Learning}}. 2019.
+Dispon{\'\i}vel em:
+  \url{https://cio.com.br/melhores-bibliotecas-de-machine-e-deep-learning/}.}
+
+\bibitem[Hu et al. 2004]{Hu2004}
+\abntrefinfo{Hu et al.}{HU et al.}{2004}
+{HU, W. et al. {A survey on visual surveillance of object motion and
+  behaviors}.
+\emph{IEEE Transactions on Systems, Man and Cybernetics Part C: Applications
+  and Reviews}, 2004.
+ISSN 10946977.}
+
+\bibitem[Jafri e Arabnia 2009]{Jafri2009}
+\abntrefinfo{Jafri e Arabnia}{JAFRI; ARABNIA}{2009}
+{JAFRI, R.; ARABNIA, H.~R. {A Survey of Face Recognition Techniques}.
+\emph{Journal of Information Processing Systems}, 2009.
+ISSN 1976-913X.}
+
+\bibitem[Jebara 1996]{Jebara1996}
+\abntrefinfo{Jebara}{JEBARA}{1996}
+{JEBARA, T.~S. {3D POSE ESTIMATION AND NORMALIZATION FOR FACE RECOGNITION}.
+\emph{Department of Electrical Engineering}, 1996.}
+
+\bibitem[Kanade 1977]{Kanade1977}
+\abntrefinfo{Kanade}{KANADE}{1977}
+{KANADE, T. \emph{{Computer recognition of human faces}}. [S.l.: s.n.], 1977.}
+
+\bibitem[Labeled Faces in the Wild]{Lfw}
+\abntrefinfo{Labeled\ldots}{LABELED\ldots}{}
+{LABELED Faces in the Wild.
+Dispon{\'\i}vel em: \url{http://vis-www.cs.umass.edu/lfw/}.}
+
+\bibitem[Merenda, Porcaro e Iero 2020]{Merenda2020}
+\abntrefinfo{Merenda, Porcaro e Iero}{MERENDA; PORCARO; IERO}{2020}
+{MERENDA, M.; PORCARO, C.; IERO, D. {Edge machine learning for ai-enabled iot
+  devices: A review}.
+\emph{Sensors (Switzerland)}, 2020.
+ISSN 14248220.}
+
+\bibitem[Neapolitan 2018]{Neapolitan2018}
+\abntrefinfo{Neapolitan}{NEAPOLITAN}{2018}
+{NEAPOLITAN, R.~E. {Neural Networks and Deep Learning}.
+\emph{Artificial Intelligence}, p. 389--411, 2018.}
+
+\bibitem[Nikouei et al. 2018]{Nikouei2018}
+\abntrefinfo{Nikouei et al.}{NIKOUEI et al.}{2018}
+{NIKOUEI, S.~Y. et al. {Smart surveillance as an edge network service: From
+  harr-cascade, SVM to a Lightweight CNN}. In:  \emph{Proceedings - 4th IEEE
+  International Conference on Collaboration and Internet Computing, CIC 2018}.
+  [S.l.: s.n.], 2018.
+ISBN 9781538695029.}
+
+\bibitem[Olson 2006]{Olson2006}
+\abntrefinfo{Olson}{OLSON}{2006}
+{OLSON, T.~J. \emph{{AUTOMATIC VIDEO MONITORING SYSTEM WHICH SELECTIVELY SAVES
+  INFORMATION}}. 2006. 16~p.
+Dispon{\'\i}vel em:
+  \url{https://patentimages.storage.googleapis.com/f0/7b/a2/58558376b25dca/US7023469.pdf}.}
+
+\bibitem[Pacheco et al. 2018]{Pacheco2018}
+\abntrefinfo{Pacheco et al.}{PACHECO et al.}{2018}
+{PACHECO, A. et al. {A Smart Classroom Based on Deep Learning and Osmotic IoT
+  Computing}. In:  \emph{2018 Congreso Internacional de Innovacion y Tendencias
+  en Ingenieria, CONIITI 2018 - Proceedings}. [S.l.: s.n.], 2018.
+ISBN 9781538681312.}
+
+\bibitem[Porter, Fraser e Hush 2010]{Porter2010}
+\abntrefinfo{Porter, Fraser e Hush}{PORTER; FRASER; HUSH}{2010}
+{PORTER, R.; FRASER, A.~M.; HUSH, D. {Wide-area motion imagery}.
+\emph{IEEE Signal Processing Magazine}, 2010.
+ISSN 10535888.}
+
+\bibitem[Puvvadi et al. 2015]{Puvvadi2015}
+\abntrefinfo{Puvvadi et al.}{PUVVADI et al.}{2015}
+{PUVVADI, U.~L. et al. {Cost-effective security support in real-time video
+  surveillance}.
+\emph{IEEE Transactions on Industrial Informatics}, 2015.
+ISSN 15513203.}
+
+\bibitem[QUIRITA 2014]{Quirita2014}
+\abntrefinfo{QUIRITA}{QUIRITA}{2014}
+{QUIRITA, V. H.~A. {ESTUDO DE M{\'{E}}TODOS AUTOM{\'{A}}TICOS DE RECONHECIMENTO
+  FACIAL PARA V{\'{I}}DEO MONITORAMENTO}. 2014.}
+
+\bibitem[{Ramos Lima} e {Marques Ciarelli} 2019]{RamosLima2019}
+\abntrefinfo{{Ramos Lima} e {Marques Ciarelli}}{{Ramos Lima}; {Marques
+  Ciarelli}}{2019}
+{{Ramos Lima}, G.; {Marques Ciarelli}, P. {Sistema de Videomonitoramento com
+  Identifica{\c{c}}{\~{a}}o de Suspeitos Utilizando Biometria Facial}. In:  .
+  [S.l.: s.n.], 2019.}
+
+\bibitem[Singh 2017]{Singh2017}
+\abntrefinfo{Singh}{SINGH}{2017}
+{SINGH, S. Optimize cloud computations using edge computing. In:  IEEE.
+  \emph{2017 International Conference on Big Data, IoT and Data Science (BID)}.
+  [S.l.], 2017. p. 49--53.}
+
+\bibitem[Song et al. 2017]{Song2017}
+\abntrefinfo{Song et al.}{SONG et al.}{2017}
+{SONG, H. et al. \emph{{Smart Cities: Foundations, Principles, and
+  Applications}}. [S.l.: s.n.], 2017.
+ISBN 9781119226444.}
+
+\bibitem[{Stan Z. Li} 2011]{StanZ.Li2011}
+\abntrefinfo{{Stan Z. Li}}{{Stan Z. Li}}{2011}
+{{Stan Z. Li}, A. K.~J. \emph{{Handbook of Face Recognition}}. Second edi. New
+  York: Springer, 2011.}
+
+\bibitem[Szeliski 2011]{Szeliski2011}
+\abntrefinfo{Szeliski}{SZELISKI}{2011}
+{SZELISKI, R. {Computer vision: algorithms and applications}.
+\emph{Choice Reviews Online}, 2011.
+ISSN 0009-4978.}
+
+\bibitem[Tsakanikas e Dagiuklas 2018]{Tsakanikas2018}
+\abntrefinfo{Tsakanikas e Dagiuklas}{TSAKANIKAS; DAGIUKLAS}{2018}
+{TSAKANIKAS, V.; DAGIUKLAS, T. {Video surveillance systems-current status and
+  future trends}.
+\emph{Computers and Electrical Engineering}, 2018.
+ISSN 00457906.}
+
+\bibitem[Verhelst e Moons 2017]{Verhelst2017}
+\abntrefinfo{Verhelst e Moons}{VERHELST; MOONS}{2017}
+{VERHELST, M.; MOONS, B. {Embedded Deep Neural Network Processing: Algorithmic
+  and Processor Techniques Bring Deep Learning to IoT and Edge Devices}.
+\emph{IEEE Solid-State Circuits Magazine}, 2017.
+ISSN 19430582.}
+
+\bibitem[Viola e Jones 2001]{Viola2001}
+\abntrefinfo{Viola e Jones}{VIOLA; JONES}{2001}
+{VIOLA, P.; JONES, M. {Rapid object detection using a boosted cascade of simple
+  features}. In:  \emph{Proceedings of the IEEE Computer Society Conference on
+  Computer Vision and Pattern Recognition}. [S.l.: s.n.], 2001.
+ISSN 10636919.}
+
+\bibitem[Wilson e Kelling 1982]{Wilson1982}
+\abntrefinfo{Wilson e Kelling}{WILSON; KELLING}{1982}
+{WILSON, J.; KELLING, G. {Broken Windows: the police and neighborhood safety}.
+\emph{The Atlantic Monthly}, 1982.
+ISSN 0094-6575.}
+
+\bibitem[Zafeiriou, Zhang e Zhang 2015]{Zafeiriou2015}
+\abntrefinfo{Zafeiriou, Zhang e Zhang}{ZAFEIRIOU; ZHANG; ZHANG}{2015}
+{ZAFEIRIOU, S.; ZHANG, C.; ZHANG, Z. {A survey on face detection in the wild:
+  Past, present and future}.
+\emph{Computer Vision and Image Understanding}, 2015.
+ISSN 1090235X.}
+
+\end{thebibliography}

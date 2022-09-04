@@ -1,0 +1,83 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: Elementos_Pretextuais/capaDissertacao.aux
+A level-1 auxiliary file: Elementos_Pretextuais/folharostoDissertacao.aux
+A level-1 auxiliary file: Elementos_Pretextuais/fichaCatalografica.aux
+A level-1 auxiliary file: Elementos_Pretextuais/folhaAprovacao.aux
+A level-1 auxiliary file: Elementos_Pretextuais/declaracaoAutor.aux
+A level-1 auxiliary file: Elementos_Pretextuais/resumo.aux
+A level-1 auxiliary file: Elementos_Pretextuais/abstract.aux
+A level-1 auxiliary file: Cap1_Introducao/introducao.aux
+A level-1 auxiliary file: Cap2_Revisao_Teorica/RevTeorica.aux
+A level-1 auxiliary file: Cap3_Desenvolvimento/Desenvolvimento.aux
+A level-1 auxiliary file: Cap4_Experimentos_Realizados/Experimentos.aux
+A level-1 auxiliary file: Cap5_Conclusao/Conclusao.aux
+A level-1 auxiliary file: referencias.aux
+The style file: abntex2-alf.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: abntex2-options.bib
+Database file #2: minhasReferencias.bib
+Warning--I didn't find a database entry for "Cisco2016"
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Warning--campo year vazio ou faltando em Dlib
+Warning--campo year vazio ou faltando em Lfw
+Warning--campo note vazio em Quirita2014
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-alf.bst versão v-1.9.7           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://www.abntex.net.br/                               |
++---------------------------------------------------------+
+You've used 42 entries,
+            6714 wiz_defined-function locations,
+            1473 strings with 17039 characters,
+and the built_in function-call counts, 36231 in all, are:
+= -- 3207
+> -- 1215
+< -- 269
++ -- 783
+- -- 370
+* -- 2524
+:= -- 4921
+add.period$ -- 167
+call.type$ -- 42
+change.case$ -- 434
+chr.to.int$ -- 51
+cite$ -- 44
+duplicate$ -- 2142
+empty$ -- 2378
+format.name$ -- 1776
+if$ -- 8251
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 705
+newline$ -- 220
+num.names$ -- 195
+pop$ -- 926
+preamble$ -- 1
+purify$ -- 167
+quote$ -- 0
+skip$ -- 2555
+stack$ -- 1
+substring$ -- 1147
+swap$ -- 816
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 25
+warning$ -- 3
+while$ -- 256
+width$ -- 0
+write$ -- 627
+(There were 4 warnings)

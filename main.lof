@@ -1,0 +1,21 @@
+\babel@toc {brazil}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1}{\ignorespaces Fluxo de processo de reconhecimento de face.}}{19}{figure.caption.5}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Características geométricas (destaque em branco), usada em experimentos de reconhecimento de faces.}}{20}{figure.caption.6}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Arquitetura de computação distribuída}}{24}{figure.caption.7}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4}{\ignorespaces Interface e seus parâmetros.}}{27}{figure.caption.8}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Exemplo de resultado retornado.}}{28}{figure.caption.9}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Exemplo de resultado com pucas faces detectadas.}}{31}{figure.caption.10}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Exemplo de resultado com várias faces detectadas e alguns falsos positivos.}}{32}{figure.caption.11}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Exemplo de resultado possivelmente satisfatório.}}{33}{figure.caption.12}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Exemplo de matriz de resultado com limites ajustados.}}{34}{figure.caption.13}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Exemplo de resultado com as métricas.}}{35}{figure.caption.14}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Exemplo de variação de cena com redução de 20 faces.}}{37}{figure.caption.15}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Imagem selecionada para testes da cena 1.}}{40}{figure.caption.16}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13}{\ignorespaces Otimização Cena1 resolução 1440p.}}{42}{figure.caption.17}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Otimização Cena1 resolução 1080p.}}{43}{figure.caption.18}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Otimização Cena1 resolução 720p.}}{44}{figure.caption.19}%
+\addvspace {10\p@ }

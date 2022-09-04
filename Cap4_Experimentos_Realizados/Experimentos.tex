@@ -1,0 +1,49 @@
+\chapter{Experimentos Realizados}
+\thispagestyle{plain}
+\label{cap:experimentos}
+\graphicspath{{./Cap4_Experimentos_Realizados/Figures/}}
+
+A realização dos experimentos baseou-se na utilização da ferramenta de parametrização e obtenção de métricas, aplicado nas imagens tratadas de cada cena, conforme variaçoes definidas no Capítulo anterior. Os dados obtidos foram organizados de forma a facilitar a análise e comparação entre as variaçoes em cada cena e também entre os diferentes dispositivos sendo testados.
+
+Para cada variação de resolução, que depende de uma nova seleção de parâmetros, será exibido a matriz de resultados final juntamente com as faces detectadas, após já feita a análise para se chegar a um melhor resultado, indicando quais foram os parâmetros definidos.
+
+\section{Cena 1}
+
+\subsection{Otimização de parâmetros}
+
+Primeiramente, foi realizada a otimização dos parâmetros para cada variação de resolução, a partir das imagens com todoas as faces disponíveis de cada resolução.
+
+A definição dos parâmetros 'ótimos' não é objetiva. Para esta cena, buscou-se um melhor resultado em que houvesse a maior quantidade de faces detectadas sem a presença de falsos positivos e no menor tempo. Durante a análise, teve-se a razoabilidade de considerar na comparação entre os diferentes resultados da matriz que, um grande aumento no tempo de detecção não justifica um pequeno ganho relativo na quantidade de faces detectadas.
+
+\subsubsection{Resolução 1440p}
+
+\begin{figure}[h]
+    \centering
+    \caption[Otimização Cena1 resolução 1440p.]{Otimização Cena1 resolução 1440p.}
+    \includegraphics[width=0.4\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_matriz.jpg}
+    \includegraphics[width=1.0\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_faces.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:otimizacaoCena1_1440p}
+\end{figure}
+
+\subsubsection{Resolução 1080p}
+
+\begin{figure}[h]
+    \centering
+    \caption[Otimização Cena1 resolução 1080p.]{Otimização Cena1 resolução 1080p.}
+    \includegraphics[width=0.4\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg}
+    \includegraphics[width=1.0\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:otimizacaoCena1_1080p}
+\end{figure}
+
+\subsubsection{Resolução 720p}
+
+\begin{figure}[h]
+    \centering
+    \caption[Otimização Cena1 resolução 720p.]{Otimização Cena1 resolução 720p.}
+    \includegraphics[width=0.4\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg}
+    \includegraphics[width=1.0\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:otimizacaoCena1_720p}
+\end{figure}

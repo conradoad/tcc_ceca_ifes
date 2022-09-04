@@ -1,0 +1,133 @@
+% Modelo Original a partir do template do trabalho do Aluno Tiago Augusto Gomes da Costa
+% Prof Orientador Dr. Flávio Garcia Pereira
+% 22/08/2019
+
+\documentclass[12pt, openright, oneside, a4paper, english, french, spanish, brazil]{abntex2}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color,soul}			% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{amsmath}
+\usepackage{afterpage}
+\usepackage{subcaption}
+\usepackage{textcomp}
+\usepackage{hyperref}
+%\usepackage{subfig}
+\usepackage{gensymb}
+
+\usepackage{float}
+
+\usepackage{pdfpages}
+\usepackage[section]{placeins}
+\usepackage{amsfonts}
+
+\usepackage{listings}           % Python Code
+\usepackage{newfloat,tocloft}
+\usepackage{caption}
+\usepackage{enumitem}
+\setlist{leftmargin=5.5mm}
+\usepackage[explicit,nobottomtitles*]{titlesec}
+
+\usepackage[brazilian,hyperpageref]{backref}	 % Páginas com as citações na bibl
+\usepackage[alf, bibjustif]{abntex2cite}	% Citações padrão ABNT
+
+% Formatação de Página
+\usepackage[a4paper]{geometry}
+\geometry{
+ a4paper,
+ left=30mm,
+ top=30mm,
+ bottom=20mm,
+ right=20mm
+}
+
+% Formatação de Fonte
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+
+%% Formatação de Capítulo
+\titleformat{\chapter}
+  {\normalfont\normalsize\bfseries}{\thechapter \quad \MakeUppercase{#1}}{.5em}{\vspace{.5ex}}
+  \titlespacing*{\chapter}      
+    {0pt}{0pt}{12pt}
+    
+% Formatação de Seção
+\titleformat{\section}
+  {\normalfont\normalsize}{\thesection \quad #1}{.5em}{\vspace{.5ex}}
+
+% Formatação de Subseção
+\titleformat{\subsection}
+  {\normalfont\normalsize}{\thesubsection \quad #1}{.5em}{\vspace{.5ex}}  
+
+% Numeração
+\makeevenfoot{plain}{}{}{\thepage}
+\makeoddfoot{plain}{}{}{\thepage}
+
+% Parágrafo
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+ % Início do TCC
+\titulo{Ensaios de detec\c cão facial em dispositivos de borda, para monitoramento e controle de acesso em espa\c cos abertos e inteligentes}
+\autor{Conrado Costa}
+\data{2021} %deixar apenas o ano
+\local{Serra -- ES}
+\orientador{Prof. Rafael Emerick Z de Oliveira}
+%\orientador[Orientadora:]{Prof\textsuperscript{a}. Dr\textsuperscript{a}. Nome da Orientadora}
+%\coorientador{Prof. Dr. Nome do Coorientador}
+%\coorientador[Coorientadora:]{Prof\textsuperscript{a}. Dr\textsuperscript{a}. Nome da Coorientadora}
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+
+\begin{document}
+
+\include{Elementos_Pretextuais/capaDissertacao}
+
+\newpage
+
+\include{Elementos_Pretextuais/folharostoDissertacao}
+\include{Elementos_Pretextuais/fichaCatalografica}
+
+\setcounter{page}{1}
+\pagenumbering{arabic}                % arabic numbers <-----------------(style 1,2,...)
+\pagestyle{empty}
+
+\include{Elementos_Pretextuais/folhaAprovacao}
+\include{Elementos_Pretextuais/declaracaoAutor}
+%\include{Elementos_Pretextuais/dedicatoria}
+%\include{Elementos_Pretextuais/agradecimentos}
+%\include{Elementos_Pretextuais/epigrafe}
+
+\include{Elementos_Pretextuais/resumo}
+\include{Elementos_Pretextuais/abstract}
+
+%\listoftables
+%\newpage
+
+\listoffigures
+\newpage
+
+\tableofcontents
+
+\graphicspath{{Figuras/}}
+
+\pagestyle{plain}
+
+%\setcounter{page}{13} %Ajustar esse número de acordo com a numeração da sua página
+
+\include{Cap1_Introducao/introducao}
+\include{Cap2_Revisao_Teorica/RevTeorica}
+\include{Cap3_Desenvolvimento/Desenvolvimento}
+\include{Cap4_Experimentos_Realizados/Experimentos}
+\include{Cap5_Conclusao/Conclusao}
+
+\include{referencias}
+
+
+
+\end{document}
