@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.6)  5 SEP 2022 03:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.6)  13 SEP 2022 00:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2018,27 +2018,27 @@ File: Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_faces.jpg Graphic f
 Package pdftex.def Info: Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_faces.jpg  used on input line 29.
 (pdftex.def)             Requested size: 386.96027pt x 218.6415pt.
  [42]
-<Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg, id=531, 88.4103pt x 87.6876pt>
+<Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg, id=531, 224.2779pt x 187.902pt>
 File: Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg Graphic file (type jpg)
 <use Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg>
 Package pdftex.def Info: Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg  used on input line 39.
-(pdftex.def)             Requested size: 182.09486pt x 180.61304pt.
-<Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg, id=532, 219.9417pt x 123.8226pt>
+(pdftex.def)             Requested size: 386.96027pt x 324.23737pt.
+<Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg, id=532, 218.2554pt x 123.5817pt>
 File: Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg Graphic file (type jpg)
 <use Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg>
 Package pdftex.def Info: Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg  used on input line 40.
-(pdftex.def)             Requested size: 455.24411pt x 256.29602pt.
+(pdftex.def)             Requested size: 386.96027pt x 219.11104pt.
  [43 <./Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_matriz.jpg> <./Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_faces.jpg>]
-<Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg, id=537, 87.9285pt x 87.4467pt>
+<Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg, id=537, 222.8325pt x 191.5155pt>
 File: Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg Graphic file (type jpg)
 <use Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg>
 Package pdftex.def Info: Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg  used on input line 50.
-(pdftex.def)             Requested size: 182.09486pt x 181.10957pt.
-<Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg, id=538, 220.1826pt x 124.5453pt>
+(pdftex.def)             Requested size: 386.96027pt x 332.60303pt.
+<Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg, id=538, 220.9053pt x 125.5089pt>
 File: Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg Graphic file (type jpg)
 <use Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg>
 Package pdftex.def Info: Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg  used on input line 51.
-(pdftex.def)             Requested size: 455.24411pt x 257.53535pt.
+(pdftex.def)             Requested size: 386.96027pt x 219.88322pt.
 ) [44 <./Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg> <./Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg>] [45 <./Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg> <./Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg>]
 \openout2 = `Cap5_Conclusao/Conclusao.aux'.
 
@@ -2084,13 +2084,13 @@ Package rerunfilecheck Info: File `main.brf' has not changed.
 Here is how much of TeX's memory you used:
  23035 strings out of 478862
  358409 string characters out of 5858945
- 768315 words of memory out of 6000000
+ 768318 words of memory out of 6000000
  39732 multiletter control sequences out of 15000+600000
  479002 words of font info for 276 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  75i,12n,77p,1475b,605s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (52 pages, 12237639 bytes).
+Output written on main.pdf (52 pages, 13482249 bytes).
 PDF statistics:
  777 PDF objects out of 1000 (max. 8388607)
  682 compressed objects within 7 object streams
