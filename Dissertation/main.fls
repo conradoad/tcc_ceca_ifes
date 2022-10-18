@@ -1379,11 +1379,6 @@ INPUT ./Cap3_Desenvolvimento/Figures/exemplo_metricas.jpg
 INPUT Cap3_Desenvolvimento/Figures/exemplo_metricas.jpg
 INPUT ./Cap3_Desenvolvimento/Figures/exemplo_metricas.jpg
 INPUT ./Cap3_Desenvolvimento/Figures/exemplo_metricas.jpg
-INPUT ./Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.png
-INPUT ./Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.png
-INPUT Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.png
-INPUT ./Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.png
-INPUT ./Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.png
 INPUT ./Cap3_Desenvolvimento/Figures/imagem_cena1.jpg
 INPUT ./Cap3_Desenvolvimento/Figures/imagem_cena1.jpg
 INPUT Cap3_Desenvolvimento/Figures/imagem_cena1.jpg
@@ -1416,6 +1411,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
+INPUT ./Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg
+INPUT ./Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg
+INPUT Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg
+INPUT ./Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg
+INPUT ./Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg
 INPUT ./Cap4_Experimentos_Realizados/Experimentos.tex
 INPUT ./Cap4_Experimentos_Realizados/Experimentos.tex
 INPUT ./Cap4_Experimentos_Realizados/Experimentos.tex

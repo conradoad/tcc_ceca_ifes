@@ -157,53 +157,14 @@ Na figura \ref{fig:resultadoMetricas}, pode-se observar como os dados retorandos
     \label{fig:resultadoMetricas}
 \end{figure}
 
+<pending> comentar sobre o tempo de carregamento de imagem e tempo que captura que será detalhado mais para frente </pending>
+
 
 \section{Cenários de testes}
 
-Nesta seção são apresentados os cenários definidos para os testes. Cada cenário representa uma possível aplicação diferente e possui diferentes requisitos que servirão de balizas para a calibração e comparação dos resultados.
-
-Para a realização do experimento, foram selecionadas imagens que representem um pior caso para cada cenário.
+Nesta seção são apresentados os dois cenários definidos para os testes. Cada cenário representa uma possível aplicação diferente e possui diferentes requisitos que servirão de balizas para a calibração e comparação dos resultados.
 
 Para um estudo mais completo, serão testadas algumas variações de cada cenário, seja quanto à quantidade de faces presentes e/ou quanto à resolução da imagem testada, além, claro dos diferentes dispositivos que serão testados.
-
-\subsection{Variação de quantidade de faces}
-
-Em cenas cuja aplicação tenha como objetivo detectar um elevado número de faces simultaneamente, pretende-se verificar como a variação da quantidade de faces presente na imagem afeta tanto no tempo de resposta do processo de detecção quanto no tamanho do conjunto das imagens das faces detectadas, recortadas da imagem completa, representando economia na utilização de banda para transmissão do resultado da detecção.
-
-Para a realização desses testes nas cenas a que a variação da quantidade de faces se aplica, foram selecionadas imagens com um grande número de faces, para que se possa obter tranquilamente 5 variações da mesma imagem, reduzindo iterativamente a quantidade de faces em cada uma, da forma mais linear possível.
-
-As variações foram preparadas utilizando-se o software de edição de imagem GIMP (GNU Image Manipulation Program), aberto e gratuito. Partindo-se da imagem original, uma certa quantidade de faces foram borradas de forma a se tornarem indetectáveis, como se aquela faces não estivessem presentes na imagem. A imagem resultante se tornou a primeira variação por quantidade de faces. A partir da imagem dessa primeira variação, foi feito o mesmo procedimento, borrando a mesma quantidade de faces que ainda não haviam sido borradas. E assim foi feito sucessivamente até obter-se um total de 5 variações. Importante ressaltar que, durante a preparação das imagens, preocupou-se em borrar as faces de uma forma bem distribuída.
-
-\begin{figure}[h]
-    \centering
-    \caption[Exemplo de variação de cena com redução de 20 faces.]{Exemplo de variação de cena com redução de 20 faces.}
-    \includegraphics[width=0.8\textwidth]{Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.png}
-    \caption*{Fonte: autor.}
-    \label{fig:exemploVariacaoFaces}
-\end{figure}
-
-Na figura \ref{fig:exemploVariacaoFaces}, um exemplo de variação com a redução de 20 faces. Ao se comparar o resultado das variações, é de se esperar que a diferença de faces detectadas seja igual à diferente da quantidade de faces borradas, porém, não necessariamente será igual, pois pode ser que alguma face não seja detectada pelo algoritmo de qualquer forma.
-
-Para obtenção dos dados nos testes de variação de quantidade de faces deve-se, a partir da imagem original, com todas as faces detectáveis, utilizar a ferramenta para encontrar uma combinação otimizada de parâmetros de detecção. Com os melhores parâmetros definidos, obtém-se as métricas da imagem original e também de todas a variações de quantidade de faces geradas a partir dessa mesma imagem para futura comparação.
-
-\subsection{Variação de resolução da imagem}
-
-Outra variação que é possível obter de uma mesma imagem e que fará parte do estudo é no que tange à resolućão da imagem. Quanto maior a resolução da imagem, maior tende a ser a capacidade e qualidade de detecção de faces menores, mas também maior é a demanda de processamento e maior tende a ser o tempo de espera de uma detecção, bem como a utilização de banda para passar adiante as imagens das faces detectadas.
-
-Dependendo do cenário e dos possíveis tipos de aplicação, considerar trabalhar a decção em imagens com resoluções menores que a capacidde do sensor, pode ser suficiente para viabilizar o uso do dispositivo de borda para a tarefa de detecção, desde que cumprindo os requisitos de tempo de resposta e capacidade de detecção.
-
-Para a realização dos testes com variação de resolução, foram obtidas das imagens originais (a original e suas respectivas variações por quantidade de faces) imagens com resoluçoes menores, através de interpolação, utilizando-se também o software GIMP para o processamento. As imagens originais de cada cena foram selecionadas já com resolução em full hd (1920x1080), e foram obtidas as variações nas resoluçoes hd (1280x720) e sd (720x480). Para cada redução de resolução, são obtidas 5 novas imagens, uma a partir da imagem original e outras quatro a partir da variações de quantidade de faces.
-
-Para a obtenção dos dados nos testes de variação de resolução, deve-se utilizar novamente a ferramenta para encontrar a melhor combinação de parâmetros de detecção para as imagens na nova resolução e, a partir desses novos parâmetros, obter as métricas de todas as imagens com a referida resolução.
-
-\subsection{Dispositivos testados}
-
-Serão testados dois dispositivos SBC \textit{Single Board Computer} diferentes, cujos resultados serão comparados.
-
-\begin{itemize}
-    \item SBC 1 - Raspberry Pi 4: quad-core Cortex-A72 com clock de 1,5 GHz e 4 GB de memória RAM. 
-    \item SBC 2 - Raspberry Pi Zero W: single-core ARM1176JZF-S com clock de 1,0 GHz e 512 MB de memória RAM.
-\end{itemize}
 
 \subsection{Cena 1}
 
@@ -211,8 +172,8 @@ Nessa primeira cena deseja-se representar o monitoramento de um espaço aberto e
 
 \begin{itemize}
     \item \textbf{Variações possíveis} - variação de quantidade de faces e variação de resolução da imagem.
-    \item \textbf{Requisitos mínimos} (para balizar a parametrização) - máximo 3 segundo de resposta.
-    \item \textbf{Imagem para testes} - para representar esta cena, foi selecionada uma imagem (figura \ref{fig:imagemCena1}) com várias faces olhando na direção da câmera e em diferentes distâncias. Ter todas as faces olhando para a mesma direção distancia de um cenário real, mas se torna ideal para o estudo pois serve como um pior caso para a cena e facilita a obtenção de variações por quantidade de faces.
+    \item \textbf{Requisitos mínimos} (para balizar a parametrização) - máximo 3 segundos de resposta.
+    \item \textbf{Imagem para testes} - para representar esta cena, foi selecionada uma imagem (figura \ref{fig:imagemCena1}) com várias faces olhando na direção da câmera e em diferentes distâncias. Ter todas as faces olhando para a mesma direção, distancia-se de um cenário real, mas torna-se ideal para o estudo pois serve como um pior caso para a cena e facilita a obtenção de variações por quantidade de faces.
 \end{itemize}
 
 \begin{figure}[H]
@@ -226,3 +187,44 @@ Nessa primeira cena deseja-se representar o monitoramento de um espaço aberto e
 \footnotetext{Disponível em: <https://commons.wikimedia.org/wiki/File:Wikimedia\_Hackathon\_Barcelona\_2018\_-\_group\_photo.jpg>
 
 Arquivo de imagem sob a licença CC BY-SA 4.0: <https://creativecommons.org/licenses/by-sa/4.0/deed.en>}
+
+
+\subsubsection{Variação de quantidade de faces}
+
+Nessa cena, como a aplicação tem por objetivo detectar um elevado número de faces simultaneamente, pretende-se verificar como a variação da quantidade de faces presente na imagem afeta tanto no tempo de resposta do processo de detecção quanto no tamanho do conjunto das imagens das faces detectadas, recortadas da imagem completa, representando economia na utilização de banda para transmissão do resultado da detecção.
+
+Para a realização desses testes, a escolha de uma imagem com um grande número de faces foi importante para que se pudesse obter 5 variações da mesma, reduzindo iterativamente a quantidade de faces em cada uma, da forma mais linear possível.
+
+As variações foram preparadas utilizando-se o software de edição de imagem GIMP (GNU Image Manipulation Program), aberto e gratuito. Partindo-se da imagem original, uma certa quantidade de faces foram borradas de forma a se tornarem indetectáveis, como se aquela faces não estivessem presentes na imagem. A imagem resultante se tornou a primeira variação por quantidade de faces. A partir da imagem dessa primeira variação, foi feito o mesmo procedimento, borrando a mesma quantidade de faces que ainda não haviam sido borradas. E assim foi feito sucessivamente até obter-se um total de 5 variações. Importante ressaltar que, durante a preparação das imagens, preocupou-se em borrar as faces de uma forma bem distribuída.
+
+\begin{figure}[h]
+    \centering
+    \caption[Exemplo de variação de cena com redução de 40 faces.]{Exemplo de variação de cena com redução de 40 faces.}
+    \includegraphics[width=0.9\textwidth]{Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:exemploVariacaoFaces}
+\end{figure}
+
+Na figura \ref{fig:exemploVariacaoFaces}, um exemplo de variação com a redução de 40 faces. Ao se comparar o resultado das variações, é de se esperar que a diferença de faces detectadas seja igual à diferente da quantidade de faces borradas, porém, não necessariamente será igual, pois pode ser que alguma face não seja detectada pelo algoritmo de qualquer forma.
+
+Para obtenção dos dados nos testes de variação de quantidade de faces deve-se, a partir da imagem original, com todas as faces detectáveis, utilizar a ferramenta para encontrar uma combinação otimizada de parâmetros de detecção. Com os melhores parâmetros definidos, obtém-se as métricas da imagem original e também de todas a variações de quantidade de faces geradas a partir dessa mesma imagem para futura comparação.
+
+\subsection{Variação de resolução da imagem}
+
+Outra variação que é possível obter dessa mesma imagem e que fará parte do estudo é no que tange à resolução da imagem. Quanto maior a resolução da imagem, maior tende a ser a capacidade e qualidade de detecção de faces menores, mas também maior é a demanda de processamento e maior tende a ser o tempo de espera de uma detecção, bem como a utilização de banda para passar adiante as imagens das faces detectadas.
+
+Dependendo do cenário e dos possíveis tipos de aplicação, considerar trabalhar a decção em imagens com resoluções menores que a capacidde do sensor, pode ser suficiente para viabilizar o uso do dispositivo de borda para a tarefa de detecção, desde que cumprindo os requisitos de tempo de resposta e capacidade de detecção.
+
+Para a realização dos testes com variação de resolução, foram obtidas das imagens originais (a original e suas respectivas variações por quantidade de faces) imagens com resoluçoes menores, através de interpolação, utilizando-se também o software GIMP para o processamento. As imagens originais de cada cena foram selecionadas já com resolução em quad-hd (2560x1440), e foram obtidas as variações nas resoluçoes full-hd (1920x1080) e hd (1280x720). Para cada redução de resolução, são obtidas 5 novas imagens, uma a partir da imagem original e outras quatro a partir da variações de quantidade de faces.
+
+Para a obtenção dos dados nos testes de variação de resolução, utilizou-se novamente a ferramenta para encontrar a melhor combinação de parâmetros de detecção para as imagens na nova resolução e, a partir desses novos parâmetros, obteve-se as métricas de todas as imagens com a referida resolução.
+
+\subsection{Dispositivos testados}
+
+Serão testados dois dispositivos SBC \textit{Single Board Computer} diferentes, cujos resultados serão comparados.
+
+\begin{itemize}
+    \item SBC 1 - Raspberry Pi 4: quad-core Cortex-A72 com clock de 1,5 GHz e 4 GB de memória RAM. 
+    \item SBC 2 - Raspberry Pi Zero W: single-core ARM1176JZF-S com clock de 1,0 GHz e 512 MB de memória RAM.
+\end{itemize}
+
