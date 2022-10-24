@@ -18,10 +18,11 @@
 \contentsline {section}{\numberline {3.1}O algoritmo de detecção de objetos}{25}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Ferramenta de parametrização, otimização e obtenção de resultados}{26}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Cenários de testes}{36}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Cena 1}{36}{subsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.1.1}Variação de quantidade de faces}{37}{subsubsection.3.3.1.1}%
+\contentsline {subsection}{\numberline {3.3.1}Cena 1}{37}{subsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1.1}Variação de quantidade de faces}{38}{subsubsection.3.3.1.1}%
 \contentsline {subsection}{\numberline {3.3.2}Variação de resolução da imagem}{39}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Dispositivos testados}{40}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.3}Tempo médio de captura}{40}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Dispositivos testados}{40}{subsection.3.3.4}%
 \contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Experimentos Realizados}}{41}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Cena 1}{41}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Otimização de parâmetros}{41}{subsection.4.1.1}%
