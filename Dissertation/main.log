@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.6)  23 OCT 2022 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.6)  26 OCT 2022 02:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1875,13 +1875,13 @@ LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
 
 
 ] [14] [15] [16] [17] [18]
-<Cap2_Revisao_Teorica/Figures/fluxo_rec.png, id=330, 230.0595pt x 67.452pt>
+<Cap2_Revisao_Teorica/Figures/fluxo_rec.png, id=334, 230.0595pt x 67.452pt>
 File: Cap2_Revisao_Teorica/Figures/fluxo_rec.png Graphic file (type png)
 <use Cap2_Revisao_Teorica/Figures/fluxo_rec.png>
 Package pdftex.def Info: Cap2_Revisao_Teorica/Figures/fluxo_rec.png  used on input line 61.
 (pdftex.def)             Requested size: 364.19667pt x 106.7922pt.
  [19 <./Cap2_Revisao_Teorica/Figures/fluxo_rec.png>]
-<Cap2_Revisao_Teorica/Figures/face_vetores.png, id=355, 31.317pt x 46.0119pt>
+<Cap2_Revisao_Teorica/Figures/face_vetores.png, id=359, 31.317pt x 46.0119pt>
 File: Cap2_Revisao_Teorica/Figures/face_vetores.png Graphic file (type png)
 <use Cap2_Revisao_Teorica/Figures/face_vetores.png>
 Package pdftex.def Info: Cap2_Revisao_Teorica/Figures/face_vetores.png  used on input line 75.
@@ -1904,7 +1904,7 @@ Package hyperref Warning: Suppressing empty link on input line 90.
 LaTeX Warning: Citation `Cisco2016' on page 22 undefined on input line 101.
 
 [22]
-<Cap2_Revisao_Teorica/Figures/arquitetura_distribuida.png, id=408, 242.8272pt x 186.6975pt>
+<Cap2_Revisao_Teorica/Figures/arquitetura_distribuida.png, id=412, 242.8272pt x 186.6975pt>
 File: Cap2_Revisao_Teorica/Figures/arquitetura_distribuida.png Graphic file (type png)
 <use Cap2_Revisao_Teorica/Figures/arquitetura_distribuida.png>
 Package pdftex.def Info: Cap2_Revisao_Teorica/Figures/arquitetura_distribuida.png  used on input line 111.
@@ -1918,7 +1918,7 @@ Package pdftex.def Info: Cap2_Revisao_Teorica/Figures/arquitetura_distribuida.pn
 
 
 ]
-<Cap3_Desenvolvimento/Figures/interface_parametros.png, id=430, 458.9145pt x 191.5155pt>
+<Cap3_Desenvolvimento/Figures/interface_parametros.png, id=434, 458.9145pt x 191.5155pt>
 File: Cap3_Desenvolvimento/Figures/interface_parametros.png Graphic file (type png)
 <use Cap3_Desenvolvimento/Figures/interface_parametros.png>
 Package pdftex.def Info: Cap3_Desenvolvimento/Figures/interface_parametros.png  used on input line 40.
@@ -1928,7 +1928,7 @@ Package pdftex.def Info: Cap3_Desenvolvimento/Figures/interface_parametros.png  
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [26]
-<Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz.jpg, id=435, 91.3011pt x 99.4917pt>
+<Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz.jpg, id=439, 91.3011pt x 99.4917pt>
 File: Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz.jpg Graphic file (type jpg)
 <use Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz.jpg>
 Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz.jpg  used on input line 60.
@@ -1938,7 +1938,7 @@ Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz.j
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [27 <./Cap3_Desenvolvimento/Figures/interface_parametros.png>] [28 <./Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz.jpg>] [29]
-<Cap3_Desenvolvimento/Figures/exemplo_resultado_1.jpg, id=457, 221.1462pt x 209.8239pt>
+<Cap3_Desenvolvimento/Figures/exemplo_resultado_1.jpg, id=461, 221.1462pt x 209.8239pt>
 File: Cap3_Desenvolvimento/Figures/exemplo_resultado_1.jpg Graphic file (type jpg)
 <use Cap3_Desenvolvimento/Figures/exemplo_resultado_1.jpg>
 Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_resultado_1.jpg  used on input line 90.
@@ -1947,7 +1947,7 @@ Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_resultado_1.jpg  u
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Cap3_Desenvolvimento/Figures/exemplo_resultado_2.jpg, id=458, 221.1462pt x 209.8239pt>
+<Cap3_Desenvolvimento/Figures/exemplo_resultado_2.jpg, id=462, 221.1462pt x 209.8239pt>
 File: Cap3_Desenvolvimento/Figures/exemplo_resultado_2.jpg Graphic file (type jpg)
 <use Cap3_Desenvolvimento/Figures/exemplo_resultado_2.jpg>
 Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_resultado_2.jpg  used on input line 98.
@@ -1955,7 +1955,7 @@ Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_resultado_2.jpg  u
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Cap3_Desenvolvimento/Figures/exemplo_resultado_3.jpg, id=459, 221.1462pt x 209.8239pt>
+<Cap3_Desenvolvimento/Figures/exemplo_resultado_3.jpg, id=463, 221.1462pt x 209.8239pt>
 File: Cap3_Desenvolvimento/Figures/exemplo_resultado_3.jpg Graphic file (type jpg)
 <use Cap3_Desenvolvimento/Figures/exemplo_resultado_3.jpg>
 Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_resultado_3.jpg  used on input line 106.
@@ -1964,7 +1964,7 @@ Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_resultado_3.jpg  u
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [30]
-<Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz_2.jpg, id=466, 223.7961pt x 164.0529pt>
+<Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz_2.jpg, id=470, 223.7961pt x 164.0529pt>
 File: Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz_2.jpg Graphic file (type jpg)
 <use Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz_2.jpg>
 Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz_2.jpg  used on input line 121.
@@ -1974,13 +1974,13 @@ Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz_2
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [31 <./Cap3_Desenvolvimento/Figures/exemplo_resultado_1.jpg>] [32 <./Cap3_Desenvolvimento/Figures/exemplo_resultado_2.jpg>] [33 <./Cap3_Desenvolvimento/Figures/exemplo_resultado_3.jpg>] [34 <./Cap3_Desenvolvimento/Figures/exemplo_resultado_matriz_2.jpg>]
-<Cap3_Desenvolvimento/Figures/exemplo_metricas.jpg, id=486, 210.3057pt x 171.7617pt>
+<Cap3_Desenvolvimento/Figures/exemplo_metricas.jpg, id=490, 210.3057pt x 171.7617pt>
 File: Cap3_Desenvolvimento/Figures/exemplo_metricas.jpg Graphic file (type jpg)
 <use Cap3_Desenvolvimento/Figures/exemplo_metricas.jpg>
 Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_metricas.jpg  used on input line 155.
 (pdftex.def)             Requested size: 364.19667pt x 297.48174pt.
  [35 <./Cap3_Desenvolvimento/Figures/exemplo_metricas.jpg>] [36]
-<Cap3_Desenvolvimento/Figures/imagem_cena1.jpg, id=499, 1927.2pt x 1084.05pt>
+<Cap3_Desenvolvimento/Figures/imagem_cena1.jpg, id=503, 1927.2pt x 1084.05pt>
 File: Cap3_Desenvolvimento/Figures/imagem_cena1.jpg Graphic file (type jpg)
 <use Cap3_Desenvolvimento/Figures/imagem_cena1.jpg>
 Package pdftex.def Info: Cap3_Desenvolvimento/Figures/imagem_cena1.jpg  used on input line 185.
@@ -1992,7 +1992,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 192.
  [37 <./Cap3_Desenvolvimento/Figures/imagem_cena1.jpg>]
-<Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg, id=507, 2569.6pt x 1445.4pt>
+<Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg, id=511, 2569.6pt x 1445.4pt>
 File: Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg Graphic file (type jpg)
 <use Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg>
 Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg  used on input line 206.
@@ -2001,51 +2001,51 @@ Package pdftex.def Info: Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[38] [39 <./Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg>]) [40]
+[38] [39 <./Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg>] [40] [41]) [42]
 \openout2 = `Cap4_Experimentos_Realizados/Experimentos.aux'.
 
- (./Cap4_Experimentos_Realizados/Experimentos.tex [41
+ (./Cap4_Experimentos_Realizados/Experimentos.tex [43
 
 
 
 
 ]
-<Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_matriz.jpg, id=529, 220.6644pt x 212.4738pt>
+<Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_matriz.jpg, id=542, 220.6644pt x 212.4738pt>
 File: Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_matriz.jpg Graphic file (type jpg)
 <use Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_matriz.jpg>
 Package pdftex.def Info: Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_matriz.jpg  used on input line 28.
 (pdftex.def)             Requested size: 386.96027pt x 372.60956pt.
-<Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_faces.jpg, id=530, 218.7372pt x 123.5817pt>
+<Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_faces.jpg, id=543, 218.7372pt x 123.5817pt>
 File: Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_faces.jpg Graphic file (type jpg)
 <use Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_faces.jpg>
 Package pdftex.def Info: Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_faces.jpg  used on input line 29.
 (pdftex.def)             Requested size: 386.96027pt x 218.6415pt.
- [42]
-<Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg, id=535, 222.5916pt x 192.72pt>
+ [44]
+<Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg, id=548, 222.5916pt x 192.72pt>
 File: Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg Graphic file (type jpg)
 <use Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg>
 Package pdftex.def Info: Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg  used on input line 39.
 (pdftex.def)             Requested size: 386.96027pt x 335.07129pt.
-<Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg, id=536, 218.7372pt x 123.0999pt>
+<Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg, id=549, 218.7372pt x 123.0999pt>
 File: Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg Graphic file (type jpg)
 <use Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg>
 Package pdftex.def Info: Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg  used on input line 40.
 (pdftex.def)             Requested size: 386.96027pt x 217.7891pt.
- [43 <./Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_matriz.jpg> <./Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_faces.jpg>]
-<Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg, id=542, 222.8325pt x 190.7928pt>
+ [45 <./Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_matriz.jpg> <./Cap4_Experimentos_Realizados/Figures/cena1_param_1440p_faces.jpg>]
+<Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg, id=554, 222.8325pt x 190.7928pt>
 File: Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg Graphic file (type jpg)
 <use Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg>
 Package pdftex.def Info: Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg  used on input line 50.
 (pdftex.def)             Requested size: 386.96027pt x 331.34792pt.
-<Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg, id=543, 219.219pt x 124.5453pt>
+<Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg, id=555, 219.219pt x 124.5453pt>
 File: Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg Graphic file (type jpg)
 <use Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg>
 Package pdftex.def Info: Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg  used on input line 51.
 (pdftex.def)             Requested size: 386.96027pt x 219.87502pt.
-) [44 <./Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg> <./Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg>] [45 <./Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg> <./Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg>]
+) [46 <./Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_matriz.jpg> <./Cap4_Experimentos_Realizados/Figures/cena1_param_1080p_faces.jpg>] [47 <./Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg> <./Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg>]
 \openout2 = `Cap5_Conclusao/Conclusao.aux'.
 
- (./Cap5_Conclusao/Conclusao.tex) [46
+ (./Cap5_Conclusao/Conclusao.tex) [48
 
 
 
@@ -2064,12 +2064,12 @@ Underfull \hbox (badness 2293) in paragraph at lines 41--41
 []\T1/phv/m/n/12 (+20) BROWNLEE, J. \T1/phv/m/sl/12 (+20) What is Deep Le-ar-ning? \T1/phv/m/n/12 (+20) 2019. Dis-po-ní-vel em: []$<[]https : / /
  []
 
-[47
+[49
 
 
 
 
-] [48])) [49] 
+] [50])) [51] 
 AED: lastpage setting LastPage
 \tf@lof=\write5
 \openout5 = `main.lof'.
@@ -2085,18 +2085,18 @@ Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: 59AF4DA263966BC2692F84524170B6BE;3892.
  ) 
 Here is how much of TeX's memory you used:
- 23048 strings out of 478862
- 358570 string characters out of 5858945
- 768731 words of memory out of 6000000
- 39740 multiletter control sequences out of 15000+600000
- 479253 words of font info for 278 fonts, out of 8000000 for 9000
+ 23058 strings out of 478862
+ 358682 string characters out of 5858945
+ 768753 words of memory out of 6000000
+ 39742 multiletter control sequences out of 15000+600000
+ 479552 words of font info for 281 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  75i,12n,77p,1475b,605s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (52 pages, 9095096 bytes).
+Output written on main.pdf (54 pages, 9098645 bytes).
 PDF statistics:
- 787 PDF objects out of 1000 (max. 8388607)
- 693 compressed objects within 7 object streams
- 142 named destinations out of 1000 (max. 500000)
- 60755 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 808 PDF objects out of 1000 (max. 8388607)
+ 711 compressed objects within 8 object streams
+ 146 named destinations out of 1000 (max. 500000)
+ 60771 words of extra memory for PDF output out of 61914 (max. 10000000)
 

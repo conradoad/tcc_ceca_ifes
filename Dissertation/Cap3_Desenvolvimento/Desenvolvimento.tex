@@ -212,7 +212,7 @@ Na figura \ref{fig:exemploVariacaoFaces}, um exemplo de variação com a reduç�
 
 Para obtenção dos dados nos testes de variação de quantidade de faces deve-se, a partir da imagem original, com todas as faces detectáveis, utilizar a ferramenta para encontrar uma combinação otimizada de parâmetros de detecção. Com os melhores parâmetros definidos, obtém-se as métricas da imagem original e também de todas a variações de quantidade de faces geradas a partir dessa mesma imagem para futura comparação.
 
-\subsection{Variação de resolução da imagem}
+\subsubsection{Variação de resolução da imagem}
 
 Outra variação que é possível obter dessa mesma imagem e que fará parte do estudo é no que tange à resolução da imagem. Quanto maior a resolução da imagem, maior tende a ser a capacidade e qualidade de detecção de faces menores, mas também maior é a demanda de processamento e maior tende a ser o tempo de espera de uma detecção, bem como a utilização de banda para passar adiante as imagens das faces detectadas.
 
@@ -222,9 +222,36 @@ Para a realização dos testes com variação de resolução, foram obtidas das 
 
 Para a obtenção dos dados nos testes de variação de resolução, utilizou-se novamente a ferramenta para encontrar a melhor combinação de parâmetros de detecção para as imagens na nova resolução e, a partir desses novos parâmetros, obteve-se as métricas de todas as imagens com a referida resolução.
 
-\subsection{Tempo médio de captura}
-Como já adiantado no final da seção anterior, o tempo de aquisição da imagem que será considerado no estudo será o tempo médio de captura de frames a partir de um sensor OV5647, utilizando-se o pacote \emph{Picamera}.
-<pending> explicar port still e porque de estar usando nessa cena </pending>
+\subsubsection{Tempo médio de captura}
+Como já adiantado no final da seção anterior, o tempo de aquisição da imagem que será considerado no estudo será o tempo médio de captura de frames a partir de um sensor OV5647, utilizando-se o pacote \emph{Picamera}. Para a cena em questão, onde objetiva-se maximizar a quantidade de faces detectadas, podendo estas estarem bem distantes da câmera, a qualidade da imagem é um fator importante.
+
+Um dos possíveis \emph{ports} usados pelo Picamera é o \emph{still port}, que força a captura da imagem utilizando-se toda a área do sensor, que no caso é de 2592x1944 pixels, mesmo que a resolução de saída da imagem seja menor. Além disso, usa um forte algoritmo para redução de ruído, proporcionando maior qualidade de imagem, sendo assim a forma mais adequada de considerar na captura de imagem no contexto dessa cena.
+
+Para se obter o tempo médio de captura foi escrito um algoritmo simples, que faz a captura consecutiva de 10 frames utilizando-se o \emph{still port} e retorna o tempo médio de captura. No algoritmo é configurado a resolução de saída dos frames para corresponder às resoluções testadas.
+
+\subsection{Cena 2}
+
+Nessa segunda cena, deseja-se representar o controle de acesso a um ambiente, onde o dispositivo com a câmera está posicionado estrategicamente próximo à abertura de acesso (porta, portão, etc) de forma a capturar de perto a face de quem estiver adentrando no local. É importante uma reposta rápida na detecção pois a pessoa entrando no ambiente estará em movimento, estando no campo de visão da câmera por pouco tempo.
+
+\begin{itemize}
+    \item \textbf{Variações possíveis} - variação de resolução da imagem.
+    \item \textbf{Requisitos mínimos} (para balizar a parametrização) - máximo 0.3 segundo de resposta com detecção a partir de 1s de distância.
+    \item \textbf{Imagens para testes} - para representar esta cena, foram obtidos imagens a partir do sensor OV5647 conectado ao dispositivo, com o próprio autor simulando a entrada no ambiente.
+    \end{itemize}
+
+\subsubsection{Captura das imagens para teste}
+
+O dispositivo com a câmera foram posicionados estrategicamente ao lado de uma...
+
+Script para obtenção dos frames
+
+Utilização do port video (still já inviabiliza)
+
+Importância da distância pra garantir pegar a partir de 1s correndo (2,6 m, considerando velocidade média de corrida 9,4km/h) dando chance de capturar 3 vzs considerando máximo de 0.3 segundo de resposta - esse seria o pior caso
+
+Definir 3 tamanhos de imagem. Explicar que será obtido o maior e pra amnter a mesma imagem a resolição reduzida no GIMPFazer olhando para frente mas com a ressalva de que a pessoa pode estar olhando para outro lado.
+
+
 
 \subsection{Dispositivos testados}
 
