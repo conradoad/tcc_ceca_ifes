@@ -231,7 +231,7 @@ Para se obter o tempo médio de captura foi escrito um algoritmo simples, que fa
 
 \subsection{Cena 2}
 
-Nessa segunda cena, deseja-se representar o controle de acesso a um ambiente, onde o dispositivo com a câmera está posicionado estrategicamente próximo à abertura de acesso (porta, portão, etc) de forma a capturar de perto a face de quem estiver adentrando no local. É importante uma reposta rápida na detecção pois a pessoa entrando no ambiente estará em movimento, estando no campo de visão da câmera por pouco tempo.
+Nessa segunda cena, deseja-se representar o controle de acesso a um ambiente, onde o dispositivo com a câmera está posicionado estrategicamente próximo à abertura de acesso (porta, portão, etc) de forma a capturar de perto a face de quem estiver adentrando ao local. É importante uma reposta rápida na detecção pois a pessoa entrando no ambiente estará em movimento, permanecendo no campo de visão da câmera por pouco tempo.
 
 \begin{itemize}
     \item \textbf{Variações possíveis} - variação de resolução da imagem.
@@ -241,17 +241,23 @@ Nessa segunda cena, deseja-se representar o controle de acesso a um ambiente, on
 
 \subsubsection{Captura das imagens para teste}
 
-O dispositivo com a câmera foram posicionados estrategicamente ao lado de uma...
+Para a captura dos frames para os testes, o dispositivo com a câmera foi posicionado estrategicamente ao lado de uma porta, a uma altura aproximada de 1,70, e levemente inclinado em direção à entrada, de forma que a câmera pudesse captar faces mais próximas e também a distâncias de até 2m. <pending> adicionar foto </pending>
+
+Foram feitos alguns testes para obter a posição de uma pessoa mais próxima da entrada em que a câmera conseguisse capturar uma boa imagem do rosto. A partir dessa posição, mediu-se 1,6 m de distância, e capturou-se novos frames, com a pessoa posicionada a essa distâcia. A partir de uma distância de 1,7m uma pessoa caminhando rapidamente a no máximo 6 km/h, leva pelo menos 1s para chegar à posição inicial obtida (6 km/h * 1000 m/km * 1h/3600s = 1,67m/s). A uma presença de pelos menos 1s diante da câmera, com a face capturável, e a um tempo máximo de 0.3s de resposta definido na detecção, têm-se pelo menos 3 frames capturados e analizados enquando uma mesma pessoa caminho até a entrada do ambiente. Esse será considerado nosso pior caso e o frame obtido com a pessoa posicionada a 1.67m da posição inicial será utilizado nos testes para definição dos parâmetros e obtenção das métricas para comparação.
+
+Explicar como será o uso da ferramenta dessa vez, no intuito de conseguir o limiar para reconhecimento da face àquela distância e no menos tempo
 
 Script para obtenção dos frames
 
 Utilização do port video (still já inviabiliza)
 
-Importância da distância pra garantir pegar a partir de 1s correndo (2,6 m, considerando velocidade média de corrida 9,4km/h) dando chance de capturar 3 vzs considerando máximo de 0.3 segundo de resposta - esse seria o pior caso
+Importância da distância pra garantir pegar a partir de 1s de distância para menos (1,6 m, considerando velocidade média de corrida 6km/h) dando chance de capturar 3 vzs considerando máximo de 0.3 segundo de resposta - esse seria o pior caso
 
 Definir 3 tamanhos de imagem. Explicar que será obtido o maior e pra amnter a mesma imagem a resolição reduzida no GIMPFazer olhando para frente mas com a ressalva de que a pessoa pode estar olhando para outro lado.
 
+\subsubsection{Tempo médio de captura}
 
+\subsubsection{Variações de resolução}
 
 \subsection{Dispositivos testados}
 
