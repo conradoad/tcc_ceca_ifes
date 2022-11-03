@@ -243,15 +243,21 @@ Nessa segunda cena, deseja-se representar o controle de acesso a um ambiente, on
 
 Para a captura dos frames para os testes, o dispositivo com a câmera foi posicionado estrategicamente ao lado de uma porta, a uma altura aproximada de 1,70, e levemente inclinado em direção à entrada, de forma que a câmera pudesse captar faces mais próximas e também a distâncias de até 2m. <pending> adicionar foto </pending>
 
-Foram feitos alguns testes para obter a posição de uma pessoa mais próxima da entrada em que a câmera conseguisse capturar uma boa imagem do rosto. A partir dessa posição, mediu-se 1,6 m de distância, e capturou-se novos frames, com a pessoa posicionada a essa distâcia. A partir de uma distância de 1,7m uma pessoa caminhando rapidamente a no máximo 6 km/h, leva pelo menos 1s para chegar à posição inicial obtida (6 km/h * 1000 m/km * 1h/3600s = 1,67m/s). A uma presença de pelos menos 1s diante da câmera, com a face capturável, e a um tempo máximo de 0.3s de resposta definido na detecção, têm-se pelo menos 3 frames capturados e analizados enquando uma mesma pessoa caminho até a entrada do ambiente. Esse será considerado nosso pior caso e o frame obtido com a pessoa posicionada a 1.67m da posição inicial será utilizado nos testes para definição dos parâmetros e obtenção das métricas para comparação.
+Foram feitos testes para obter a posição de uma pessoa mais próxima da entrada em que a câmera conseguisse capturar uma boa imagem do rosto. A partir dessa posição, mediu-se 1,6 m de distância, e capturou-se novos frames, com a pessoa posicionada a essa distâcia. A partir de uma distância de aproximadamente 1,7m uma pessoa caminhando rapidamente a no máximo 6 km/h, leva pelo menos 1s para chegar à posição inicial obtida (6 km/h * 1000 m/km * 1h/3600s = 1,67m/s). A uma presença com duração de pelos menos 1s diante da câmera, com a face capturável, e a um tempo máximo de 0.3s de resposta definido na detecção, têm-se pelo menos 3 frames capturados e analizados enquando uma mesma pessoa caminho até a entrada do ambiente. Esse será considerado nosso pior caso e o frame obtido com a pessoa posicionada a 1.7m da posição inicial será utilizado nos testes para definição dos parâmetros e obtenção das métricas para comparação.
 
-Explicar como será o uso da ferramenta dessa vez, no intuito de conseguir o limiar para reconhecimento da face àquela distância e no menos tempo
+Dessa forma, a ferramenta de análise será utilizada nessa cena com uma abordagem diferente para se obter os melhores parâmetros para comparação. Ao invés de se buscar a maior quantidade de faces detectadas no menor tempo, como feito na primeira cena, dessa vez, como o objetivo é a detecção de apenas uma face próxima por vez, busca-se encontrar os parâmetros com os quais é possível detectar a face de um pessoa se aproximando da entrada a partir de 1,7m de distância, no menor tempo. Por esse motivo, o frame utilizado nos testes foi o obtido com a pessoa a 1,7m de distância.
+
+subsubsection{Modo de captura e tempo médio}
+
+Na cena anterior foi utilizado o modo \emph{still port} do Picamera para se obter o tempo médio de captura de cada frame, pois, como já explicado, obtém-se imagens com melhor qualidade devido à captura utilizando-se a área total do sensor e devido aos algoritmos de redução de ruído. Porém, obviamente, isso traz um custo no tempo de disponibilização do frame pelo módulo da câmera.
+
+Nessa segunda cena, como o objetivo é a detecção de uma única face mais próxima da câmera e permancendo por muito pouco tempo no campo de visão, trona-se então menos importante a qualidade da imagem e mais importante a vaelocidade comque os frames são disponibilizados.
+
+Outro \emph{port} de captura disponível é o \emph{video port} ...
 
 Script para obtenção dos frames
 
 Utilização do port video (still já inviabiliza)
-
-Importância da distância pra garantir pegar a partir de 1s de distância para menos (1,6 m, considerando velocidade média de corrida 6km/h) dando chance de capturar 3 vzs considerando máximo de 0.3 segundo de resposta - esse seria o pior caso
 
 Definir 3 tamanhos de imagem. Explicar que será obtido o maior e pra amnter a mesma imagem a resolição reduzida no GIMPFazer olhando para frente mas com a ressalva de que a pessoa pode estar olhando para outro lado.
 
