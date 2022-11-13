@@ -216,9 +216,9 @@ Para obtenção dos dados nos testes de variação de quantidade de faces deve-s
 
 Outra variação que é possível obter dessa mesma imagem e que fará parte do estudo é no que tange à resolução da imagem. Quanto maior a resolução da imagem, maior tende a ser a capacidade e qualidade de detecção de faces menores, mas também maior é a demanda de processamento e maior tende a ser o tempo de espera de uma detecção, bem como a utilização de banda para passar adiante as imagens das faces detectadas.
 
-Dependendo do cenário e dos possíveis tipos de aplicação, considerar trabalhar a decção em imagens com resoluções menores que a capacidde do sensor pode ser suficiente para viabilizar o uso do dispositivo de borda para a tarefa de detecção, desde que cumprindo os requisitos de tempo de resposta e capacidade de detecção.
+Dependendo do cenário e dos possíveis tipos de aplicação, considerar trabalhar a detecção em imagens com resoluções menores que a capacidde do sensor pode ser suficiente para viabilizar o uso do dispositivo de borda para a tarefa de detecção, desde que cumprindo os requisitos de tempo de resposta e capacidade de detecção.
 
-Para a realização dos testes com variação de resolução, foram obtidas das imagens originais (a original e suas respectivas variações por quantidade de faces) imagens com resoluçoes menores, através de interpolação, utilizando-se também o software GIMP para o processamento. As imagens originais de cada cena foram selecionadas já com resolução em quad-hd (2560x1440), e foram obtidas as variações nas resoluções full-hd (1920x1080) e hd (1280x720). Para cada redução de resolução, são obtidas 5 novas imagens, uma a partir da imagem original e outras quatro a partir da variações de quantidade de faces.
+Para a realização dos testes com variação de resolução, foram obtidas das imagens originais (a original e suas respectivas variações por quantidade de faces) imagens com resoluçoes menores, através de interpolação, utilizando-se também o software GIMP para o processamento. A imagem original desta cada cena foi selecionada já com resolução em quad-hd (2560x1440), e foram obtidas as variações nas resoluções full-hd (1920x1080) e hd (1280x720). Para cada redução de resolução, são obtidas 5 novas imagens, uma a partir da imagem original e outras quatro a partir da variações de quantidade de faces.
 
 Para a obtenção dos dados nos testes de variação de resolução, utilizou-se novamente a ferramenta para encontrar a melhor combinação de parâmetros de detecção para as imagens na nova resolução e, a partir desses novos parâmetros, obteve-se as métricas de todas as imagens com a referida resolução.
 
@@ -243,27 +243,25 @@ Nessa segunda cena, deseja-se representar o controle de acesso a um ambiente, on
 
 Para a captura dos frames para os testes, o dispositivo com a câmera foi posicionado estrategicamente ao lado de uma porta, a uma altura aproximada de 1,70, e levemente inclinado em direção à entrada, de forma que a câmera pudesse captar faces mais próximas e também a distâncias de até 2m. <pending> adicionar foto </pending>
 
-Foram feitos testes para obter a posição de uma pessoa mais próxima da entrada em que a câmera conseguisse capturar uma boa imagem do rosto. A partir dessa posição, mediu-se 1,6 m de distância, e capturou-se novos frames, com a pessoa posicionada a essa distâcia. A partir de uma distância de aproximadamente 1,7m uma pessoa caminhando rapidamente a no máximo 6 km/h, leva pelo menos 1s para chegar à posição inicial obtida (6 km/h * 1000 m/km * 1h/3600s = 1,67m/s). A uma presença com duração de pelos menos 1s diante da câmera, com a face capturável, e a um tempo máximo de 0.3s de resposta definido na detecção, têm-se pelo menos 3 frames capturados e analizados enquando uma mesma pessoa caminho até a entrada do ambiente. Esse será considerado nosso pior caso e o frame obtido com a pessoa posicionada a 1.7m da posição inicial será utilizado nos testes para definição dos parâmetros e obtenção das métricas para comparação.
+Foram feitos testes para obter a posição de uma pessoa mais próxima da entrada em que a câmera conseguisse capturar uma boa imagem do rosto. A partir dessa posição, mediu-se 1,6 m de distância, e capturou-se novos frames, com a pessoa posicionada a essa distâcia. A partir de uma distância de aproximadamente 1,7m uma pessoa caminhando rapidamente a no máximo 6 km/h, leva pelo menos 1s para chegar à posição inicial obtida (6 km/h * 1000 m/km * 1h/3600s = 1,67m/s). A uma presença com duração de pelos menos 1s diante da câmera, com a face capturável, e a um tempo máximo de 0.3s de resposta definido na detecção, têm-se pelo menos 3 frames capturados e analizados enquando uma mesma pessoa caminha até a entrada do ambiente. Esse será considerado nosso pior caso e ambos os frames obtidos (tanto o com a pessoa na posição mais próxima da câmera quanto o com a pessoa posicionada a 1.7m da posição inicial) serão utilizados nos testes para definição dos parâmetros e obtenção das métricas para comparação.
 
-Dessa forma, a ferramenta de análise será utilizada nessa cena com uma abordagem diferente para se obter os melhores parâmetros para comparação. Ao invés de se buscar a maior quantidade de faces detectadas no menor tempo, como feito na primeira cena, dessa vez, como o objetivo é a detecção de apenas uma face próxima por vez, busca-se encontrar os parâmetros com os quais é possível detectar a face de um pessoa se aproximando da entrada a partir de 1,7m de distância, no menor tempo. Por esse motivo, o frame utilizado nos testes foi o obtido com a pessoa a 1,7m de distância.
+Dessa forma, a ferramenta de análise será utilizada nessa cena com uma abordagem diferente para se obter os melhores parâmetros para comparação. Ao invés de se buscar a maior quantidade de faces detectadas no menor tempo, como feito na primeira cena, dessa vez, como o objetivo é a detecção de apenas uma face próxima por vez, busca-se encontrar os parâmetros com os quais é possível detectar a face de uma pessoa se aproximando da entrada a partir de 1,7m de distância, no menor tempo. Como têm-se duas imagens diferentes sendo analisadas, com a face da mesma pessoa, mas em posição e tamanhos relativos diferentes, cada uma apresentará resultados diferentes entre si. Portanto, serão considerados a combinação de parâmetros que atenda bem às duas imagens. Quanto aos dados obtidos das métricas para comparação de resultados, serão considerados os tempos de maior duração e os maiores tamanhos de face.
+
+\subsubsection{Variação de resolução da imagem}
+
+Como nessa cena considera-se a detecção de apenas uma face, variações por quantidade de faces não faz sentido. Portando, será experimentado apenas variação por resolução de imagem. 
+
+Para a realização dos testes com variação de resolução, foram obtidas das duas imagens capturadas imagens com resoluçoes menores, através de interpolação, utilizando-se também o software GIMP para o processamento. As imagens originais originais foram capturadas já com a maior resolução que será considerada no estudo, SVGA (800x600), e foram obtidas as variações nas resoluções menores, VGA/480p (640x480) e QVGA (320x240). As imagens nas resoluções menores poderiam também terem sido capturadas diretamente do módulo da câmera, porém dificilmente se conseguiria obtê-las com as faces nas mesmas posições.
 
 subsubsection{Modo de captura e tempo médio}
 
 Na cena anterior foi utilizado o modo \emph{still port} do Picamera para se obter o tempo médio de captura de cada frame, pois, como já explicado, obtém-se imagens com melhor qualidade devido à captura utilizando-se a área total do sensor e devido aos algoritmos de redução de ruído. Porém, obviamente, isso traz um custo no tempo de disponibilização do frame pelo módulo da câmera.
 
-Nessa segunda cena, como o objetivo é a detecção de uma única face mais próxima da câmera e permancendo por muito pouco tempo no campo de visão, trona-se então menos importante a qualidade da imagem e mais importante a vaelocidade comque os frames são disponibilizados.
+Nessa segunda cena, como o objetivo é a detecção de uma única face mais próxima da câmera e permancendo por muito pouco tempo no campo de visão, torna-se então menos importante a qualidade da imagem e mais importante a velocidade com que os frames são disponibilizados.
 
-Outro \emph{port} de captura disponível é o \emph{video port} ...
+Outro \emph{port} de captura disponível é o \emph{video port}, que não força a captura utilizando-se toda a área do sensor e nem utiliza um forte algoritmo de redução de ruído, como feito no \emph{still port}. Assim, consegue-se capturas de frames mais rápidas, porém com menor qualidade, tendo as imagens uma aparência mais granulada. 
 
-Script para obtenção dos frames
-
-Utilização do port video (still já inviabiliza)
-
-Definir 3 tamanhos de imagem. Explicar que será obtido o maior e pra amnter a mesma imagem a resolição reduzida no GIMPFazer olhando para frente mas com a ressalva de que a pessoa pode estar olhando para outro lado.
-
-\subsubsection{Tempo médio de captura}
-
-\subsubsection{Variações de resolução}
+Para obtenção das imagens, bem como os tempos médios de captura, foi escrito um script simples para capturar 30 frames em sequência, salvando os mesmos em arquivos de formato JPEG e calculando os tempos médios apenas da captura desses frames, para cada resolução diferente, que serão utilizados na base de dados para comparação. O mesmo script foi utilizado para obter as duas imagens na resolução 800x600 a serem utilizadas na ferramenta de parametrização. 
 
 \subsection{Dispositivos testados}
 
