@@ -237,7 +237,7 @@ Nessa segunda cena, deseja-se representar o controle de acesso a um ambiente, on
     \item \textbf{Variações possíveis} - variação de resolução da imagem.
     \item \textbf{Requisitos mínimos} (para balizar a parametrização) - máximo 0.3 segundo de resposta com detecção a partir de 1s de distância.
     \item \textbf{Imagens para testes} - para representar esta cena, foram obtidos imagens a partir do sensor OV5647 conectado ao dispositivo, com o próprio autor simulando a entrada no ambiente.
-    \end{itemize}
+\end{itemize}
 
 \subsubsection{Captura das imagens para teste}
 
@@ -261,14 +261,26 @@ Nessa segunda cena, como o objetivo é a detecção de uma única face mais pró
 
 Outro \emph{port} de captura disponível é o \emph{video port}, que não força a captura utilizando-se toda a área do sensor e nem utiliza um forte algoritmo de redução de ruído, como feito no \emph{still port}. Assim, consegue-se capturas de frames mais rápidas, porém com menor qualidade, tendo as imagens uma aparência mais granulada. 
 
-Para obtenção das imagens, bem como os tempos médios de captura, foi escrito um script simples para capturar 30 frames em sequência, salvando os mesmos em arquivos de formato JPEG e calculando os tempos médios apenas da captura desses frames, para cada resolução diferente, que serão utilizados na base de dados para comparação. O mesmo script foi utilizado para obter as duas imagens na resolução 800x600 a serem utilizadas na ferramenta de parametrização. 
+Para obtenção das imagens, bem como os tempos médios de captura, foi escrito um script simples que faz a captura 30 frames em sequência, utilizando-se o \emph{video port}, salva os mesmos em arquivos de formato JPEG e calcula os tempos médios de captura que serão utilizados na base de dados para comparação. Esse tempo médio é obtido também para as resoluções menores definidas. O mesmo script foi utilizado para obter as duas imagens na resolução 800x600 a serem utilizadas na ferramenta de parametrização. 
+
 
 \subsection{Dispositivos testados}
 
-Serão testados dois dispositivos SBC \textit{Single Board Computer} diferentes, cujos resultados serão comparados.
+Foram testados dois dispositivos SBC \textit{Single Board Computer} diferentes, ambos da família Raspberry Pi, cujos resultados serão comparados. 
 
 \begin{itemize}
-    \item SBC 1 - Raspberry Pi 4: quad-core Cortex-A72 com clock de 1,5 GHz e 4 GB de memória RAM. 
+    \item SBC 1 - Raspberry Pi 4B: quad-core Cortex-A72 com clock de 1,5 GHz e 4 GB de memória RAM. 
     \item SBC 2 - Raspberry Pi Zero W: single-core ARM1176JZF-S com clock de 1,0 GHz e 512 MB de memória RAM.
 \end{itemize}
 
+Na figura \ref{fig:devices}, os dois dispositivos utilizados. O Raspberry Pi 4B já com o módulo da câmera conectado na interface CSI. Esse mesmo módulo é conectado no Raspberry Pi Zero utilizando-se cabo flat adequado, para obter-se o tempo médio de captura de frames.
+
+\begin{figure}[h]
+    \centering
+    \caption[Dispositivos testados. À esqueda o Rapberry Pi 4 e à direita o Raspberry Pi Zero W.]{Dispositivos testados. À esqueda o Rapberry Pi 4 e à direita o Raspberry Pi Zero W.}
+    \includegraphics[width=0.6\textwidth]{Cap3_Desenvolvimento/Figures/devices.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:devices}
+\end{figure}
+
+Apesar de configurações de hardware bem diferentes, os dois dispositivos foram configurados para rodar a mesma versão do sistema operacional Raspberry Pi OS (com kernel 5.10), bem como as mesmas versões do Python (3.7), Picamera (1.13) e OpenCV (3.2). Assim, elimina-se a possibilidade de diferentes versões de software influenciar no desempenho.

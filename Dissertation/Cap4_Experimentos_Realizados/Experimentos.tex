@@ -13,7 +13,7 @@ Para cada variação de resolução, que depende de uma nova seleção de parâm
 
 Primeiramente, foi realizada a otimização dos parâmetros para cada variação de resolução, a partir das imagens com todas as faces disponíveis de cada resolução. No caso desta cena, que exige relativamente muito mais processamento, utilizou-se o Raspberry Pi 4B para a definição dos parâmetros, repetindo-os nos testes com o Raspberry Pi Zero W para base de comparação.
 
-A definição dos parâmetros 'ótimos' não é objetiva. Para esta cena, buscou-se um melhor resultado em que houvesse a maior quantidade de faces detectadas sem a presença de falsos positivos e no menor tempo. Durante a análise, teve-se a razoabilidade de considerar na comparação entre os diferentes resultados da matriz que, um grande aumento no tempo de detecção não justifica um pequeno ganho relativo na quantidade de faces detectadas.
+A definição dos parâmetros 'ótimos' não é objetiva. Para esta cena, buscou-se um melhor resultado em que houvesse a maior quantidade de faces detectadas com o mínimo ou nenhuma presença de falsos positivos e no menor tempo. Durante a análise, teve-se a razoabilidade de considerar na comparação entre os diferentes resultados da matriz que, um grande aumento no tempo de detecção não justifica um pequeno ganho relativo na quantidade de faces detectadas.
 
 As próximas três subsubseções \ref{sssec:resolution1}, \ref{sssec:resolution2} e \ref{sssec:resolution3} mostram através de imagens, para cada resolução testada, a última iteração da matriz de resultados com os dados entrada, a célula destacada com os parâmetros escolhidos e a imagem com a faces detectadas.
 
@@ -46,9 +46,57 @@ Os parâmetros definidos de cada resolução foram usados para obter as métrica
 
 \begin{figure}[H]
     \centering
-    \caption[Otimização Cena 1 - resolução 720p.]{Otimização Cena1 resolução 720p.}
+    \caption[Otimização Cena 1 - resolução 720p.]{Otimização Cena 1 - resolução 720p.}
     \includegraphics[width=0.85\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_param_720p_matriz.jpg}
     \includegraphics[width=0.85\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_param_720p_faces.jpg}
     \caption*{Fonte: autor.}
     \label{fig:otimizacaoCena1_720p}
 \end{figure}
+
+\section{Cena 2}
+
+\subsection{Captura de imagens para teste}
+
+Conforme definido no capítulo anterior, as imagens para teste foram capturadas a partir de um módulo de câmera conectado no Raspbery Pi 4B.
+
+A cena foi montada conforme pode ser visualizado na figura \ref{fig:cena2_posicao1_visao_externa}. O Raspberry Pi 4B, montado em sua case e com o módulo da câmera conectado foi fixado no batente lateral esquerdo da entrada, de forma que a câmera ficasse posicionada a 1,7m do piso e levemente inclinada para baixo e para a dentro, na direção da passagem. A pessoa que aparece na imagem é o próprio autor.
+
+Utilizando-se o script de captura de frames, foram feitos alguns testes e definiu-se essa como a posição mais próxima para se obter a primeira imagem a ser utilizada nos testes de desempenho, pois consegue pegar uma boa imagem do rosto e ainda com um pouco de folga vertical, considerando-se pessoas mais altas ou baixas.
+
+\begin{figure}[H]
+    \centering
+    \caption[Posicionamento para captura da face na primeira posição.]{Posicionamento para captura da face na primeira posição.}
+    \includegraphics[width=0.65\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_posicao1_visao_externa.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena2_posicao1_visao_externa}
+\end{figure}
+
+Na figura \ref{fig:cena2_posicao1_imagem_capturada} tem-se a imagem capturada pela câmera na posição 1, mas maior resolução definida para esta cena, 800x600.
+
+\begin{figure}[H]
+    \centering
+    \caption[Captura da imagem na primeira posição.]{Captura da imagem na primeira posição.}
+    \includegraphics[width=0.65\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_posicao1_imagem_capturada.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena2_posicao1_imagem_capturada}
+\end{figure}
+
+A partir dessa primeira posição, mediu-se 1,7m distanciando-se da entrada. Essa é a posição mais distante, a partir da qual deseja-se que a face seja detectável. A figura \ref{fig:cena2_posicao2_visao_externa} demonstra esse posicionamento e na figura \ref{fig:cena2_posicao2_imagem_capturada} tem-se a imagem capturada pela câmera que também será utilizada nos testes.
+\begin{figure}[H]
+    \centering
+    \caption[Posicionamento para captura da face na segunda posição.]{Posicionamento para captura da face na segunda posição.}
+    \includegraphics[width=0.65\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_posicao2_visao_externa.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena2_posicao2_visao_externa}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption[Captura da imagem na segunda posição.]{Captura da imagem na segunda posição.}
+    \includegraphics[width=0.65\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_posicao2_imagem_capturada.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena2_posicao2_imagem_capturada}
+\end{figure}
+
+
+\subsection{Otimização de parâmetros}
