@@ -109,15 +109,16 @@ Pode-se pensar, a princípio, que bastava analisar a imagem na posição 2, que 
 
 Para se considerar um pior caso, foram utilizados os dados das métricas que apresentaram maiores tempos de resposta e tamanho de imagem, isso para cada resolução.
 
-As próximas três subsubseções \ref{sssec:resolution2-1}, \ref{sssec:resolution2-2} e \ref{sssec:resolution2-3} mostram para cada resolução testada, a última iteração da matriz de resultados para a detecção em ambas as posições, com os dados entrada, a célula destacada com os parâmetros escolhidos e as imagems com a faces detectadas.
+As próximas três subsubseções \ref{sssec:resolution2-1}, \ref{sssec:resolution2-2} e \ref{sssec:resolution2-3} mostram para cada resolução testada, a última iteração da matriz de resultados para a detecção em ambas as posições, com os dados entrada, a célula destacada com os parâmetros escolhidos e as imagems com a faces detectadas. Nas figuras das matrizes foram adicionadas linhas azuis (para a posição 1) e vermelhas (para aposição 2), indicando limiares que separam os grupos contínuos de resultados onde há detecção de face. Foram então selecionados os melhores resultados dentro da interseção desses grupos .
 
-Após os parâmetros definidos no Raspberry Pi 4, os mesmo foram utilizados para obter a métricas no Raspberry Pi Zero W, sendo todos tabelados para comparação.
+Após os parâmetros definidos no Raspberry Pi 4, os mesmos foram utilizados para obter a métricas no Raspberry Pi Zero W, sendo todos tabelados para comparação.
+
 
 \subsubsection{Resolução 600p} \label{sssec:resolution2-1}
 
 Devido ao tamanho maior das matrizes de resultados e a necessidade de visualização lado à lado, a parte da interface com os controles de parametrização não foram exibidos. Os prâmetros utilizados foram: "Min. Neighbors: 3", "Number of Samples: 6". Início e fim de escala dos demais parâmetros podem ser vistos nas matrizes.
 
-<pending> nas matrizes foram demarcadas linhas azui e vermelhas ...etc
+
 
 \begin{figure}[H]
     \centering
@@ -176,3 +177,6 @@ Devido ao tamanho maior das matrizes de resultados e a necessidade de visualiza�
     \caption*{Fonte: autor.}
     \label{fig:otimizacaoCena2_240p_faces}
 \end{figure}
+
+- colocar as imagens das faces cortadas em tamanho real para demonstração
+- ver se incluo de alguma forma os dados da métricas para cada resolução testada
