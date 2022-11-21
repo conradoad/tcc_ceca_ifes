@@ -175,7 +175,7 @@ Nessa primeira cena deseja-se representar o monitoramento de um espaço aberto e
 
 \begin{itemize}
     \item \textbf{Variações possíveis} - variação de quantidade de faces e variação de resolução da imagem.
-    \item \textbf{Requisitos mínimos} (para balizar a parametrização) - máximo 3 segundos de resposta.
+    \item \textbf{Requisitos mínimos} (para balizar a parametrização) - máximo 5 segundos de resposta.
     \item \textbf{Imagem para testes} - para representar esta cena, foi selecionada uma imagem (figura \ref{fig:imagemCena1}) com várias faces olhando na direção da câmera e em diferentes distâncias. Ter todas as faces olhando para a mesma direção, distancia-se de um cenário real, mas torna-se ideal para o estudo pois serve como um pior caso para a cena e facilita a obtenção de variações por quantidade de faces.
 \end{itemize}
 
@@ -264,9 +264,9 @@ Outro \emph{port} de captura disponível é o \emph{video port}, que não força
 Para obtenção das imagens, bem como os tempos médios de captura, foi escrito um script simples que faz a captura 30 frames em sequência, utilizando-se o \emph{video port}, salva os mesmos em arquivos de formato JPEG e calcula os tempos médios de captura que serão utilizados na base de dados para comparação. Esse tempo médio é obtido também para as resoluções menores definidas. O mesmo script foi utilizado para obter as duas imagens na resolução 800x600 a serem utilizadas na ferramenta de parametrização. 
 
 
-\subsection{Dispositivos testados}
+\section{Dispositivos testados}
 
-Foram testados dois dispositivos SBC \textit{Single Board Computer} diferentes, ambos da família Raspberry Pi, cujos resultados serão comparados. 
+Foram testados dois dispositivos SBC (\textit{Single Board Computer}) diferentes, ambos da família Raspberry Pi, cujos resultados serão comparados. 
 
 \begin{itemize}
     \item SBC 1 - Raspberry Pi 4B: quad-core Cortex-A72 com clock de 1,5 GHz e 4 GB de memória RAM. 

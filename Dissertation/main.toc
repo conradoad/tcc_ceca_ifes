@@ -25,18 +25,22 @@
 \contentsline {subsection}{\numberline {3.3.2}Cena 2}{42}{subsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.2.1}Captura das imagens para teste}{42}{subsubsection.3.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.3.2.2}Variação de resolução da imagem}{43}{subsubsection.3.3.2.2}%
-\contentsline {subsection}{\numberline {3.3.3}Dispositivos testados}{44}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Dispositivos testados}{44}{section.3.4}%
 \contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Experimentos Realizados}}{46}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Cena 1}{46}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Otimização de parâmetros}{46}{subsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.1.1}Resolução 1440p}{48}{subsubsection.4.1.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}Resolução 1440p}{47}{subsubsection.4.1.1.1}%
 \contentsline {subsubsection}{\numberline {4.1.1.2}Resolução 1080p}{49}{subsubsection.4.1.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.1.3}Resolução 720p}{50}{subsubsection.4.1.1.3}%
-\contentsline {section}{\numberline {4.2}Cena 2}{51}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Captura de imagens para teste}{51}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Otimização de parâmetros}{53}{subsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.2.1}Resolução 600p}{54}{subsubsection.4.2.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2.2}Resolução 480p}{56}{subsubsection.4.2.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.2.3}Resolução 240p}{57}{subsubsection.4.2.2.3}%
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Considerações Finais e Trabalhos \mbox {Futuros}}}{58}{chapter.5}%
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{59}{section*.32}%
+\contentsline {subsubsection}{\numberline {4.1.1.3}Resolução 720p}{51}{subsubsection.4.1.1.3}%
+\contentsline {subsection}{\numberline {4.1.2}Análise dos resultados}{53}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}Efeitos da variação por quantidade de faces}{53}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}Efeitos da variação por resolução de imagem}{54}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}Considerações sobre dispositivos}{58}{subsubsection.4.1.2.3}%
+\contentsline {section}{\numberline {4.2}Cena 2}{58}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Captura de imagens para teste}{58}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Otimização de parâmetros}{61}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Resolução 600p}{62}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Resolução 480p}{64}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}Resolução 240p}{65}{subsubsection.4.2.2.3}%
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Considerações Finais e Trabalhos \mbox {Futuros}}}{67}{chapter.5}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{68}{section*.38}%
