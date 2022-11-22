@@ -23,14 +23,15 @@
 \contentsline {figure}{\numberline {18}{\ignorespaces Faces detectadas e Tempos de execução por Variação de faces detectáveis.}}{55}{figure.caption.24}%
 \contentsline {figure}{\numberline {19}{\ignorespaces Faces detectadas e Tempos de execução por Variação de resolução.}}{57}{figure.caption.25}%
 \contentsline {figure}{\numberline {20}{\ignorespaces Comparativo de faces recortadas de deiferentes resoluções, em tamanho real.}}{57}{figure.caption.26}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Posicionamento para captura da face na primeira posição.}}{59}{figure.caption.27}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Captura da imagem na primeira posição.}}{60}{figure.caption.28}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Posicionamento para captura da face na segunda posição.}}{60}{figure.caption.29}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Captura da imagem na segunda posição.}}{61}{figure.caption.30}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Otimização Cena 2 - resolução 600p - matrizes. À esquerda posição 1 e à direita, posição 2}}{63}{figure.caption.31}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Otimização Cena 2 - resolução 600p - face detectada. À esquerda posição 1 e à direita, posição 2}}{63}{figure.caption.32}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Otimização Cena 2 - resolução 480p - matrizes. À esquerda posição 1 e à direita, posição 2}}{64}{figure.caption.33}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Otimização Cena 2 - resolução 480p - face detectada. À esquerda posição 1 e à direita, posição 2}}{64}{figure.caption.34}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Otimização Cena 2 - resolução 240p - matrizes. À esquerda posição 1 e à direita, posição 2}}{65}{figure.caption.35}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Otimização Cena 2 - resolução 240p - face detectada. À esquerda posição 1 e à direita, posição 2}}{65}{figure.caption.36}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Comparativo de tamanho médio de imagem encodada por face detectada em bytes.}}{58}{figure.caption.27}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Posicionamento para captura da face na primeira posição.}}{60}{figure.caption.28}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Captura da imagem na primeira posição.}}{61}{figure.caption.29}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Posicionamento para captura da face na segunda posição.}}{61}{figure.caption.30}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Captura da imagem na segunda posição.}}{62}{figure.caption.31}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Otimização Cena 2 - resolução 600p - matrizes. À esquerda posição 1 e à direita, posição 2}}{64}{figure.caption.32}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Otimização Cena 2 - resolução 600p - face detectada. À esquerda posição 1 e à direita, posição 2}}{64}{figure.caption.33}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Otimização Cena 2 - resolução 480p - matrizes. À esquerda posição 1 e à direita, posição 2}}{65}{figure.caption.34}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Otimização Cena 2 - resolução 480p - face detectada. À esquerda posição 1 e à direita, posição 2}}{65}{figure.caption.35}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Otimização Cena 2 - resolução 240p - matrizes. À esquerda posição 1 e à direita, posição 2}}{66}{figure.caption.36}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Otimização Cena 2 - resolução 240p - face detectada. À esquerda posição 1 e à direita, posição 2}}{66}{figure.caption.37}%
 \addvspace {10\p@ }

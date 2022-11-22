@@ -160,7 +160,6 @@ Outra questão em que a utilização de resolução maior torna-se vantajoso é 
 
 Para se ter uma ideia mais visual da diferença, a figura \ref{fig:cena1_comparativo_qualidade_faces} faz um comparativo entre duas faces detectadas (a de uma pessoa mais próxima e a de uma pessoa mais distante) e as diferentes resoluções.
 
-
 \begin{figure}
     \centering
     \caption[Comparativo de faces recortadas de deiferentes resoluções, em tamanho real.]{Comparativo de faces recortadas de deiferentes resoluções, em tamanho real.}
@@ -169,9 +168,20 @@ Para se ter uma ideia mais visual da diferença, a figura \ref{fig:cena1_compara
     \label{fig:cena1_comparativo_qualidade_faces}
 \end{figure}
 
-E o tamanho do dado que será trafegado (ver tamanho por face)
+Um fator que talvez possa pesar a favor de se utilizar resolução menor é a quantidade de dados sendo trafegados ou aramazenados. A figura \ref{fig:cena1_comparativo_tamanho_faces} traz um comparativo entre o tamanho médio das imagens das faces recortadas, coloridas e encodadas em base64. Nesse caso, observa-se que a utilização da resolução em 1080p reduzuria o tamanho de dados trafegados e/ou armazenados em aproximadamente 34\%. Claro que existe a possibilidade de realizar a detecção na resolução maior e redimensionar as imagens antes de serem transmitidas, mas deve-se levar em consideração que, para tal, haverá mais carga de processamento no dispositivo de borda.
 
-\subsubsection{Considerações sobre dispositivos}
+\begin{figure}
+    \centering
+    \caption[Comparativo de tamanho médio de imagem encodada por face detectada em bytes.]{Comparativo de tamanho médio de imagem encodada por face detectada em bytes.}
+    \includegraphics[width=0.65\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_graficos_tamanho_medio_imagem_face.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena1_comparativo_tamanho_faces}
+\end{figure}
+
+\subsubsection{Considerações sobre os dispositivos testados}
+Nos gráficos apresentados nas figuras \ref{fig:dadosCena1_graficos_variacao_faces} e \ref{fig:cena1_graficos_variacao_resolucao} já fica bem evidente que o Raspberry Pi Zero W deixa a desejar, com tempos de resposta acima de 1 minuto, muito além do aceitável para a cena. Pode-se concluir então que a utilização deste não é adequada para processamento de detecção de faces em imagens com resoluções mais altas, como as testadas, independete da quantidade de faces presentes na imagem.
+
+Já o Raspberry Pi 4B apresentou bom desempenho, conseguindo detectar 169 faces na maior resolução com tempo médio de resposta de 3,88, desde a captura do frame até a preparação das faces cortadas em dados prontos para transmissão. Um tempo razoavelmente menor que o máximo desejado no cenário, com uma margem 22\% e que ainda pode ser aumentada tirando proveito de processamento paralelo, principalmente na captura dos frames, o que não foi feito nesses testes.
 
 \section{Cena 2}
 
