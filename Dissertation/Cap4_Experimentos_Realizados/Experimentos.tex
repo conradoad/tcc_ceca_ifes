@@ -183,6 +183,30 @@ Nos gráficos apresentados nas figuras \ref{fig:dadosCena1_graficos_variacao_fac
 
 Já o Raspberry Pi 4B apresentou bom desempenho, conseguindo detectar 169 faces na maior resolução com tempo médio de resposta de 3,88, desde a captura do frame até a preparação das faces cortadas em dados prontos para transmissão. Um tempo razoavelmente menor que o máximo desejado no cenário, com uma margem 22\% e que ainda pode ser aumentada tirando proveito de processamento paralelo, principalmente na captura dos frames, o que não foi feito nesses testes.
 
+\subsubsection{Considerações sobre utilização de banda}
+
+Quando em uma aplicação com arquitetura distribuída, uma das principais vantagens de se alocar parte do processamento nos dispositivos de borda é a economia que se pode ter na utilização de banda ao trafegar os dados gerados por esses dispositivos para outros positivos que estejam na mesma rede ou na nuvem, que desempenham outras funções dentro da aplicação. Quando se tem têm imagens sendo trafegadas, como é o caso desse estudo, o volume de dados é razoavelmente alto, podendo essa economia ser muito relevante para o projeto.
+
+Trazendo para a cena em questão, caso o dispositivo de borda tivesse a função de apenas capturar a imagem, encodar e transmiti-la para um outro dispositivo realizar a detecação das faces, as imagens teriam que ser transmitidas em sua totalidade para se obter o mesmo resultado. Uma grande quantidade de dados trafegados, refentes às partes das imagens não úteis após a detecção, seriam descartados, desperdiçando-se assim a utilização de banda da rede. Inclusive, mesmo não havendo faces presentes, as imagens precisariam continuar sendo enviadas periodicamente, evidenciando ainda mais o desperdício. Isso pode gerar vários problemas como gargalos na rede e sobrecarga computacional.
+
+Tendo-se a detecção das faces realizada pelo próprio dispositivo na borda, apenas as partes úteis da imagens, que são as faces recortadas, precisam ser transmitidas, tendo-se assim uma utilização mais eficiente na utilização da rede que interliga os diferentes dispositivos.
+
+Durante os testes, junto com as métricas de tempo de processamento são obtidas também as informações do tamanho total da imagem testada e também a soma das imagens das faces recortadas, que serão usadas para comparações na sequência. Estão sendo considerados os tamanhos das imagens após encodamento em base64.
+
+A figura \ref{fig:cena1_comparativo_utilizacao_banda} mostra um comparativo de como seria a utilização de banda nos dois casos, transmitindo-se a imagem completa e apenas as imagens das faces recortadas, com resolução de 1440 x 2560. Para o cálculo de utilização de banda, considerou-se que intervalo entre as detecções de 5 segundos, conforme tempo máximo definido como requisito para esta cena.
+
+No eixo x têm-se a quantidade de faces detectadas..................
+
+\begin{figure}
+    \centering
+    \caption[Comparativo de tamanho médio de imagem encodada por face detectada em bytes.]{Comparativo de tamanho médio de imagem encodada por face detectada em bytes.}
+    \includegraphics[width=0.95\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_comparativo_utilizacao_banda.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena1_comparativo_utilizacao_banda}
+\end{figure}
+
+Considerando-se que podem haver dezenas ou centenas de cameras...
+
 \section{Cena 2}
 
 \subsection{Captura de imagens para teste}
