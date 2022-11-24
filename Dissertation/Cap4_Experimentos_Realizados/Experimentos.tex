@@ -193,9 +193,9 @@ Tendo-se a detecção das faces realizada pelo próprio dispositivo na borda, ap
 
 Durante os testes, junto com as métricas de tempo de processamento são obtidas também as informações do tamanho total da imagem testada e também a soma das imagens das faces recortadas, que serão usadas para comparações na sequência. Estão sendo considerados os tamanhos das imagens após encodamento em base64.
 
-A figura \ref{fig:cena1_comparativo_utilizacao_banda} mostra um comparativo de como seria a utilização de banda nos dois casos, transmitindo-se a imagem completa e apenas as imagens das faces recortadas, com resolução de 1440 x 2560. Para o cálculo de utilização de banda, considerou-se que intervalo entre as detecções de 5 segundos, conforme tempo máximo definido como requisito para esta cena.
+A figura \ref{fig:cena1_comparativo_utilizacao_banda} mostra um comparativo de como seria a utilização de banda nos dois casos, transmitindo-se a imagem completa e transmitindo-se apenas as imagens das faces recortadas, com resolução de 1440 x 2560. Para o cálculo de utilização de banda, considerou-se que intervalo entre as detecções de 5 segundos, conforme tempo máximo definido como requisito para esta cena.
 
-No eixo x têm-se a quantidade de faces detectadas..................
+No eixo x têm-se a quantidade de faces que foram detectadas, nas barras de cor vermelha a largura de banda a largura de banda que seria utilizada trafegando-se a imagem completa e nas barras de cor verde a largura de banda considerando-se o tráfego apenas do recorte das faces detectadas, ambas seguindo a escala à esquerda do eixo y e expressas em MBps. Na série em formato de linha azul têm-se a diferença percentual em relação ao tamanho da imagem completa, seguindo a escala à direita do eixo y.
 
 \begin{figure}
     \centering
@@ -205,7 +205,12 @@ No eixo x têm-se a quantidade de faces detectadas..................
     \label{fig:cena1_comparativo_utilizacao_banda}
 \end{figure}
 
-Considerando-se que podem haver dezenas ou centenas de cameras...
+Como se pode observar, a redução na utilização de banda para tráfego das imagens ao se utilizar o processamento na borda para detecção de face é bastante expressivo, partindo-se de 95\% para o caso em que há grande quantidade de faces detectadas (196) e chagando a 99,2\% no caso com muito poucas faces detectadas (25). De fato, a redução pode chegar até a 100\% em eventuais momentos em que não haja face alguma a ser detectada.
+
+Pode-se pensar que talvez a utilização de quase 3 MBps para se transmittir a imagem completa não seria algo tão absurso assim, dependendo da infraestrutura de rede disponível e seu estado de utilização. Mas é importante atentar-se aqui que a unidade sendo usada está em Megabytes/s, então 3 MBps corresponderia a 24 Mbps (Megabits/s), nada mais sendo do que 24\% da capacidade de banda de uma rede operando a 100 Mbps.
+
+Além disso, está se considerando aqui a utilização de banda de apenas um dispositivo. Em uma aplicação real, é razoável considerar que podem haver dezenas de dispositivos realizando monitoramento e tendo de enviar imagens e dados a algum outro dispositivo centralizador, seja em uma rede logal ou algum servidor na nuvem. Imagine um caso com apenas 5 dispositivos de borda distribuídos em ambientes parecidos com a cena em questão, capturando imagens em 1440 x 2560 e a cada 5s para monitoramento e detecção de faces. Caso não haja detecção de face na borda, a utilização de banda necessária para transmissão das imagens completas seria de pelo menos 120 Mbps, o que já seria inviável em uma rede local de 100 Mbps, quanto mais na nuvem.
+Agora, considere que todos esses 5 dispositivos tenham capacidade de realizar a detecção transmitir apenas as imagens das faces recortadas. Para o pior caso que se testou, 169 faces detectadas, a banda demandada pelos cinco dispositivos simultaneamente seria de aproximadamente 0,75 MBps, ou 6 Mbps, algo bastante razoável para se trafegar em uma rede local mas talvez ainda nem tanto para se transmitir continuamente pela nuvem.
 
 \section{Cena 2}
 
