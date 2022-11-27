@@ -181,6 +181,20 @@ ISBN 9781538695029.}
 Dispon{\'\i}vel em:
   \url{https://patentimages.storage.googleapis.com/f0/7b/a2/58558376b25dca/US7023469.pdf}.}
 
+\bibitem[{OpenCV-CascadeClassifier} 2022]{OpenCV-CascadeClassifier}
+\abntrefinfo{{OpenCV-CascadeClassifier}}{{OpenCV-CascadeClassifier}}{2022}
+{{OpenCV-CascadeClassifier}. 2022.
+[Online; acessado em 15-09-2022].
+Dispon{\'\i}vel em:
+  \url{https://docs.opencv.org/3.4/db/d28/tutorial\_cascade\_classifier.html}.}
+
+\bibitem[{OpenCV-PreTrainedModels} 2022]{OpenCV-PreTrainedModels}
+\abntrefinfo{{OpenCV-PreTrainedModels}}{{OpenCV-PreTrainedModels}}{2022}
+{{OpenCV-PreTrainedModels}. 2022.
+[Online; acessado em 15-09-2022].
+Dispon{\'\i}vel em:
+  \url{https://github.com/opencv/opencv/tree/master/data/haarcascades}.}
+
 \bibitem[Pacheco et al. 2018]{Pacheco2018}
 \abntrefinfo{Pacheco et al.}{PACHECO et al.}{2018}
 {PACHECO, A. et al. {A Smart Classroom Based on Deep Learning and Osmotic IoT

@@ -5,24 +5,37 @@
 
 \section{O algoritmo de detecção de objetos}
 
-O algoritmo de detecção de objetos utilizado nesse estudo foi o \textit{Haar cascade object detection}, proposto por Viola e Jones em sua pesquisa \textit{Rapid Object Detection using a Boosted Cascade of Simple Features} \cite{Viola2001}.
-
-<pending>explicar um pouco sobre o algoritmo (baseado na detecção com base em características, é treinado com imagens positivas e negativas, É rapido pois a classificaçao em camadas descarta rapidamente uma area em que não há face, etc).</pending>
+O algoritmo de detecção de objetos utilizado nesse estudo foi o \textit{Haar cascade object detection}, proposto por Viola e Jones em sua pesquisa \textit{Rapid Object Detection using a Boosted Cascade of Simple Features} \cite{Viola2001}, inicialmente proposto para detecção de faces, mas sendo possível ser utilizado na detecção de qualquier objeto. A biblioteca OpenCV fornece uma implementação desse algoritmo proposto para detecção de objetos \cite{OpenCV-CascadeClassifier}, que pode ser usando tanto para o treinamento de um novo modelo quanto para realizar a detecção em si, utilizando-se do modelo treinado ou de algum dos modelos pretreinados disponibilizados pelos próprios mantenedores do OpenCV em \cite{OpenCV-PreTrainedModels}. Neste trabalho foi utilizado o modelo pretreinado 'haarcascade\_frontalface\_alt.xml' para a detecção das faces. 
 
 Não é o algoritmo com melhor acurácia atualmente, se comparado com técnicas mais modernas que aplicam \textit{deep learning}, porém é um algoritmo extremamente rápido e preciso, portanto ainda é muito útil para detecção de objetos em dispositivos com recursos limitados, como é o caso de dispositivos de borda, em geral.
 
-Uma desvantagem nesse algoritmo é a tendência à detecção de falsos positivos e à necessidade de definição de alguns parâmetros, descritos resumidamente a seguir.
+Uma desvantagem nesse método é a tendência à detecção de falsos positivos. Existe também a necessidade de definição de alguns parâmetros na implementação fornecida no OpenCV, descritos resumidamente a seguir.
 
-<pending>- parametros importantes (explicar cada)
---scaleFactor	Parameter specifying how much the image size is reduced at each image scale.
---minNeighbors	Parameter specifying how many neighbors each candidate rectangle should have to retain it.
---minSize	Minimum possible object size. Objects smaller than that are ignored.
---maxSize	Maximum possible object size. Objects larger than that are ignored. If maxSize == minSize model is evaluated on single scale.</pending>
+O método fornecido pelo objeto do tipo \emph{CascadeClassifier} \cite{OpenCV-CascadeClassifier} para performar a detecção em uma imagem é o \emph{detectMultiScale}, que tem assinatura (em C++) conforme a figura \ref{fig:detectMultiScaleFcn}. O modelo classificador pretreinado é carregado previamente utilizando-se do método \emph{load} do mesmo objeto.
+
+\begin{figure}[h]
+    \centering
+    \caption[Assinatura da função detectMultiScale do OpenCV.]{Assinatura da função detectMultiScale do OpenCV.}
+    \includegraphics[width=0.60\textwidth]{Cap3_Desenvolvimento/Figures/detectMultiScaleFcn.jpg}
+    \caption*{Fonte: Documentação do OpenCV.\footnotemark}
+    \label{fig:detectMultiScaleFcn}
+\end{figure}
+
+\footnotetext{Disponível em: <https://docs.opencv.org/3.2.0/d1/de5/classcv\_1\_1CascadeClassifier.html>}
+
+\begin{itemize}
+    \item \emph{image} - matriz da imagem de entrada, na qual os objetos (no nosso caso, faces) serão detectados;
+    \item \emph{objects} - referência ao vetor de retângulos que será populado com as áreas na imagem de entrada onde foram detectadas as faces;
+    \item \emph{scaleFactor} - esse parâmetro determina o quanto a imagem será reescalonada em cada passo durante a detecção. O modelo foi treinado com imagens de tamanhos fixos, então, para possibilitar a detecção de variados tamanhos de faces, a imagem tem sua resolução reduzida em vários passos, de forma que em algum determinado passo faces maiores tenham proporções próximas da utilizada no treinamento do modelo e, assim sejam detectadas. Por exemplo, um valor de 1.1 significa que a imagem será reduzida 10\% a cada passo, um valor de 1.05, 5\%. Quanto menor for o valor desse parâmetro maiores serão as chances de uma face se encaixar ao tamanho detectável em algum passo, porém mais lento será a resposta do algoritmo já que será exigido mais processamento conforme aumenta a quantidade de passos.
+    \item \emph{minNeighbors} - especifica quantos vizinhos cada retângulo candidato a uma face deve ter para ser considerado como uma detecção positiva. Em resumo, esse parâmetro afeta na qualidade da resolução. Valores baixos podem detectar maiores quantidades de faces porém com a presença de muitos falsos positivos, enquanto valores maiores tendem a aumentar a confiabilidade do que é detectado porém podendo aumentar a quantidade de falsos negativos (quando há uma face mas não é detectada pois não tem retangulos vizinhos suficientes);
+    \item \emph{flags} - não utilizado;
+    \item \emph{minSize} - indica o tamanho mínimo de face a ser detectada na imagem. Tamanhos mínimos maiores tendem a reduzir o tempo de resposta por aumentar o tamanho da janela deslizante na varredura da imagem (o que demanda mais processamento), mas com risco de não detectar faces relativamente pequenas. Tamanhos mínimos menores aumentam as chances de detecção de faces relativamente pequenas, mas com aumento também na demanda de processamente devido à dimuinuição da janela deslizante.
+    \item 
+\end{itemize}
 
 O ajuste de parâmetros não é muito simples e depende do cenário da imagem, dos possíveis tamanhos de faces que se dejesa detectar, etc. A escolha dos parâmetros influencia diretamente no resultado da detecção, na capacidade de detecção de determinados tamanhos de faces, na propensão em detectar falsos-positivos e no tempo de execução.
 
-Devido a isso, viu-se necessário o desenvolvimento de uma ferramenta para se testar de uma só vez um range variável de valores de determinados parâmetros e verificar facilmente a qualidade e tempo de detecção para cada conjunto de valores testados. 
-
+Devido a isso, viu-se necessário o desenvolvimento de uma ferramenta para se testar de uma só vez um range variável de valores de determinados parâmetros e verificar facilmente a qualidade e tempo de detecção para cada combinação de valores testados. 
 
 \section{Ferramenta de parametrização, otimização e obtenção de resultados}
 
@@ -38,11 +51,13 @@ Na figura a seguir temos um exemplo da interface com imagem e parâmetros seleci
     \centering
     \caption[Interface e seus parâmetros.]{Interface e seus parâmetros.}
     \includegraphics[width=1.0\textwidth]{Cap3_Desenvolvimento/Figures/interface_parametros.png}
-    \caption*{Fonte: autor.}
+    \caption*{Fonte: compilação do autor.\footnotemark}
     \label{fig:interfaceUsuario}
 \end{figure}
 
-<pending> fazer citação da imagem utilizada no exemplo></pending>
+\footnotetext{Imagem usada na compilação disponível em: <https://commons.wikimedia.org/wiki/File:WikiConference\_North\_America\_2018\_-\_Friday\_Group\_Photo.jpg>
+Arquivo de imagem sob a licença CC BY-SA 4.0: <https://creativecommons.org/licenses/by-sa/4.0/deed.en>}
+
 
 À esquerda da interface há um elemento de entrada que permite a seleção a imagem a ser utilizada no ensaio. Na imagem, exibida logo abaixo, serão delimitadas as faces detectadas.
 
@@ -86,9 +101,9 @@ Por fim, a figura \ref{fig:exemploResultado3} apresenta um resultado que possive
 
 \begin{figure}[h]
     \centering
-    \caption[Exemplo de resultado com pucas faces detectadas.]{Exemplo de resultado com pucas faces detectadas.}
+    \caption[Exemplo de resultado com poucas faces detectadas.]{Exemplo de resultado com poucas faces detectadas.}
     \includegraphics[width=0.8\textwidth]{Cap3_Desenvolvimento/Figures/exemplo_resultado_1.jpg}
-    \caption*{Fonte: autor.}
+    \caption*{Fonte: compilação do autor.\footnotemark[\value{footnote}]}
     \label{fig:exemploResultado1}
 \end{figure}
 
@@ -96,7 +111,7 @@ Por fim, a figura \ref{fig:exemploResultado3} apresenta um resultado que possive
     \centering
     \caption[Exemplo de resultado com várias faces detectadas e alguns falsos positivos.]{Exemplo de resultado com várias faces detectadas e alguns falsos positivos.}
     \includegraphics[width=0.8\textwidth]{Cap3_Desenvolvimento/Figures/exemplo_resultado_2.jpg}
-    \caption*{Fonte: autor.}
+    \caption*{Fonte: compilação do autor.\footnotemark[\value{footnote}]}
     \label{fig:exemploResultado2}
 \end{figure}
 
@@ -104,7 +119,7 @@ Por fim, a figura \ref{fig:exemploResultado3} apresenta um resultado que possive
     \centering
     \caption[Exemplo de resultado possivelmente satisfatório.]{Exemplo de resultado possivelmente satisfatório.}
     \includegraphics[width=0.8\textwidth]{Cap3_Desenvolvimento/Figures/exemplo_resultado_3.jpg}
-    \caption*{Fonte: autor.}
+    \caption*{Fonte: compilação do autor.\footnotemark[\value{footnote}]}
     \label{fig:exemploResultado3}
 \end{figure}
 
@@ -131,7 +146,7 @@ Tendo definido-se uma melhor combinação de valores dos parâmetros, pode-se en
 
 Ao se clicar no botão "Get Metrics", no lado esquerdo da tela (vide figura \ref{fig:interfaceUsuario}), os parâmetros definidos de acordo com a célula selecionada na matriz de resultados são enviados ao servidor no dispositivo que está sendo testado. Este, por sua vez, executa novamente o algoritmo de detecção, logando também o tempo de execução de outras etapas preparatórias, bem como outras informações referentes aos tamanhos das imagens.
 
-Na figura \ref{fig:resultadoMetricas}, pode-se observar como os dados retorandos são exibidos na interface do usuário. A seguir, uma breve explicação de cada item:
+Na figura \ref{fig:resultadoMetricas}, pode-se observar como os dados retornados são exibidos na interface do usuário. A seguir, uma breve explicação de cada item:
 
 \begin{itemize}
     \item 1.0 - Params: os parâmetros utilizados no algoritmos de detecção, conforme célula selecionada na matriz de resultados na etapa anterior;
@@ -188,7 +203,6 @@ Nessa primeira cena deseja-se representar o monitoramento de um espaço aberto e
 \end{figure}
 
 \footnotetext{Disponível em: <https://commons.wikimedia.org/wiki/File:Wikimedia\_Hackathon\_Barcelona\_2018\_-\_group\_photo.jpg>
-
 Arquivo de imagem sob a licença CC BY-SA 4.0: <https://creativecommons.org/licenses/by-sa/4.0/deed.en>}
 
 
@@ -204,7 +218,7 @@ As variações foram preparadas utilizando-se o software de edição de imagem G
     \centering
     \caption[Exemplo de variação de cena com redução de 40 faces.]{Exemplo de variação de cena com redução de 40 faces.}
     \includegraphics[width=0.9\textwidth]{Cap3_Desenvolvimento/Figures/exemplo_variacao_faces.jpg}
-    \caption*{Fonte: autor.}
+    \caption*{Fonte: compilação do autor.\footnotemark[\value{footnote}]}
     \label{fig:exemploVariacaoFaces}
 \end{figure}
 
@@ -241,7 +255,7 @@ Nessa segunda cena, deseja-se representar o controle de acesso a um ambiente, on
 
 \subsubsection{Captura das imagens para teste}
 
-Para a captura dos frames para os testes, o dispositivo com a câmera foi posicionado estrategicamente ao lado de uma porta, a uma altura aproximada de 1,70, e levemente inclinado em direção à entrada, de forma que a câmera pudesse captar faces mais próximas e também a distâncias de até 2m. <pending> adicionar foto </pending>
+Para a captura dos frames para os testes, o dispositivo com a câmera foi posicionado estrategicamente ao lado de uma porta, a uma altura aproximada de 1,70, e levemente inclinado em direção à entrada, de forma que a câmera pudesse captar faces mais próximas e também a distâncias de até 2m.
 
 Foram feitos testes para obter a posição de uma pessoa mais próxima da entrada em que a câmera conseguisse capturar uma boa imagem do rosto. A partir dessa posição, mediu-se 1,6 m de distância, e capturou-se novos frames, com a pessoa posicionada a essa distâcia. A partir de uma distância de aproximadamente 1,7m uma pessoa caminhando rapidamente a no máximo 6 km/h, leva pelo menos 1s para chegar à posição inicial obtida (6 km/h * 1000 m/km * 1h/3600s = 1,67m/s). A uma presença com duração de pelos menos 1s diante da câmera, com a face capturável, e a um tempo máximo de 0.3s de resposta definido na detecção, têm-se pelo menos 3 frames capturados e analizados enquando uma mesma pessoa caminha até a entrada do ambiente. Esse será considerado nosso pior caso e ambos os frames obtidos (tanto o com a pessoa na posição mais próxima da câmera quanto o com a pessoa posicionada a 1.7m da posição inicial) serão utilizados nos testes para definição dos parâmetros e obtenção das métricas para comparação.
 

@@ -39,45 +39,45 @@ Warning--campo note vazio em Quirita2014
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 44 entries,
+You've used 46 entries,
             6714 wiz_defined-function locations,
-            1484 strings with 17227 characters,
-and the built_in function-call counts, 39545 in all, are:
-= -- 3751
+            1493 strings with 17533 characters,
+and the built_in function-call counts, 45466 in all, are:
+= -- 4815
 > -- 1215
-< -- 333
-+ -- 895
+< -- 464
++ -- 1132
 - -- 370
-* -- 2680
-:= -- 5307
-add.period$ -- 175
-call.type$ -- 44
-change.case$ -- 446
-chr.to.int$ -- 53
-cite$ -- 46
-duplicate$ -- 2380
-empty$ -- 2512
+* -- 2961
+:= -- 6001
+add.period$ -- 183
+call.type$ -- 46
+change.case$ -- 458
+chr.to.int$ -- 55
+cite$ -- 48
+duplicate$ -- 2819
+empty$ -- 2646
 format.name$ -- 1776
-if$ -- 9047
+if$ -- 10421
 int.to.chr$ -- 0
 int.to.str$ -- 0
-missing$ -- 737
-newline$ -- 232
+missing$ -- 769
+newline$ -- 244
 num.names$ -- 195
-pop$ -- 992
+pop$ -- 1089
 preamble$ -- 1
-purify$ -- 173
+purify$ -- 179
 quote$ -- 0
-skip$ -- 3001
+skip$ -- 3878
 stack$ -- 1
-substring$ -- 1301
-swap$ -- 896
-text.length$ -- 15
+substring$ -- 1580
+swap$ -- 1043
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 49
+type$ -- 102
 warning$ -- 3
-while$ -- 264
+while$ -- 272
 width$ -- 0
-write$ -- 655
+write$ -- 683
 (There were 4 warnings)
