@@ -152,7 +152,7 @@ Comparando-se as faces detectadas nessa duas resoluções, vide figuras \ref{fig
 
 Já comparando-se os resultados obtidos com a imagem de menor resolução, 720p, e as demais, a perda com relação à quantidade de faces detectadas é bastante expressiva, chegando a cair para menos de um terço da quantidade de faces detectadas na imagem de 1440p. Como pode ser visto na imagem \ref{fig:otimizacaoCena1_720p}, apenas as faces maiores (de pessoas mais próximas da câmera) são detectadas. A tempo de resposta tem uma queda até que razoável, porém não compensa a perda na quantidade de faces detectadas. Dessa forma, o uso de imagens com resolução de 720p se torna inadequado para o cenário em questão. 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \caption[Faces detectadas e Tempos de execução por Variação de resolução.]{Faces detectadas e Tempos de execução por Variação de resolução.}
     \includegraphics[width=0.7\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_graficos_variacao_resolucao.jpg}
@@ -166,9 +166,9 @@ Outra questão em que a utilização de resolução maior torna-se vantajoso é 
 
 Para se ter uma ideia mais visual da diferença, a figura \ref{fig:cena1_comparativo_qualidade_faces} faz um comparativo entre duas faces detectadas (a de uma pessoa mais próxima e a de uma pessoa mais distante) e as diferentes resoluções.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \caption[Comparativo de faces recortadas de deiferentes resoluções, em tamanho real.]{Comparativo de faces recortadas de deiferentes resoluções, em tamanho real.}
+    \caption[Comparativo de faces recortadas de diferentes resoluções, em tamanho real.]{Comparativo de faces recortadas de diferentes resoluções, em tamanho real.}
     \includegraphics[width=0.8\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_comparativo_qualidade_faces_recortadas.jpg}
     \caption*{Fonte: autor.}
     \label{fig:cena1_comparativo_qualidade_faces}
@@ -176,7 +176,7 @@ Para se ter uma ideia mais visual da diferença, a figura \ref{fig:cena1_compara
 
 Um fator que talvez possa pesar a favor de se utilizar resolução menor é a quantidade de dados sendo trafegados ou aramazenados. A figura \ref{fig:cena1_comparativo_tamanho_faces} traz um comparativo entre o tamanho médio das imagens das faces recortadas, coloridas e encodadas em base64. Nesse caso, observa-se que a utilização da resolução em 1080p reduzuria o tamanho de dados trafegados e/ou armazenados em aproximadamente 34\%. Claro que existe a possibilidade de realizar a detecção na resolução maior e redimensionar as imagens antes de serem transmitidas, mas deve-se levar em consideração que, para tal, haverá mais carga de processamento no dispositivo de borda.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \caption[Comparativo de tamanho médio de imagem encodada por face detectada em bytes.]{Comparativo de tamanho médio de imagem encodada por face detectada em bytes.}
     \includegraphics[width=0.65\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_graficos_tamanho_medio_imagem_face.jpg}
@@ -205,7 +205,7 @@ No eixo x têm-se a quantidade de faces que foram detectadas, nas barras de cor 
 
 \begin{figure}
     \centering
-    \caption[Comparativo de tamanho médio de imagem encodada por face detectada em bytes.]{Comparativo de tamanho médio de imagem encodada por face detectada em bytes.}
+    \caption[Comparativo de utilização de banda por quantidade de faces detectadas.]{Comparativo de utilização de banda por quantidade de faces detectadas.}
     \includegraphics[width=0.95\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_comparativo_utilizacao_banda.jpg}
     \caption*{Fonte: autor.}
     \label{fig:cena1_comparativo_utilizacao_banda}
@@ -408,6 +408,37 @@ Nesta cena, são dois os fatores que influenciam no resultado das detecções, q
 
 \subsubsection{Efeitos da variação por resolução de imagem}
 
+\begin{figure}[h]
+    \centering
+    \caption[Tempos de execução por Variação de resolução.]{Tempos de execução por Variação de resolução.}
+    \includegraphics[width=0.7\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_graficos_variacao_resolucao.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena2_graficos_variacao_resolucao}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \caption[Comparativo de faces recortadas de diferentes resoluções, em tamanho real.]{Comparativo de faces recortadas de diferentes resoluções, em tamanho real.}
+    \includegraphics[width=0.8\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_comparativo_qualidade_faces_recortadas_tamanho_real.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena2_comparativo_qualidade_faces_tamanho_real}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \caption[Comparativo de faces recortadas de diferentes resoluções, em tamanho proporcional.]{Comparativo de faces recortadas de diferentes resoluções, em tamanho proporcional.}
+    \includegraphics[width=0.8\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_comparativo_qualidade_faces_recortadas_tamanho_proporcional.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena2_comparativo_qualidade_faces_tamanho_proporcional}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \caption[Comparativo de utilização de banda.]{Comparativo de utilização de banda.}
+    \includegraphics[width=0.95\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_comparativo_utilizacao_banda.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena2_comparativo_utilizacao_banda}
+\end{figure}
 
 - colocar as imagens das faces cortadas em tamanho real para demonstração
 - ver se incluo de alguma forma os dados da métricas para cada resolução testada
