@@ -26,6 +26,7 @@ Para essa resolução de 1440 x 2560 conseguiu-se chegar a uma quantidade muito 
 
 Parâmetros definidos: 
 \begin{itemize}
+    \SingleSpacing
     \item Min. Size Face: 0.8\%
     \item Scale Factor: 1.069
     \item Min. Neighbors: 3
@@ -61,6 +62,7 @@ Dessa vez percebe-se a presença de alguns falsos positivos. Testou-se a variaç
 
 Parâmetros definidos: 
 \begin{itemize}
+    \SingleSpacing
     \item Min. Size Face: 1.0\%
     \item Scale Factor: 1.039
     \item Min. Neighbors: 3
@@ -90,6 +92,7 @@ Também percebe-se a presença de falso positivo. Testou-se também a variação
 
 Parâmetros definidos: 
 \begin{itemize}
+    \SingleSpacing
     \item Min. Size Face: 1.6\%
     \item Scale Factor: 1.024
     \item Min. Neighbors: 4
@@ -113,7 +116,7 @@ Parâmetros definidos:
 \end{figure}
 
 \subsection{Análise dos resultados}
-Nesta cena, são três fatores influenciando no resultado das detecções, seja quanto à capaidade de detecção e/ou quanto ao tempo de resposta. Esses fatores são a quantidade de faces detectáveis presentes na imagem, a resolução da imagem e o dispositivo rodando o algoritmo de detecção, sobre os quais serão feitas as comparações e análises a seguir.
+Nesta cena, são três fatores influenciando no resultado das detecções, seja quanto à capacidade de detecção e/ou quanto ao tempo de resposta. Esses fatores são a quantidade de faces detectáveis presentes na imagem, a resolução da imagem e o dispositivo rodando o algoritmo de detecção, sobre os quais serão feitas as comparações e análises a seguir.
 
 \subsubsection{Efeitos da variação por quantidade de faces}
 
@@ -130,7 +133,7 @@ Como se pode notar pela análise dos gráficos, a variação da quantidade de fa
 
 Com base nisso, pode-se dizer que, para a cena em questão, a quantidade de pessoas presentes no ambiente pouco no tempo de resposta do algoritmo em uso, o \textit{Haar cascade object detection} \cite{Viola2001}, podendo então este fator ser desconsiderado para quesitos de tempo (mas não de utilização de banda, obviamente).
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \caption[Faces detectadas e Tempos de execução por Variação de faces detectáveis.]{Faces detectadas e Tempos de execução por Variação de faces detectáveis.}
     \includegraphics[width=0.7\textwidth]{Cap4_Experimentos_Realizados/Figures/cena1_graficos_variacao_faces.jpg}
@@ -265,7 +268,7 @@ A partir dessa primeira posição, mediu-se 1,7m distanciando-se da entrada. Ess
 
 Foi realizada a otimização dos parâmetros para cada variação de resolução, utilizando-se as imagens capturadas nas duas posições. Utilizou-se o Raspberry Pi 4B para a definição dos parâmetros, repetindo-os nos testes com o Raspberry Pi Zero W para base de comparação.
 
-As imagens em ambas as posições foram analisadas em conjunto mas com o objetivo de se chegar a apenas um conjunto de parâmetros 'ótimos' para obtenção das métricas. Foram considerados 'ótimos' a mesma combinação de parâmetros que atendia as duas imagens, buscando-se os limiares com o menor tempo em que as faces são detectadas e sem falsos positivos. Para facilitar a visualização desses limiares, foram definidos passos maiores de ScaleFactor e Min. Size para se obter quantidades maiores de amostras.
+As imagens em ambas as posições foram analisadas em conjunto mas com o objetivo de se chegar a apenas um conjunto de parâmetros 'ótimos' para obtenção das métricas. Foram considerados 'ótimos' a mesma combinação de parâmetros que atendia às duas imagens, buscando-se os limiares com o menor tempo em que as faces são detectadas e sem falsos positivos. Para facilitar a visualização desses limiares, foram definidos passos maiores de 'Scale Factor' e 'Min. Size (\%)' para se obter quantidades maiores de amostras.
 
 Pode-se pensar, a princípio, que bastava analisar a imagem na posição 2, que é a mais distante, pois essa já seria o pior caso, já que a face teria menor resolução que a da posição 1. Porém, percebe-se claramente comparando as figuras \ref{fig:cena2_posicao1_imagem_capturada} e \ref{fig:cena2_posicao2_imagem_capturada} que quando a face está mais próxima da câmera e estando a pessoa olhando naturalmente em direção à entrada, o angulo não é muito bom, podendo criar alguma dificuldade adicional na detecção da face. Por isso a importância da análise conjunta.
 
@@ -273,14 +276,25 @@ Para se considerar um pior caso, foram utilizados os dados das métricas que apr
 
 As próximas três subsubseções \ref{sssec:resolution2-1}, \ref{sssec:resolution2-2} e \ref{sssec:resolution2-3} mostram para cada resolução testada, a última iteração da matriz de resultados para a detecção em ambas as posições, com os dados entrada, a célula destacada com os parâmetros escolhidos e as imagems com a faces detectadas. Nas figuras das matrizes foram adicionadas linhas azuis (para a posição 1) e vermelhas (para aposição 2), indicando limiares que separam os grupos contínuos de resultados onde há detecção de face. Foram então selecionados os melhores resultados dentro da interseção desses grupos .
 
-Após os parâmetros definidos no Raspberry Pi 4, os mesmos foram utilizados para obter a métricas no Raspberry Pi Zero W, sendo todos tabelados para comparação.
+Após os parâmetros definidos no Raspberry Pi 4, os mesmos foram utilizados para obter a métricas no Raspberry Pi Zero W, sendo todos tabelados para comparação. Uma tabela resumida com esses dados é exibida no final de cada uma das próximas três subseções.
 
+Devido ao tamanho maior das matrizes de resultados e a necessidade de visualização lado a lado, a parte da interface com os controles de parametrização não foram exibidos. Os prâmetros utilizados foram: "Min. Neighbors: 3", "Number of Samples: 6". Início e fim de escala dos demais parâmetros podem ser vistos nas matrizes.
 
 \subsubsection{Resolução 600p} \label{sssec:resolution2-1}
 
-Devido ao tamanho maior das matrizes de resultados e a necessidade de visualização lado à lado, a parte da interface com os controles de parametrização não foram exibidos. Os prâmetros utilizados foram: "Min. Neighbors: 3", "Number of Samples: 6". Início e fim de escala dos demais parâmetros podem ser vistos nas matrizes.
+A figura \ref{fig:otimizacaoCena2_600p_matrizes} apresenta lado a lado as matrizes de resultados dos testes realizados com as imagens em 600 x 800 das duas posições no Raspberry Pi 4B. Para os ranges e passos escolhidos, percebe-se que para a posição 1, com a face maior, o principal fator que delimita a região onda a face é detectada é o 'Scale Factor', com valores iguais ou menores a 1,4. Enquanto que para a posição 2, o principal delimitador para detecção da face é o 'Min. Size (\%), o que se é esperado, já que é a imagem que possui a face em tamanho menor.
 
+As duas linha delimitadoras na cor vermelha, na matriz à direita, foram posicionadas de forma um tanto livre, mas buscando isolar regiões onde todos os resultados detectam a face. Poderia também ter sido considerada apenas uma linha horizontal entre 'Min. Size (\%) 7.0 e 8.0, por exemplo. Não mudaria muito o resultado e não teria impacto significativo na estudo.
 
+Considerando-se o menor tempo na interseção das regiões, os parâmetros definidos foram:
+\begin{itemize}
+    \SingleSpacing
+    \item Min. Size Face: 8.0\%
+    \item Scale Factor: 1.400
+    \item Min. Neighbors: 3
+\end{itemize}
+
+Os mesmos parâmetros foram utilizados para obter as métricas detalhadas nos dois dispositivos testados. Os dados obtidos são apresentados na tabela da figura \ref{fig:dadosCena2_600p} que serão usados nas comparações de resultados.
 
 \begin{figure}[H]
     \centering
@@ -293,14 +307,34 @@ Devido ao tamanho maior das matrizes de resultados e a necessidade de visualiza�
 
 \begin{figure}[H]
     \centering
-    \caption[Otimização Cena 2 - resolução 600p - face detectada. À esquerda posição 1 e à direita, posição 2]{Otimização Cena 2 - resolução 600p - face detectada. À esquerda, posição 1, e à direita, posição 2.}
+    \caption[Otimização Cena 2 - resolução 600p - faces detectadas. À esquerda posição 1 e à direita, posição 2]{Otimização Cena 2 - resolução 600p - faces detectadas. À esquerda, posição 1, e à direita, posição 2.}
     \includegraphics[width=0.49\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_800x600_pos1_face.jpg}
     \includegraphics[width=0.49\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_800x600_pos2_face.jpg}
     \caption*{Fonte: autor.}
     \label{fig:otimizacaoCena2_600p_faces}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \caption[Tabela de Dados - resolução 600p.]{Tabela de Dados - resolução 600p.}
+    \includegraphics[width=0.90\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_dados_600p.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:dadosCena2_600p}
+\end{figure}
+
 \subsubsection{Resolução 480p} \label{sssec:resolution2-2}
+
+A análise para definição dos parâmetros seguiu-se da mesma forma como já foi explicado na subsubseção anterior. Novamente a região delimitada na matriz de resultados à direita, posição 2, foi a mais restritiva.
+
+Considerando-se o menor tempo na interseção das regiões, os parâmetros definidos foram: 
+\begin{itemize}
+    \SingleSpacing
+    \item Min. Size Face: 8.0\%
+    \item Scale Factor: 1.500
+    \item Min. Neighbors: 3
+\end{itemize}
+
+A apresentação das imagens com a face detectada na figura \ref{fig:otimizacaoCena2_480p_matrizes} pode parecer repetitiva. A intenção é possibilitar uma comparação quanto à qualidade das imagens quando comparadas às da figura \ref{fig:otimizacaoCena2_600p_faces}, de maior resolução. Como não estão em seus tamanhos reais, pode ser difícil ter a percepção lendo o documento sem ampliação. Na próxima subseção as faces recortadas de cada imagem são postas lado a lado em seus tamanhos reais para possibilitar a percepção da diferença na qualidade.
 
 \begin{figure}[H]
     \centering
@@ -313,14 +347,32 @@ Devido ao tamanho maior das matrizes de resultados e a necessidade de visualiza�
 
 \begin{figure}[H]
     \centering
-    \caption[Otimização Cena 2 - resolução 480p - face detectada. À esquerda posição 1 e à direita, posição 2]{Otimização Cena 2 - resolução 480p - face detectada. À esquerda, posição 1, e à direita, posição 2.}
+    \caption[Otimização Cena 2 - resolução 480p - faces detectadas. À esquerda posição 1 e à direita, posição 2]{Otimização Cena 2 - resolução 480p - faces detectadas. À esquerda, posição 1, e à direita, posição 2.}
     \includegraphics[width=0.49\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_640x480_pos1_face.jpg}
     \includegraphics[width=0.49\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_640x480_pos2_face.jpg}
     \caption*{Fonte: autor.}
     \label{fig:otimizacaoCena2_480p_faces}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \caption[Tabela de Dados - resolução 480p.]{Tabela de Dados - resolução 480p.}
+    \includegraphics[width=0.90\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_dados_480p.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:dadosCena2_480p}
+\end{figure}
+
 \subsubsection{Resolução 240p} \label{sssec:resolution2-3}
+
+Aa análise para definição dos parâmetros seguiu-se da mesma forma como nas subsubseções anteriores. Novamente a região delimitada na matriz de resultados à direita, posição 2, foi a mais restritiva.
+
+Considerando-se o menor tempo na interseção das regiões, os parâmetros definidos foram: 
+\begin{itemize}
+    \SingleSpacing
+    \item Min. Size Face: 7.0\%
+    \item Scale Factor: 1.250
+    \item Min. Neighbors: 3
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -331,14 +383,31 @@ Devido ao tamanho maior das matrizes de resultados e a necessidade de visualiza�
     \label{fig:otimizacaoCena2_240p_matrizes}
 \end{figure}
 
+Nessa resolução, já se consegue perceber mais claramente a diferença da qualidade das imagens apresentadas na figura \ref{fig:otimizacaoCena2_240p_faces} se comparadas às imagens das figuras \ref{fig:otimizacaoCena2_480p_faces} e \ref{fig:otimizacaoCena2_600p_faces}, com resoluções maiores.
+
 \begin{figure}[H]
     \centering
-    \caption[Otimização Cena 2 - resolução 240p - face detectada. À esquerda posição 1 e à direita, posição 2]{Otimização Cena 2 - resolução 240p - face detectada. À esquerda, posição 1, e à direita, posição 2.}
+    \caption[Otimização Cena 2 - resolução 240p - faces detectadas. À esquerda posição 1 e à direita, posição 2]{Otimização Cena 2 - resolução 240p - faces detectadas. À esquerda, posição 1, e à direita, posição 2.}
     \includegraphics[width=0.49\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_320x240_pos1_face.jpg}
     \includegraphics[width=0.49\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_320x240_pos2_face.jpg}
     \caption*{Fonte: autor.}
     \label{fig:otimizacaoCena2_240p_faces}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption[Tabela de Dados - resolução 240p.]{Tabela de Dados - resolução 240p.}
+    \includegraphics[width=0.90\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_dados_240p.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:dadosCena2_240p}
+\end{figure}
+
+\subsection{Análise dos resultados}
+
+Nesta cena, são dois os fatores que influenciam no resultado das detecções, que são a resolução da imagem e o dispositivo rodando o algoritmo de detecção, sobre os quais serão feitas as comparações e análises a seguir.
+
+\subsubsection{Efeitos da variação por resolução de imagem}
+
 
 - colocar as imagens das faces cortadas em tamanho real para demonstração
 - ver se incluo de alguma forma os dados da métricas para cada resolução testada
