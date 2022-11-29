@@ -40,7 +40,8 @@
 \contentsline {figure}{\numberline {35}{\ignorespaces Otimização Cena 2 - resolução 240p - faces detectadas. À esquerda posição 1 e à direita, posição 2}}{72}{figure.caption.41}%
 \contentsline {figure}{\numberline {36}{\ignorespaces Tabela de Dados - resolução 240p.}}{72}{figure.caption.42}%
 \contentsline {figure}{\numberline {37}{\ignorespaces Tempos de execução por Variação de resolução.}}{73}{figure.caption.43}%
-\contentsline {figure}{\numberline {38}{\ignorespaces Comparativo de faces recortadas de diferentes resoluções, em tamanho real.}}{73}{figure.caption.44}%
-\contentsline {figure}{\numberline {39}{\ignorespaces Comparativo de faces recortadas de diferentes resoluções, em tamanho proporcional.}}{74}{figure.caption.45}%
-\contentsline {figure}{\numberline {40}{\ignorespaces Comparativo de utilização de banda.}}{74}{figure.caption.46}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Parcela de cada etapa no tempo de execução no Raspberry Pi 4, por resolução.}}{75}{figure.caption.44}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Comparativo de faces recortadas de diferentes resoluções, em tamanho real.}}{76}{figure.caption.45}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Comparativo de faces recortadas de diferentes resoluções, em tamanhos ajustados.}}{76}{figure.caption.46}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Comparativo de utilização de banda.}}{77}{figure.caption.47}%
 \addvspace {10\p@ }

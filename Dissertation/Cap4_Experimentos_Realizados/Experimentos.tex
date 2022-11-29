@@ -406,7 +406,11 @@ Nessa resolução, já se consegue perceber mais claramente a diferença da qual
 
 Nesta cena, são dois os fatores que influenciam no resultado das detecções, que são a resolução da imagem e o dispositivo rodando o algoritmo de detecção, sobre os quais serão feitas as comparações e análises a seguir.
 
-\subsubsection{Efeitos da variação por resolução de imagem}
+Os dados das métricas em todas as resoluções foram obtidos a partir da imagem na posição 1, pois apresentou maiores tempos de resposta e maiores tamanhos de imagem da face recortada em relação à posição 2, sendo assim o pior caso.
+
+\subsubsection{Efeitos da variação por resolução de imagem e considerações sobre os dispositivos testados}
+
+O gráfico da figura \ref{fig:cena2_graficos_variacao_resolucao} compara o tempo de resposta entre os dois dispositivos testados, linhas azuis claro e escuro, e nas diferentes resoluções, distribuídas no eixo x. Também foi representado no gráfico o tempo máximo de resposta estabelecido na cena, 0,3 segundo, linha tracejada amarela. 
 
 \begin{figure}[h]
     \centering
@@ -415,6 +419,28 @@ Nesta cena, são dois os fatores que influenciam no resultado das detecções, q
     \caption*{Fonte: autor.}
     \label{fig:cena2_graficos_variacao_resolucao}
 \end{figure}
+
+Como pode ser observado, os tempos de resposta do Raspberry Pi 4B ficaram bem abaixo do do tempo máximo definido para esta cena, chegando a no máximo 0,11 segundo (63\% de margem), na resolução de 600 x 800, e reduzindo não muito expressivamente à medida que se reduz a resolução da imagem. Com isso, pode-se concluir que o Raspberry Pi 4B é capaz de realizar a detecção de faces únicas em tempo suficientemente pequeno para atender aos requisitos da cena nas três resoluções testadas. Isso significa que, considerando-se o cenário estabelecido e o ciclo de detecção rodando a cada 0,3s, o dispositivo é capaz de obter a imagem e realizar a detecção da face (se a posição for favorável) de uma mesma pessoa pelo menos três vezes, considerando-se essa pessoa caminhando rapidamente em direção à entrada do ambiente (um pior caso), conforme demonstrado na subsubseção \ref{sssec:memoria_calculo}.
+
+Quanto à margem de pelo menos 63\% no tempo de resposta do Raspberry Pi 4B, pode-se pensar em aproveitá-la de pelo menos duas formas. Uma delas seria considerar um período menor no ciclo de detecção. Se o ciclo de detecção rodar conforme o tempo de respsota do dispositivo e não a cada 0,3s, a quantidade de frames capturados e analisados de uma mesma pessoa pode chegar a aproximadamente 10. Outra possibilidade seria a sobra de tempo de processamento para realizar outros tratamentos ou análises na imagem, como por exemplo o reconhecimento da face detectada. Realizar o reconhecimento de face na borda poderia gerar consideráveis ganhos em aplicações distribuídas, assunto que poderia ser objeto de um estudo futuro.
+
+Uma questão interessante a se observar é quanto à parcela de cada etapa de processmaneto no tempo total de resposta. A figura \ref{fig:cena2_parcelas_etapas_resolucao_rapi4} mostra o gráfico em barras empilhadas mostrando a contribuição no tempo de execução de cada etapa, no Raspberry Pi 4B, por cada resolução. Como pode ser observado, as etapas de converter a imagem para escala de cinza (barra amarela) e o encodamento das faces recortadas (barra laranja) têm tempos de execução tão pequenos, que foram aproximados a 0 na precisão de 2 casas decimais, podendo ser considerados então insignificantes nesse caso.
+
+Quando se os tempos mais significantes observa-se que o tempo de execução de captura da imagem (em azul) é consideravelmente maior que o tempo de execução da própria detecção de faces em si, isso para todas as resoluções. Verifica-se também que a variação no tempo total de execução, dá-se por influência majoritária do tempo de captura dos frames que, logicamente, são menores conforme se reduz a resolução da imagem. 
+
+\begin{figure}[h]
+    \centering
+    \caption[Parcela de cada etapa no tempo de execução no Raspberry Pi 4, por resolução.]{Parcela de cada etapa no tempo de execução no Raspberry Pi 4, por resolução.}
+    \includegraphics[width=0.95\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_parcelas_etapas_resolucao_rapi4.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena2_parcelas_etapas_resolucao_rapi4}
+\end{figure}
+
+Importante ressaltar também que existe ainda o potencial de se reduzir ainda mais o tempo de resposta total implementando-se estratégia de processamente paralelo entra a etapa de captura de frames e as demais, o que não foi feito para este estudo.
+
+Com relação a qual das resoluções adotar, ainda analisando-se os resultados obtidos com o Raspberry Pi 4B, poderia-se dizer a menor resolução (240 x 320) seria a mais adequada em se considerando apenas tempo de resposta. A utilização da menor resolução também irá proporciona a vantagem de utilizar menor largura de banda para trafegar os dados das imagem na rede e também ocuparia menor espaço de armazenamento (se for o caso).
+
+Porém, se a qualidade das imagens das faces for um fator importante para posteriores tratamentos das imagens dentro da aplicação, a escolha de se utilizar as resoluções maiores pode fazer grande diferença. Para demonstrar isso, as figuras \ref{fig:cena2_comparativo_qualidade_faces_tamanho_real} e \ref{fig:cena2_comparativo_qualidade_faces_tamanho_proporcional}, fazem comparativos entre as faces recortadas nas duas posições e nas diferentes resoluções. Na figura \ref{fig:cena2_comparativo_qualidade_faces_tamanho_real}, as imagens estão apresentadas nas proporções reais entre si, considerando-se seu tamanho real, em pixels. Na figura \ref{fig:cena2_comparativo_qualidade_faces_tamanho_proporcional}, as faces de resoluções menores foram alargadas de forma que todas as faces ficassem aproximadamente do mesmo tamanhos. Assim, é possível perceber com clareza a diferença na qualidade da imagens. Na face menor recortada da resolução 240 x 320 é evidente a perda de definição nos detalhes da face, algo que poderia fazer toda a diferença na qualidade do resultado de um reconhecimento de face, por exemplo.
 
 \begin{figure}[h]
     \centering
@@ -426,7 +452,7 @@ Nesta cena, são dois os fatores que influenciam no resultado das detecções, q
 
 \begin{figure}[h]
     \centering
-    \caption[Comparativo de faces recortadas de diferentes resoluções, em tamanho proporcional.]{Comparativo de faces recortadas de diferentes resoluções, em tamanho proporcional.}
+    \caption[Comparativo de faces recortadas de diferentes resoluções, em tamanhos ajustados.]{Comparativo de faces recortadas de diferentes resoluções, em tamanhos ajustados.}
     \includegraphics[width=0.8\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_comparativo_qualidade_faces_recortadas_tamanho_proporcional.jpg}
     \caption*{Fonte: autor.}
     \label{fig:cena2_comparativo_qualidade_faces_tamanho_proporcional}
@@ -440,9 +466,10 @@ Nesta cena, são dois os fatores que influenciam no resultado das detecções, q
     \label{fig:cena2_comparativo_utilizacao_banda}
 \end{figure}
 
-- colocar as imagens das faces cortadas em tamanho real para demonstração
-- ver se incluo de alguma forma os dados da métricas para cada resolução testada
+Quanto aos resultados do Raspberry Pi W
 
+Não atende mas pode atender. Com otimização (processamento paralelo)
+Considerar questão do custo do equipamento também.
 
 
 lembretes para discussão:
