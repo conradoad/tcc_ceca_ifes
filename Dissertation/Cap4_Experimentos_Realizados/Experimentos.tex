@@ -187,7 +187,7 @@ Um fator que talvez possa pesar a favor de se utilizar resolução menor é a qu
 \subsubsection{Considerações sobre os dispositivos testados}
 Nos gráficos apresentados nas figuras \ref{fig:dadosCena1_graficos_variacao_faces} e \ref{fig:cena1_graficos_variacao_resolucao} já fica bem evidente que o Raspberry Pi Zero W deixa a desejar, com tempos de resposta acima de 1 minuto, muito além do aceitável para a cena. Pode-se concluir então que a utilização deste não é adequada para processamento de detecção de faces em imagens com resoluções mais altas, como as testadas, independete da quantidade de faces presentes na imagem.
 
-Já o Raspberry Pi 4B apresentou bom desempenho, conseguindo detectar 169 faces na maior resolução com tempo médio de resposta de 3,88, desde a captura do frame até a preparação das faces cortadas em dados prontos para transmissão. Um tempo razoavelmente menor que o máximo desejado no cenário, com uma margem 22\% e que ainda pode ser aumentada tirando proveito de processamento paralelo, principalmente na captura dos frames, o que não foi feito nesses testes.
+Já o Raspberry Pi 4B apresentou bom desempenho, conseguindo detectar 169 faces na maior resolução com tempo médio de resposta de 3,88, desde a captura do frame até a preparação das faces cortadas em dados prontos para transmissão. Um tempo razoavelmente menor que o máximo desejado no cenário, com uma margem 22\% e que ainda pode ser aumentada tirando proveito de processamento assíncrono, principalmente na captura dos frames, o que não foi feito nesses testes.
 
 \subsubsection{Considerações sobre utilização de banda}
 
@@ -195,13 +195,13 @@ Quando em uma aplicação com arquitetura distribuída, uma das principais vanta
 
 Trazendo para a cena em questão, caso o dispositivo de borda tivesse a função de apenas capturar a imagem, encodar e transmiti-la para um outro dispositivo realizar a detecação das faces, as imagens teriam que ser transmitidas em sua totalidade para se obter o mesmo resultado. Uma grande quantidade de dados trafegados, refentes às partes das imagens não úteis após a detecção, seriam descartados, desperdiçando-se assim a utilização de banda da rede. Inclusive, mesmo não havendo faces presentes, as imagens precisariam continuar sendo enviadas periodicamente, evidenciando ainda mais o desperdício. Isso pode gerar vários problemas como gargalos na rede e sobrecarga computacional.
 
-Tendo-se a detecção das faces realizada pelo próprio dispositivo na borda, apenas as partes úteis da imagens, que são as faces recortadas, precisam ser transmitidas, tendo-se assim uma utilização mais eficiente na utilização da rede que interliga os diferentes dispositivos.
+Tendo-se a detecção das faces realizada pelo próprio dispositivo na borda, apenas as partes úteis da imagens, que são as faces recortadas, precisam ser transmitidas, proporcionando assim uma utilização mais eficiente na utilização da rede que interliga os diferentes dispositivos.
 
 Durante os testes, junto com as métricas de tempo de processamento são obtidas também as informações do tamanho total da imagem testada e também a soma das imagens das faces recortadas, que serão usadas para comparações na sequência. Estão sendo considerados os tamanhos das imagens após encodamento em base64.
 
-A figura \ref{fig:cena1_comparativo_utilizacao_banda} mostra um comparativo de como seria a utilização de banda nos dois casos, transmitindo-se a imagem completa e transmitindo-se apenas as imagens das faces recortadas, com resolução de 1440 x 2560. Para o cálculo de utilização de banda, considerou-se que intervalo entre as detecções de 5 segundos, conforme tempo máximo definido como requisito para esta cena.
+A figura \ref{fig:cena1_comparativo_utilizacao_banda} mostra um comparativo de como seria a utilização de banda nos dois casos, transmitindo-se a imagem completa e transmitindo-se apenas as imagens das faces recortadas, com resolução de 1440 x 2560. Para o cálculo de utilização de banda, considerou-se intervalo entre as detecções de 5 segundos, conforme tempo máximo definido como requisito para esta cena.
 
-No eixo x têm-se a quantidade de faces que foram detectadas, nas barras de cor vermelha a largura de banda a largura de banda que seria utilizada trafegando-se a imagem completa e nas barras de cor verde a largura de banda considerando-se o tráfego apenas do recorte das faces detectadas, ambas seguindo a escala à esquerda do eixo y e expressas em MBps. Na série em formato de linha azul têm-se a diferença percentual em relação ao tamanho da imagem completa, seguindo a escala à direita do eixo y.
+No eixo x têm-se a quantidade de faces que foram detectadas, nas barras de cor vermelha a largura de banda que seria utilizada trafegando-se a imagem completa e nas barras de cor verde a largura de banda considerando-se o tráfego apenas do recorte das faces detectadas, ambas seguindo a escala à esquerda do eixo y e expressas em MBps. Na série em formato de linha azul têm-se a diferença percentual em relação ao tamanho da imagem completa, seguindo a escala à direita do eixo y.
 
 \begin{figure}
     \centering
@@ -211,7 +211,7 @@ No eixo x têm-se a quantidade de faces que foram detectadas, nas barras de cor 
     \label{fig:cena1_comparativo_utilizacao_banda}
 \end{figure}
 
-Como se pode observar, a redução na utilização de banda para tráfego das imagens ao se utilizar o processamento na borda para detecção de face é bastante expressivo, partindo-se de 95\% para o caso em que há grande quantidade de faces detectadas (196) e chagando a 99,2\% no caso com muito poucas faces detectadas (25). De fato, a redução pode chegar até a 100\% em eventuais momentos em que não haja face alguma a ser detectada.
+Como se pode observar, a redução na utilização de banda para tráfego das imagens ao se utilizar o processamento na borda para detecção de face é bastante expressivo, partindo-se de 95\% para o caso em que há grande quantidade de faces detectadas (196) e chegando a 99,2\% no caso com muito poucas faces detectadas (25). De fato, a redução pode chegar até a 100\% em eventuais momentos em que não haja face alguma a ser detectada.
 
 Pode-se pensar que talvez a utilização de quase 3 MBps para se transmittir a imagem completa não seria algo tão absurso assim, dependendo da infraestrutura de rede disponível e seu estado de utilização. Mas é importante atentar-se aqui que a unidade sendo usada está em Megabytes/s, então 3 MBps corresponderia a 24 Mbps (Megabits/s), nada mais sendo do que 24\% da capacidade de banda de uma rede operando a 100 Mbps.
 
@@ -436,7 +436,7 @@ Quando se os tempos mais significantes observa-se que o tempo de execução de c
     \label{fig:cena2_parcelas_etapas_resolucao_rapi4}
 \end{figure}
 
-Importante ressaltar também que existe ainda o potencial de se reduzir ainda mais o tempo de resposta total implementando-se estratégia de processamente paralelo entra a etapa de captura de frames e as demais, o que não foi feito para este estudo.
+Importante ressaltar também que existe ainda o potencial de se reduzir ainda mais o tempo de resposta total implementando-se estratégia de processamente assíncrono entre a etapa de captura de frames e as demais, o que não foi feito para este estudo.
 
 Com relação a qual das resoluções adotar, ainda analisando-se os resultados obtidos com o Raspberry Pi 4B, poderia-se dizer a menor resolução (240 x 320) seria a mais adequada em se considerando apenas tempo de resposta. A utilização da menor resolução também irá proporciona a vantagem de utilizar menor largura de banda para trafegar os dados das imagem na rede e também ocuparia menor espaço de armazenamento (se for o caso).
 
@@ -458,7 +458,19 @@ Porém, se a qualidade das imagens das faces for um fator importante para poster
     \label{fig:cena2_comparativo_qualidade_faces_tamanho_proporcional}
 \end{figure}
 
-\begin{figure}
+Quanto aos resultados do Raspberry Pi Zero W, observa-se na figura \label{fig:cena2_graficos_variacao_resolucao} que na maior resolução, o tempo de resposta foi relativamente alto, 0,57s, quase o dobro do limite máximo definido. Ao se utilizar resoluções menores, 480 x 640 e 240 x 320, o tempo de resposta reduziu consideravelmente, chegando a 0,37s em ambos os casos, apenas 0,07s acima do limite estabelecido para a cena. Por conta disso poderia-se considerar que o uso desse dispositivo não seria muito adequado para esse tipo de cena, porém, pode-se considerar algumas possibilidades de melhoria. Por exemplo, a otimização de todo o processo utilizando-se técnicas de processamento assíncrono ou o teste de resoluções ainda menores têm o potencial de apresentar reduções consideráveis no tempo de resposta. Ou então a aplicação em cenários com critérios um pouco diferentes podem tornar esses tempos de respostas mais aceitáveis, como por exemplo em casos em que seja considerado um tempo maior de exposição das faces em frente à câmera.
+
+Em termos apenas de performance, a utilização do Raspberry Pi 4B é mais recomendada, considerando-se que o tempo de resposta chega a ser em torno de 78\% menor do que o observado no Raspberry Pi Zero W. Porém, há outros fatores que podem ser decisivos na escolha do dispositivo a ser utilizado em um projeto, como o valor e o tamanho. O Raspberry Pi Zero W custa em torno de 73\% menos que o Raspberry Pi 4B \footnote{Conforme preços encontrandos em visita à loja online com endereço www.robocore.net, no dia 30/11/2022. Como não havia disponível para venda o modelo exato do Raspberry Pi Zero W, foi considerado o valor do Raspberry Pi Zer 2 W, que possui configurações de hardware semelhantes.} e possui área torno de 59\% menor . O desempenho do Raspberry Pi Zero W não atendeu totalmente aos requisitos definidos para este cenário específico, porém se mostrou muito promissor. Caso fatores de custo e/ou dimensões sejam relevantes para o projeto, vale a pena considerá-lo como opção.
+
+\subsubsection{Considerações sobre utilização de banda}
+
+Considerando-se uma possível aplicação com arquitetura distribuída, a figura \ref{fig:cena2_comparativo_utilizacao_banda} mostra um comparativo de como seria a utilização de banda em dois possíveis casos, transmissão da imagem completa capturada pelo dispositivo da borda para outro dispositivo realizar a detecção, e transmissão apenas as imagens das
+faces já detectadas e recortadas pelo dispositivo na borda. Para o cálculo de utilização de banda, considerou-se intervalo entre as detecções de 0,3 segundo, conforme tempo
+máximo definido como requisito para esta cena.
+
+São apresentados os resultados por resolução de imagem, eixo x. Nas barras de cor vermelha têm-se a largura de banda que seria utilizada trafegando-se a imagem completa e nas barras de cor verde a largura de banda considerando-se o tráfego apenas do recorte das faces detectadas, ambas seguindo a escala à esquerda do eixo y e expressas em MBps. Na série em formato de linha azul têm-se a diferença percentual em relação ao tamanho da imagem completa, seguindo a escala à direita do eixo y.
+
+\begin{figure}[h]
     \centering
     \caption[Comparativo de utilização de banda.]{Comparativo de utilização de banda.}
     \includegraphics[width=0.95\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_comparativo_utilizacao_banda.jpg}
@@ -466,16 +478,18 @@ Porém, se a qualidade das imagens das faces for um fator importante para poster
     \label{fig:cena2_comparativo_utilizacao_banda}
 \end{figure}
 
-Quanto aos resultados do Raspberry Pi W
+Como pode-se observar, a redução na utilização de banda é bastante expressivo quando se processa a detecção de faces na borda, variando em torno de 90\% e 93\% entre as diferentes resoluções. Importante ressaltar que esses dados foram obtidos a partir da imagem da posição 1, quando o tamanho da face é maior. Ou seja, na média, esse ganho na redução tende a ser um pouco maior já que haverá frames capturados com faces menores, chegando a até 100\% quando não houver face presente.
 
-Não atende mas pode atender. Com otimização (processamento paralelo)
-Considerar questão do custo do equipamento também.
+Reforçando-se que as unidades no gráfico estão em MBps e não em Mbps e considerando-se as imagens trafegando em uma rede de 100 MBps, transmitir a imagem completa na resolução 600 x 800 utilizaria em média 51\% de toda a banda, para apenas esse dispositivo, enquanto que transmitir apenas as imagens das faces recortadas utilizaria em torno de 5\% da banda da rede, em média.
 
+Novamente, em uma aplicação real, é razoável considerar que podem haver dezenas de dispositivos realizando monitoramento e tendo de enviar imagens e dados a algum outro dispositivo centralizador. A tabela apresentada na figura \ref{fig:cena2_tabela_qtde_disp_resolucao} apresenta um comparativo de quanto seria a utilização média de banda para diferentes quantidades de dispositivos transmitindo as imagens das faces detectadas simultaneamente em uma mesma rede. São apresentados os valores para cada resolução testada.
 
-lembretes para discussão:
+\begin{figure}[h]
+    \centering
+    \caption[Utilização de banda em Mbps por quantidade de dispositivos e resolução.]{Utilização de banda em Mbps por quantidade de dispositivos e resolução.}
+    \includegraphics[width=0.40\textwidth]{Cap4_Experimentos_Realizados/Figures/cena2_tabela_qtde_disp_resolucao.jpg}
+    \caption*{Fonte: autor.}
+    \label{fig:cena2_tabela_qtde_disp_resolucao}
+\end{figure}
 
-cena 2
-- no rpi4 todos atendem e qaunto menos resolução mais rápido, porém menos qualidade. Talvez faça sentido usar resolução mais alta para ter mais qualidade na frente como em algum reconhecimento de face
-- no RpiZ não atende. Talvez possa ser usado para reconhecimento mais proximo como identificação de face para liberação de acesso com a face parada por mais tempo na frente, poderia-se at´e utilizar resolução menor, etc Coisa que pode entrar em trabalhos futuros tabelados
-
-- Tempo de captura relativamente grande. Possibilidade de melhorar tempo total com threads separadas e ou outras formas de captura, etc. (tb possivel em trabalhos futuros)
+Primeiramente, os dados da tabela mostram que, com a detecção de faces sendo processada pelo dispositivo de borda, a implementação de vários desses dispositivos funcionando simultâneamente em uma mesma rede se torna viável, graças à transmissão apenas das partes úteis das imagens. Outra questão que se observa é o quão importante se torna a escolha da resolução da imagem nesses casos. Dependendo da quantidade de dispositivos, a utilização da resolução 600 x 800 se tornaria inviável em uma rede de 100 Mbps, como é o caso de 20 dispositivos por exemplo, que ocuparia até 96\% da banda disponível. Porém, para essa mesma quantidade na resolução de 240 x 320, a utilização de banda já cairia drasticamente para um máximo de 16\%, claro que a custo da qualidade da imagem.
