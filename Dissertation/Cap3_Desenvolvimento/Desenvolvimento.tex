@@ -13,7 +13,7 @@ Uma desvantagem nesse método é a tendência à detecção de falsos positivos.
 
 O método fornecido pelo objeto do tipo \emph{CascadeClassifier} \cite{OpenCV-CascadeClassifier} para performar a detecção em uma imagem é o \emph{detectMultiScale}, que tem assinatura (em C++) conforme a figura \ref{fig:detectMultiScaleFcn}. O modelo classificador pretreinado é carregado previamente utilizando-se do método \emph{load} do mesmo objeto.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \caption[Assinatura da função detectMultiScale do OpenCV.]{Assinatura da função detectMultiScale do OpenCV.}
     \includegraphics[width=0.60\textwidth]{Cap3_Desenvolvimento/Figures/detectMultiScaleFcn.jpg}
@@ -30,7 +30,6 @@ O método fornecido pelo objeto do tipo \emph{CascadeClassifier} \cite{OpenCV-Ca
     \item \emph{minNeighbors} - especifica quantos vizinhos cada retângulo candidato a uma face deve ter para ser considerado como uma detecção positiva. Em resumo, esse parâmetro afeta na qualidade da resolução. Valores baixos podem detectar maiores quantidades de faces porém com a presença de muitos falsos positivos, enquanto valores maiores tendem a aumentar a confiabilidade do que é detectado porém podendo aumentar a quantidade de falsos negativos (quando há uma face mas não é detectada pois não tem retangulos vizinhos suficientes);
     \item \emph{flags} - não utilizado;
     \item \emph{minSize} - indica o tamanho mínimo de face a ser detectada na imagem. Tamanhos mínimos maiores tendem a reduzir o tempo de resposta por aumentar o tamanho da janela deslizante na varredura da imagem (o que demanda mais processamento), mas com risco de não detectar faces relativamente pequenas. Tamanhos mínimos menores aumentam as chances de detecção de faces relativamente pequenas, mas com aumento também na demanda de processamente devido à dimuinuição da janela deslizante.
-    \item 
 \end{itemize}
 
 O ajuste de parâmetros não é muito simples e depende do cenário da imagem, dos possíveis tamanhos de faces que se dejesa detectar, etc. A escolha dos parâmetros influencia diretamente no resultado da detecção, na capacidade de detecção de determinados tamanhos de faces, na propensão em detectar falsos-positivos e no tempo de execução.
@@ -289,7 +288,7 @@ Foram testados dois dispositivos SBC (\textit{Single Board Computer}) diferentes
 
 Na figura \ref{fig:devices}, os dois dispositivos utilizados. O Raspberry Pi 4B já com o módulo da câmera conectado na interface CSI. Esse mesmo módulo é conectado no Raspberry Pi Zero utilizando-se cabo flat adequado, para obter-se o tempo médio de captura de frames.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \caption[Dispositivos testados. À esqueda o Rapberry Pi 4 e à direita o Raspberry Pi Zero W.]{Dispositivos testados. À esqueda o Rapberry Pi 4 e à direita o Raspberry Pi Zero W.}
     \includegraphics[width=0.6\textwidth]{Cap3_Desenvolvimento/Figures/devices.jpg}

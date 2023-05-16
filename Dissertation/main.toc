@@ -1,20 +1,20 @@
 \changetocdepth {4}
-\babel@toc {brazil}{}
+\babel@toc {brazil}{}\relax 
 \contentsline {chapter}{Lista de ilustra\c {c}\~{o}es}{6}{section*.3}%
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \contentsline {chapter}{Sum\'ario}{8}{section*.4}%
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Introdução}}{10}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {1}\MakeUppercase {Introdução}}{10}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Objetivo Geral}{12}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Objetivos Específico}{12}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Objetivos Específicos}{12}{subsection.1.1.1}%
 \contentsline {section}{\numberline {1.2}Estrutura do Texto}{13}{section.1.2}%
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Revisão Teórica}}{14}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {2}\MakeUppercase {Revisão Teórica}}{14}{chapter.2}%
 \contentsline {section}{\numberline {2.1}O problema da segurança em espaços públicos e privados}{14}{section.2.1}%
 \contentsline {section}{\numberline {2.2}\textit {Smart cities} e videomonitoramento inteligente}{15}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Redes Neurais e Deep Learning}{17}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Processamento de imagens, detecção e reconhecimento de faces}{18}{section.2.4}%
 \contentsline {section}{\numberline {2.5}A Internet das Coisas, Edge e Fog Computing}{23}{section.2.5}%
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Desenvolvimento}}{26}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}\MakeUppercase {Desenvolvimento}}{26}{chapter.3}%
 \contentsline {section}{\numberline {3.1}O algoritmo de detecção de objetos}{26}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Ferramenta de parametrização, otimização e obtenção de resultados}{28}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Cenários de testes}{39}{section.3.3}%
@@ -26,7 +26,7 @@
 \contentsline {subsubsection}{\numberline {3.3.2.1}Captura das imagens para teste}{44}{subsubsection.3.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.3.2.2}Variação de resolução da imagem}{45}{subsubsection.3.3.2.2}%
 \contentsline {section}{\numberline {3.4}Dispositivos testados}{46}{section.3.4}%
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Experimentos Realizados}}{48}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {4}\MakeUppercase {Experimentos Realizados}}{48}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Cena 1}{48}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Otimização de parâmetros}{48}{subsection.4.1.1}%
 \contentsline {subsubsection}{\numberline {4.1.1.1}Resolução 1440p}{49}{subsubsection.4.1.1.1}%
@@ -46,5 +46,5 @@
 \contentsline {subsection}{\numberline {4.2.3}Análise dos resultados}{72}{subsection.4.2.3}%
 \contentsline {subsubsection}{\numberline {4.2.3.1}Efeitos da variação por resolução de imagem e considerações sobre os dispositivos testados}{73}{subsubsection.4.2.3.1}%
 \contentsline {subsubsection}{\numberline {4.2.3.2}Considerações sobre utilização de banda}{77}{subsubsection.4.2.3.2}%
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Considerações Finais e Trabalhos \mbox {Futuros}}}{80}{chapter.5}%
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{81}{section*.50}%
+\contentsline {chapter}{\chapternumberline {5}\MakeUppercase {Considerações Finais e Trabalhos \mbox {Futuros}}}{80}{chapter.5}%
+\contentsline {chapter}{\MakeUppercase {Refer\^encias}}{81}{section*.50}%
