@@ -23,6 +23,8 @@ O método fornecido pelo objeto do tipo \emph{CascadeClassifier} \cite{OpenCV-Ca
 
 \footnotetext{Disponível em: <https://docs.opencv.org/3.2.0/d1/de5/classcv\_1\_1CascadeClassifier.html>}
 
+Uma breve explicação dos argumentos do método:
+
 \begin{itemize}
     \item \emph{image} - matriz da imagem de entrada, na qual os objetos (no nosso caso, faces) serão detectados;
     \item \emph{objects} - referência ao vetor de retângulos que será populado com as áreas na imagem de entrada onde foram detectadas as faces;
@@ -76,17 +78,17 @@ Por fim, ao se clicar no botão "Send", a imagem e os parâmetros são enviados 
     \label{fig:matrizResultado}
 \end{figure}
 
-Como pode ser visto na figura \ref{fig:matrizResultado}, o resultado é exibido em forma de uma matriz. No eixo vertical têm-se a distribuição dos valores definidos para o parâmetros "Min. Size" e no eixo horizontal têm-se a distribuição dos valores definidos para o parâmetro "Scale Factor", de conforme os limites e quantidades de passos definidos para cada um.
+Como pode ser visto na figura \ref{fig:matrizResultado}, o resultado é exibido em forma de uma matriz. No eixo vertical têm-se a distribuição dos valores definidos para o parâmetros "Min. Size" e no eixo horizontal têm-se a distribuição dos valores definidos para o parâmetro "Scale Factor", conforme os limites e quantidades de passos definidos para cada um.
 
-Cada célula da matriz apresenta o resultado da detecção, utilizando a combinação de parâmetros corresponde, com base em duas métricas, a quantidade de faces detectadas, na parte superior da célula, e o tempos médio em segundos, na parte inferior da célula. Importante ressaltar que o tempo médio refere-se ao tempo que o algoritmo levou para a detecção de todas as faces detectadas, e não ao tempo médio de execução de cada face. A média se dá de acordo com a quantidade de vezes que o algoritmo de detecção foi executado para cada combinação de parâmetros, definido em "Number of Samples".
+Cada célula da matriz apresenta o resultado da detecção, utilizando a combinação de parâmetros correspondente, com base em duas métricas, a quantidade de faces detectadas, na parte superior da célula, e o tempo médio de execução em segundos, na parte inferior da célula. Importante ressaltar que o tempo médio refere-se ao tempo que o algoritmo levou para a detecção de todas as faces detectadas, e não ao tempo médio de execução de cada face. A média se dá de acordo com a quantidade de vezes que o algoritmo de detecção foi executado para cada combinação de parâmetros, definido em "Number of Samples".
 
 Em uma primeira análise, a partir resultado do exemplo dado na figura \ref{fig:matrizResultado}, é possível observar a tendência de se ter maior quantidade de faces detectadas, bem como maior tempo de execução, quanto mais ao topo e à esquerda está a célula na matriz. Essa observação é um tanto óbvia tendo em vista que quanto menor o tamanho mínimo de faces a ser considerado pelo algoritmo (parâmetro "Min. Size"), mais faces candidatas tendem a ser encontradas e também mais iterações serão realizadas. O mesmo acontece para o parâmetro "Scale Factor", quanto menor o valor do parâmetro, menor o passo entre as escalas, maior a quantidade de imagens escalonadas avaliadas e, portanto, maior a chance de de uma determinada face ser detectada, bem como maior quantidade de iterações realizadas.
 
-A matriz de resultados por si só não é suficiente para se determinar que uma combinação de parâmetros é a mais adequada a se adotar. Isso se deve ao fato de que não se pode afirmar que o resultado com o maior número de faces detectadas é o melhor pois, dentro do conjunto de faces detectadas, alguma poucas ou até várias delas podem ser falsos positivos, de tal forma que a qualidade do resultado da detecção deva ser considerado ruim. 
+A matriz de resultados por si só não é suficiente para se determinar que uma combinação de parâmetros é a mais adequada a se adotar. Isso se deve ao fato de que não se pode afirmar que o resultado com o maior número de faces detectadas é o melhor pois, dentro do conjunto de faces detectadas, alguma poucas ou até várias delas podem ser falsos positivos, de tal forma que a qualidade do resultado da detecção deva ser considerado ruim.
 
 Outra questão a se considerar é que, dependendo do ambiente e do objetivo da aplicação, a detecção da maior quantidade de faces possível pode não ser a prioridade. Em determinado tipo de aplicação, pode ser mais interessante que o algoritmo detecte apenas faces que estejam mais próximas da câmera (e por conta disso relativamente maiores que as demais), com um tempo de resposta menor, do que detectar o máximo de faces possível, inclusive as mais distantes, que seriam descartadas, com um tempo de resposta maior.
 
-Para tanto, é importante que haja uma análise qualitativa, ao se checar, para cada resultado analisado, quais foram as faces detectadas, resultantes da correspondente combinação de parâmetros. E, a partir da avaliação dos resultados disponíveis, comparando a presença de falsos positivos, a quantidade e tamanho das faces detectadas e o tempo médio de resposta, determinar uma combinação de parâmetros mais adequada a se adotar em uma aplicação de detecção no dispositivo testado ou concluir que o dispositivo não seria capaz de rodas a aplicação da forma desejada.
+Para tanto, é importante que haja uma análise qualitativa, ao se checar, para cada resultado analisado, quais foram as faces detectadas, resultantes da correspondente combinação de parâmetros. E, a partir da avaliação dos resultados disponíveis, comparando a presença de falsos positivos, a quantidade e tamanho das faces detectadas e o tempo médio de resposta, determinar uma combinação de parâmetros mais adequada a se adotar em uma aplicação de detecção no dispositivo testado ou concluir que o dispositivo não seria capaz de rodar a aplicação da forma desejada.
 
 Para facilitar esse tipo de análise qualitativa, a matriz de resultados responde de forma interativa, de forma que, ao se clicar em uma célula da matriz, as faces detectadas a partir dos parâmetros correspondentes daquela célula são destacadas na imagem original através de retângulos verdes, facilitando assim a verificação de falsos positivos e quais faces presentes na imagem o algoritmo conseguiu detectar com tais parâmetros.
 
@@ -221,7 +223,7 @@ As variações foram preparadas utilizando-se o software de edição de imagem G
     \label{fig:exemploVariacaoFaces}
 \end{figure}
 
-Na figura \ref{fig:exemploVariacaoFaces}, um exemplo de variação com a redução de 40 faces. Ao se comparar o resultado das variações, é de se esperar que a diferença de faces detectadas seja igual à diferente da quantidade de faces borradas, porém, não necessariamente será igual, pois pode ser que alguma face não seja detectada pelo algoritmo de qualquer forma.
+Na figura \ref{fig:exemploVariacaoFaces}, um exemplo de variação com a redução de 40 faces. Ao se comparar o resultado das variações, é de se esperar que a diferença de faces detectadas seja igual à diferença da quantidade de faces borradas, porém, não necessariamente será igual, pois pode ser que alguma face não seja detectada pelo algoritmo de qualquer forma.
 
 Para obtenção dos dados nos testes de variação de quantidade de faces deve-se, a partir da imagem original, com todas as faces detectáveis, utilizar a ferramenta para encontrar uma combinação otimizada de parâmetros de detecção. Com os melhores parâmetros definidos, obtém-se as métricas da imagem original e também de todas a variações de quantidade de faces geradas a partir dessa mesma imagem para futura comparação.
 
@@ -266,7 +268,7 @@ Como nessa cena considera-se a detecção de apenas uma face, variações por qu
 
 Para a realização dos testes com variação de resolução, foram obtidas das duas imagens capturadas imagens com resoluçoes menores, através de interpolação, utilizando-se também o software GIMP para o processamento. As imagens originais originais foram capturadas já com a maior resolução que será considerada no estudo, SVGA (800x600), e foram obtidas as variações nas resoluções menores, VGA/480p (640x480) e QVGA (320x240). As imagens nas resoluções menores poderiam também terem sido capturadas diretamente do módulo da câmera, porém dificilmente se conseguiria obtê-las com as faces nas mesmas posições.
 
-subsubsection{Modo de captura e tempo médio}
+\subsubsection{Modo de captura e tempo médio}
 
 Na cena anterior foi utilizado o modo \emph{still port} do Picamera para se obter o tempo médio de captura de cada frame, pois, como já explicado, obtém-se imagens com melhor qualidade devido à captura utilizando-se a área total do sensor e devido aos algoritmos de redução de ruído. Porém, obviamente, isso traz um custo no tempo de disponibilização do frame pelo módulo da câmera.
 

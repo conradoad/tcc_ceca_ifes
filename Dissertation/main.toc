@@ -25,6 +25,7 @@
 \contentsline {subsection}{\numberline {3.3.2}Cena 2}{43}{subsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.2.1}Captura das imagens para teste}{44}{subsubsection.3.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.3.2.2}Variação de resolução da imagem}{45}{subsubsection.3.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.3}Modo de captura e tempo médio}{45}{subsubsection.3.3.2.3}%
 \contentsline {section}{\numberline {3.4}Dispositivos testados}{46}{section.3.4}%
 \contentsline {chapter}{\chapternumberline {4}\MakeUppercase {Experimentos Realizados}}{48}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Cena 1}{48}{section.4.1}%
@@ -47,4 +48,4 @@
 \contentsline {subsubsection}{\numberline {4.2.3.1}Efeitos da variação por resolução de imagem e considerações sobre os dispositivos testados}{73}{subsubsection.4.2.3.1}%
 \contentsline {subsubsection}{\numberline {4.2.3.2}Considerações sobre utilização de banda}{77}{subsubsection.4.2.3.2}%
 \contentsline {chapter}{\chapternumberline {5}\MakeUppercase {Considerações Finais e Trabalhos \mbox {Futuros}}}{80}{chapter.5}%
-\contentsline {chapter}{\MakeUppercase {Refer\^encias}}{81}{section*.50}%
+\contentsline {chapter}{\MakeUppercase {Refer\^encias}}{82}{section*.50}%

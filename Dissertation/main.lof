@@ -7,7 +7,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4}{\ignorespaces Assinatura da função detectMultiScale do OpenCV.}}{27}{figure.caption.8}%
 \contentsline {figure}{\numberline {5}{\ignorespaces Interface e seus parâmetros.}}{29}{figure.caption.9}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Exemplo de resultado retornado.}}{30}{figure.caption.10}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Exemplo de resultado retornado.}}{31}{figure.caption.10}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Exemplo de resultado com poucas faces detectadas.}}{33}{figure.caption.11}%
 \contentsline {figure}{\numberline {8}{\ignorespaces Exemplo de resultado com várias faces detectadas e alguns falsos positivos.}}{34}{figure.caption.12}%
 \contentsline {figure}{\numberline {9}{\ignorespaces Exemplo de resultado possivelmente satisfatório.}}{35}{figure.caption.13}%
