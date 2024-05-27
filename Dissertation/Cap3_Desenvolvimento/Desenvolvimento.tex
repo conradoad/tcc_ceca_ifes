@@ -9,7 +9,7 @@ O algoritmo de detecção de objetos utilizado nesse estudo foi o \textit{Haar c
 
 Não é o algoritmo com melhor acurácia atualmente, se comparado com técnicas mais modernas que aplicam \textit{deep learning}, porém é um algoritmo extremamente rápido e preciso, portanto ainda é muito útil para detecção de objetos em dispositivos com recursos limitados, como é o caso de dispositivos de borda, em geral.
 
-Uma desvantagem nesse método é a tendência à detecção de falsos positivos. Existe também a necessidade de definição de alguns parâmetros na implementação fornecida no OpenCV, descritos resumidamente a seguir.
+Uma desvantagem nesse método é a presença de falsos positivos. Existe também a necessidade de definição de alguns parâmetros na implementação fornecida no OpenCV, descritos resumidamente a seguir.
 
 O método fornecido pelo objeto do tipo \emph{CascadeClassifier} \cite{OpenCV-CascadeClassifier} para performar a detecção em uma imagem é o \emph{detectMultiScale}, que tem assinatura (em C++) conforme a figura \ref{fig:detectMultiScaleFcn}. O modelo classificador pretreinado é carregado previamente utilizando-se do método \emph{load} do mesmo objeto.
 
@@ -42,11 +42,11 @@ Devido a isso, viu-se necessário o desenvolvimento de uma ferramenta para se te
 
 O \textit{design} da ferramenta foi pensado de forma a facilitar a análise do resultado de diversas combinações de parâmetros ao mesmo tempo, de diferentes imagens e em dispositivos diferentes, através de uma interface web.
 
-Contitui de duas partes: a parte cliente, uma interface web que pode ser executada em qualquer dispositivo através de um navegador, e a parte servidor, que deve rodar nos dispositivos que serão testados.
+Constitui de duas partes: a parte cliente, uma interface web que pode ser executada em qualquer dispositivo através de um navegador, e a parte servidor, que deve rodar nos dispositivos que serão testados.
 
 No cliente é feita a seleção da imagem a ser utilizada no teste, é definido o endereço do dispositivo a ser testado, rodando o servidor, e são definidos os parâmetros de testes. O cliente envia os dados para o servidor que executa o algoritmo de detecção conforme os parâmetros passados e retorna para o cliente o resultado de cada combinação de valores dos parâmetros solicitados. O resultado é composto por uma matriz contendo o tempo médio de execução, a quantidade de faces detectadas e a posição de cada face detectada para cada par de valores dos parâmetros na matriz. As faces detectadas são vizualizadas na imagem ao se selecionar um dos resultados, permitindo, assim, a verificação da qualidade da de detecção e a presença de falsos-positivos.
 
-Na figura a seguir temos um exemplo da interface com imagem e parâmetros selecionados, ainda sem exibição do resultado da análise.
+Na figura \ref{fig:interfaceUsuario} temos um exemplo da interface com imagem e parâmetros selecionados, ainda sem exibição do resultado da análise.
 
 \begin{figure}[h]
     \centering
@@ -66,7 +66,7 @@ Arquivo de imagem sob a licença CC BY-SA 4.0: <https://creativecommons.org/lice
 
 Logo abaixo estão os parâmetros a serem definidos e enviados ao servidor para a execução do ensaio. Três deles, "Scale factor", "Min neighbors" e "Min size", são parâmetros passados na própria função \textit{detectMultiScale} do OpenCV, e o significado de cada um foi descrito no início desta seção. O parâmetro "Number of Samples" determina quantas vezes o servidor executa cada combinação de parâmetros para obter um resultado médio.
 
-Para o parâmetro "Min Neighbors", é possível definir apenas um valor para cada execução, que será utilizado em todas as combinações de parâmetros. Já para os parâmetros "Scale Factor" e "Min Size" é possível definir valores mínimos, máximos e as quantidade de valores ("Steps") a serem distribuidos linearmente nos intervalos definidos para cada um dos dois parâmetros. O servidor executará todas as combinações possíveis a partir dos conjuntos de valores delimitados, e retornará uma matriz com um resultado para cada combinação.
+Para o parâmetro "Min Neighbors", é possível definir apenas um valor para cada execução, que será utilizado em todas as combinações de parâmetros. Já para os parâmetros "Scale Factor" \ e "Min Size" \ é possível definir valores mínimos, máximos e as quantidade de valores ("Steps") a serem distribuidos linearmente nos intervalos definidos para cada um dos dois parâmetros. O servidor executará todas as combinações possíveis a partir dos conjuntos de valores delimitados, e retornará uma matriz com um resultado para cada combinação.
 
 Por fim, ao se clicar no botão "Send", a imagem e os parâmetros são enviados para o servidor. O servidor executa o algoritmo de detecção com todas as combinações possíveis e retorna uma matriz de resultados contendo número de faces detectadas e tempo médio de execução.
 
@@ -80,7 +80,7 @@ Por fim, ao se clicar no botão "Send", a imagem e os parâmetros são enviados 
 
 Como pode ser visto na figura \ref{fig:matrizResultado}, o resultado é exibido em forma de uma matriz. No eixo vertical têm-se a distribuição dos valores definidos para o parâmetros "Min. Size" e no eixo horizontal têm-se a distribuição dos valores definidos para o parâmetro "Scale Factor", conforme os limites e quantidades de passos definidos para cada um.
 
-Cada célula da matriz apresenta o resultado da detecção, utilizando a combinação de parâmetros correspondente, com base em duas métricas, a quantidade de faces detectadas, na parte superior da célula, e o tempo médio de execução em segundos, na parte inferior da célula. Importante ressaltar que o tempo médio refere-se ao tempo que o algoritmo levou para a detecção de todas as faces detectadas, e não ao tempo médio de execução de cada face. A média se dá de acordo com a quantidade de vezes que o algoritmo de detecção foi executado para cada combinação de parâmetros, definido em "Number of Samples".
+Cada célula da matriz apresenta o resultado da detecção, utilizando a combinação de parâmetros correspondente, com base em duas métricas, a quantidade de faces detectadas (F), na parte superior da célula, e o tempo médio de execução (T) em segundos, na parte inferior da célula. Importante ressaltar que o tempo médio refere-se ao tempo que o algoritmo levou para a detecção de todas as faces detectadas, e não ao tempo médio de execução de cada face. A média se dá de acordo com a quantidade de vezes que o algoritmo de detecção foi executado para cada combinação de parâmetros, definido em "Number of Samples".
 
 Em uma primeira análise, a partir resultado do exemplo dado na figura \ref{fig:matrizResultado}, é possível observar a tendência de se ter maior quantidade de faces detectadas, bem como maior tempo de execução, quanto mais ao topo e à esquerda está a célula na matriz. Essa observação é um tanto óbvia tendo em vista que quanto menor o tamanho mínimo de faces a ser considerado pelo algoritmo (parâmetro "Min. Size"), mais faces candidatas tendem a ser encontradas e também mais iterações serão realizadas. O mesmo acontece para o parâmetro "Scale Factor", quanto menor o valor do parâmetro, menor o passo entre as escalas, maior a quantidade de imagens escalonadas avaliadas e, portanto, maior a chance de de uma determinada face ser detectada, bem como maior quantidade de iterações realizadas.
 
@@ -118,7 +118,7 @@ Por fim, a figura \ref{fig:exemploResultado3} apresenta um resultado que possive
 
 \begin{figure}[h]
     \centering
-    \caption[Exemplo de resultado possivelmente satisfatório.]{Exemplo de resultado possivelmente satisfatório.}
+    \caption[Exemplo de resultado com a maioria das faces detectadas e sem falsos positivos.]{Exemplo de resultado com a maioria das faces detectadas e sem falsos positivos.}
     \includegraphics[width=0.8\textwidth]{Cap3_Desenvolvimento/Figures/exemplo_resultado_3.jpg}
     \caption*{Fonte: compilação do autor.\footnotemark[\value{footnote}]}
     \label{fig:exemploResultado3}

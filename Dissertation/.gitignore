@@ -30,7 +30,6 @@ Aux/*
 *.nlo
 *.nls
 *.out
-*.pdf
 *.pyg
 *.run.xml
 *.snm
@@ -42,7 +41,6 @@ Aux/*
 *.vrb
 *.xdy
 *.xml
-*blx.bib
 .bak 
 .mtc
 build/
