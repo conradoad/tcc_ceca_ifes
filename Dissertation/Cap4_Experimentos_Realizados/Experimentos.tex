@@ -121,15 +121,15 @@ Nesta cena, são três fatores influenciando no resultado das detecções, seja 
 \subsubsection{Efeitos da variação por quantidade de faces}
 
 Os gráficos apresentados na figura \ref{fig:dadosCena1_graficos_variacao_faces} foram montados de forma a facilitar o entendimento de como a quantidade de faces influencia no tempo de detecção. Para maior clareza, os dados foram apresentados em três gráficos diferentes, um para cada resolução de imagem.
-No eixo x, têm-se as variações de quantidade de faces detectáveis disponíveis. "Full" refere-se à imagem original, sem alteração, com todas as faces detectáveis, "Minus 40" refere-se à imagem trabalhada para borrar 40 faces de forma distribuída, tornando-as indetectáveis, e assim por diante.
+No eixo x, têm-se as variações de quantidade de faces detectáveis disponíveis. "Full" \ refere-se à imagem original, sem alteração, com todas as faces detectáveis, "Minus 40" \ refere-se à imagem trabalhada para borrar 40 faces de forma distribuída, tornando-as indetectáveis, e assim por diante.
 
 Há três séries de dados cujas métricas são apresentadas para cada variação de faces. A quantidade de faces detectadas pelo algoritmo representada pelas barras verdes, que seguem a escala do eixo y à esquerda; o tempo total de execução nos testes com o Raspberry Pi 4B. em azul escuro, e o tempo total de execução nos teste com o Raspberry Pi Zero, em azul claro, ambos sguindo a escala do eixo y à direita, com unidade em segundos. Para melhor visualização, o eixo y à direita está em escala logarítmica.
 O tempo de execução total é a soma do tempo de aquisição de imagem (nesse caso já considerando o tempo de captura do módulo câmera e não de leitura da imagem em arquivo), o tempo de conversão da imagem em escala de cinza, o tempo de detecção em si e o tempo de encodamento da imagem para transporte.
 Há também a representação no gráfico, em linha amarela tracejada, do tempo de 5 segundos definido como limite para atender ao requisito da cena.
 
-A ferramenta utilizada para a geração dos gráficos a partir da tebela de dados foi o \emph{Data Studio} \cite{DataStudio}, da Google.
+A ferramenta utilizada para a geração dos gráficos a partir da tabela de dados foi o \emph{Data Studio} \cite{DataStudio}, da Google.
 
-Como se pode notar pela análise dos gráficos, a variação da quantidade de faces presentes, e por consequência detectadas, influencia muito pouco no tempo de detecção, chegando a 4\% a maior diferença. Observa-se esse comportamento em ambos os dispositvos testados e em todas a resoluções de imagem.
+Como se pode notar pela análise dos gráficos, a variação da quantidade de faces presentes, e por consequência detectadas, influencia muito pouco no tempo de detecção, chegando a 4\% a maior diferença. Observa-se esse comportamento em ambos os dispositivos testados e em todas a resoluções de imagem.
 
 Com base nisso, pode-se dizer que, para a cena em questão, a quantidade de pessoas presentes no ambiente pouco no tempo de resposta do algoritmo em uso, o \textit{Haar cascade object detection} \cite{Viola2001}, podendo então este fator ser desconsiderado para quesitos de tempo (mas não de utilização de banda, obviamente).
 
@@ -162,7 +162,7 @@ Já comparando-se os resultados obtidos com a imagem de menor resolução, 720p,
 
 Pode-se afirmar então que, a princípio, considerando-se apenas o \emph{trade-offf} entre quantidade de faces detectadas e tempo de resposta, a resolução de 1440p, a maior entre as  testadas, se mostra a mais adequada a se utilizar nesse tipo de cenário, onde objetiva-se detectar o máximo de faces possível e de tamanhos relativos muito pequenos.
 
-Outra questão em que a utilização de resolução maior torna-se vantajoso é quanto à qualidade das imagens recortadas das faces. Caso as imagens das faces sejam utilizadas em uma próxima etapa da aplicação em outro disposivo na rede ou na nuvem, como por exemplo para reconhecimento facial ou simplesmente manter em registro, a qualidade e detalhes da face recortada pode fazer diferença no sucesso dessa próxima etapa.
+Outra questão em que a utilização de resolução maior torna-se vantajoso é quanto à qualidade das imagens recortadas das faces. Caso as imagens das faces sejam utilizadas em uma próxima etapa da aplicação em outro dispositivo na rede ou na nuvem, como por exemplo para reconhecimento facial ou simplesmente manter em registro, a qualidade e detalhes da face recortada pode fazer diferença no sucesso dessa próxima etapa.
 
 Para se ter uma ideia mais visual da diferença, a figura \ref{fig:cena1_comparativo_qualidade_faces} faz um comparativo entre duas faces detectadas (a de uma pessoa mais próxima e a de uma pessoa mais distante) e as diferentes resoluções.
 
@@ -174,7 +174,7 @@ Para se ter uma ideia mais visual da diferença, a figura \ref{fig:cena1_compara
     \label{fig:cena1_comparativo_qualidade_faces}
 \end{figure}
 
-Um fator que talvez possa pesar a favor de se utilizar resolução menor é a quantidade de dados sendo trafegados ou armazenados. A figura \ref{fig:cena1_comparativo_tamanho_faces} traz um comparativo entre o tamanho médio das imagens das faces recortadas, coloridas e encodadas em base64. Nesse caso, observa-se que a utilização da resolução em 1080p reduzuria o tamanho de dados trafegados e/ou armazenados em aproximadamente 34\%. Claro que existe a possibilidade de realizar a detecção na resolução maior e redimensionar as imagens antes de serem transmitidas, mas deve-se levar em consideração que, para tal, haverá mais carga de processamento no dispositivo de borda.
+Um fator que talvez possa pesar a favor de se utilizar resolução menor é a quantidade de dados sendo trafegados ou armazenados. A figura \ref{fig:cena1_comparativo_tamanho_faces} traz um comparativo entre o tamanho médio das imagens das faces recortadas, coloridas e encodadas em base64. Nesse caso, observa-se que a utilização da resolução em 1080p reduziria o tamanho de dados trafegados e/ou armazenados em aproximadamente 34\%. Claro que existe a possibilidade de realizar a detecção na resolução maior e redimensionar as imagens antes de serem transmitidas, mas deve-se levar em consideração que, para tal, haverá mais carga de processamento no dispositivo de borda.
 
 \begin{figure}[h]
     \centering
@@ -274,11 +274,11 @@ Pode-se pensar, a princípio, que bastava analisar a imagem na posição 2, que 
 
 Para se considerar um pior caso, foram utilizados os dados das métricas que apresentaram maiores tempos de resposta e tamanho de imagem, isso para cada resolução.
 
-As próximas três subsubseções \ref{sssec:resolution2-1}, \ref{sssec:resolution2-2} e \ref{sssec:resolution2-3} mostram para cada resolução testada, a última iteração da matriz de resultados para a detecção em ambas as posições, com os dados entrada, a célula destacada com os parâmetros escolhidos e as imagems com a faces detectadas. Nas figuras das matrizes foram adicionadas linhas azuis (para a posição 1) e vermelhas (para aposição 2), indicando limiares que separam os grupos contínuos de resultados onde há detecção de face. Foram então selecionados os melhores resultados dentro da interseção desses grupos .
+As próximas três subsubseções \ref{sssec:resolution2-1}, \ref{sssec:resolution2-2} e \ref{sssec:resolution2-3} mostram para cada resolução testada, a última iteração da matriz de resultados para a detecção em ambas as posições, com os dados entrada, a célula destacada com os parâmetros escolhidos e as imagens com a faces detectadas. Nas figuras das matrizes foram adicionadas linhas azuis (para a posição 1) e vermelhas (para aposição 2), indicando limiares que separam os grupos contínuos de resultados onde há detecção de face. Foram então selecionados os melhores resultados dentro da interseção desses grupos .
 
 Após os parâmetros definidos no Raspberry Pi 4, os mesmos foram utilizados para obter a métricas no Raspberry Pi Zero W, sendo todos tabelados para comparação. Uma tabela resumida com esses dados é exibida no final de cada uma das próximas três subseções.
 
-Devido ao tamanho maior das matrizes de resultados e a necessidade de visualização lado a lado, a parte da interface com os controles de parametrização não foram exibidos. Os prâmetros utilizados foram: "Min. Neighbors: 3", "Number of Samples: 6". Início e fim de escala dos demais parâmetros podem ser vistos nas matrizes.
+Devido ao tamanho maior das matrizes de resultados e a necessidade de visualização lado a lado, a parte da interface com os controles de parametrização não foram exibidos. Os parâmetros utilizados foram: "Min. Neighbors: 3", "Number of Samples: 6". Início e fim de escala dos demais parâmetros podem ser vistos nas matrizes.
 
 \subsubsection{Resolução 600p} \label{sssec:resolution2-1}
 
@@ -436,7 +436,7 @@ Quando se os tempos mais significantes observa-se que o tempo de execução de c
     \label{fig:cena2_parcelas_etapas_resolucao_rapi4}
 \end{figure}
 
-Importante ressaltar também que existe ainda o potencial de se reduzir ainda mais o tempo de resposta total implementando-se estratégia de processamente assíncrono entre a etapa de captura de frames e as demais, o que não foi feito para este estudo.
+Importante ressaltar também que existe ainda o potencial de se reduzir ainda mais o tempo de resposta total implementando-se estratégia de processamento assíncrono entre a etapa de captura de frames e as demais, o que não foi feito para este estudo.
 
 Com relação a qual das resoluções adotar, ainda analisando-se os resultados obtidos com o Raspberry Pi 4B, poderia-se dizer a menor resolução (240 x 320) seria a mais adequada em se considerando apenas tempo de resposta. A utilização da menor resolução também irá proporciona a vantagem de utilizar menor largura de banda para trafegar os dados das imagem na rede e também ocuparia menor espaço de armazenamento (se for o caso).
 
