@@ -7,7 +7,15 @@
 
 O algoritmo de detecção de objetos utilizado nesse estudo foi o \textit{Haar cascade object detection}, proposto por Viola e Jones em sua pesquisa \textit{Rapid Object Detection using a Boosted Cascade of Simple Features} \cite{Viola2001}, inicialmente proposto para detecção de faces, mas sendo possível ser utilizado na detecção de qualquer objeto. A biblioteca OpenCV fornece uma implementação desse algoritmo proposto para detecção de objetos \cite{OpenCV-CascadeClassifier}, que pode ser usando tanto para o treinamento de um novo modelo quanto para realizar a detecção em si, utilizando-se do modelo treinado ou de algum dos modelos pré-treinados disponibilizados pelos próprios mantenedores do OpenCV em \cite{OpenCV-PreTrainedModels}. Neste trabalho foi utilizado o modelo pré-treinado 'haarcascade\_frontalface\_alt.xml' para a detecção das faces. 
 
-Não é o algoritmo com melhor acurácia atualmente, se comparado com técnicas mais modernas que aplicam \textit{deep learning}, porém é um algoritmo extremamente rápido e preciso, portanto ainda é muito útil para detecção de objetos em dispositivos com recursos limitados, como é o caso de dispositivos de borda, em geral.
+Não é o algoritmo com melhor acurácia e precisão atualmente, se comparado com técnicas mais modernas que aplicam \textit{deep learning}, porém é um algoritmo extremamente rápido e preciso, portanto ainda é muito útil para detecção de objetos em dispositivos com recursos limitados, como é o caso de dispositivos de borda, em geral. Em uma análise comparativa feita entre os principais algoritmos de detecção facial com foco em velocidade de detecção, quantidade de acertos e acurácia, o Haar Cascade se mostrou o algotimo mais rápido \cite{Carvalho2022}. A figura \ref{fig:comparativoAlgoritmosDeteccao} mostra o tempo total de processamento que cada algoritmo testado levou para analisar um conjunto de 1000 imagens contendo faces. O Haar Cascade foi 87\% mais rápido que o segundo colocado.
+
+\begin{figure}[H]
+    \centering
+    \caption[Tempo total de processamento por algoritmo de detecção para analisar 1000 imagens contendo faces.]{Tempo total de processamento por algoritmo de detecção para analisar 1000 imagens contendo faces.}
+    \includegraphics[width=0.75\textwidth]{Cap3_Desenvolvimento/Figures/comparativoAlgoritmosDeteccao.png}
+    \caption*{Fonte: \cite{Carvalho2022}}
+    \label{fig:comparativoAlgoritmosDeteccao}
+\end{figure}
 
 Uma desvantagem nesse método é a presença de falsos positivos. Existe também a necessidade de definição de alguns parâmetros na implementação fornecida no OpenCV, descritos resumidamente a seguir.
 
