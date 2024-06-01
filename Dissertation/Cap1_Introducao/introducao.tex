@@ -18,6 +18,26 @@ As \textit{deep neural networks} (redes neurais profundas) envolvem uma complexi
 
 Nos últimos anos, vê-se uma tendência de se incorporar o processamento de aprendizado profundo em dispositivos de borda, como celulares, dispositivos móveis e nos nós da IoT. Isso torna possível a análise de dados localmente, em tempo real, além de mitigar problemas de privacidade dos dados \cite{Verhelst2017}. Outro benefício da computação na borda (\textit{Edge Computing}) é o descongestionamento da rede de dados, pois permite que o processamento seja feito próximo das fontes dos dados \cite{Merenda2020}. Assim, evita-se a comunicação desnecessária, que sobrecarrega não só a rede principal como também o datacenter na nuvem \cite{Aazam2014}.
 
+No contexto de um sistema de monitoramento inteligente de vários ambientes, com reconhecimento facial, representado na figura \ref{fig:sistemCentralizado}, várias câmeras capturam imagens de maneira constante e simultânea. Essas imagens precisam ser enviadas de forma integral para um servidor central responsável pelo processamento, incluindo a detecção e reconhecimento de faces. Nesse paradigma, surgem desafios significativos, como o elevado volume de dados que sobrecarrega a rede, a possível degradação do tempo de resposta devido à concorrência no processamento centralizado e a dificuldade inerente à escalabilidade do sistema, entre outros.
+
+\begin{figure}[H]
+    \centering
+    \caption[Arquitetura de processamento centralizado, onde as imagens capturadas pelas câmeras são enviadas integralmente para uma unidade central de processamento.]{Arquitetura de processamento centralizado, onde as imagens capturadas pelas câmeras são enviadas integralmente para uma unidade central de processamento}
+    \includegraphics[width=0.9\textwidth]{Cap1_Introducao/Figures/sistema_centralizado.png}
+    \caption*{Fonte: autor.}
+    \label{fig:sistemCentralizado}
+\end{figure}
+
+Ao adotar o paradigma de processamento distribuído, surge uma solução promissora para os desafios mencionados, oferecendo a possibilidade de descentralizar parte do processamento. A utilização de dispositivos SBCs permite trazer parte do processamento, como o processo de detecção facial, para a borda, enquanto o reconhecimento facial permanece centralizado, como representado pela figura \ref{fig:sistemDistribuido}. Essa abordagem não apenas alivia a carga nos servidores centrais, mas também reduz significativamente o tráfego de dados pela rede, uma vez que apenas as imagens das faces identificadas precisam ser encaminhadas para os servidores centrais para as demais etapas de processamento. Além disso, essa arquitetura distribuída proporciona uma escalabilidade mais eficiente, permitindo a adição de novos pontos de monitoramento de forma simplificada, sem comprometer o desempenho do sistema como um todo.
+
+\begin{figure}[H]
+    \centering
+    \caption[Arquitetura de processamento distribuído, onde a detecção de faces ocorre na borda, enquanto o reconhecimento facial permanece centralizado.]{Arquitetura de processamento distribuído, onde a detecção de faces ocorre na borda, enquanto o reconhecimento facial permanece centralizado.}
+    \includegraphics[width=0.9\textwidth]{Cap1_Introducao/Figures/sistema_distribudo.png}
+    \caption*{Fonte: autor.}
+    \label{fig:sistemDistribuido}
+\end{figure}
+
 \section{Objetivo Geral}
 
 Com este trabalho objetiva-se testar o desempenho de dispositivos de borda no processo de detecção de faces, avaliando sua capacidade de detecção e tempo de resposta para diferentes cenários, com possíveis aplicações de monitoramento inteligente e controle de acesso. Com os resultados obtidos, espera-se determinar, para cada cenário definido, se o dispositivo é capaz de processar de forma satisfatória a etapa de detecção de faces, e as vantagens de se realizar esse processo na borda, em uma arquitetura de processamento distribuído.
