@@ -51,20 +51,6 @@
 \renewcommand{\rmdefault}{phv} % Arial
 \renewcommand{\sfdefault}{phv} % Arial
 
-%% Formatação de Capítulo
-\titleformat{\chapter}
-  {\normalfont\normalsize\bfseries}{\thechapter \quad \MakeUppercase{#1}}{.5em}{\vspace{.5ex}}
-  \titlespacing*{\chapter}      
-    {0pt}{0pt}{12pt}
-    
-% Formatação de Seção
-\titleformat{\section}
-  {\normalfont\normalsize}{\thesection \quad #1}{.5em}{\vspace{.5ex}}
-
-% Formatação de Subseção
-\titleformat{\subsection}
-  {\normalfont\normalsize}{\thesubsection \quad #1}{.5em}{\vspace{.5ex}}  
-
 % Numeração
 \makeevenfoot{plain}{}{}{\thepage}
 \makeoddfoot{plain}{}{}{\thepage}
@@ -85,6 +71,22 @@
 \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
 
 \begin{document}
+
+\begingroup
+
+%% Formatação de Capítulo
+\titleformat{\chapter}
+  {\normalfont\normalsize\bfseries}{\thechapter \quad \MakeUppercase{#1}}{.5em}{\vspace{.5ex}}
+  \titlespacing*{\chapter}      
+    {0pt}{0pt}{12pt}
+    
+% Formatação de Seção
+\titleformat{\section}
+  {\normalfont\normalsize}{\thesection \quad #1}{.5em}{\vspace{.5ex}}
+
+% Formatação de Subseção
+\titleformat{\subsection}
+  {\normalfont\normalsize}{\thesubsection \quad #1}{.5em}{\vspace{.5ex}}  
 
 \include{Elementos_Pretextuais/capaDissertacao}
 
@@ -127,6 +129,8 @@
 \include{Cap3_Desenvolvimento/Desenvolvimento}
 \include{Cap4_Experimentos_Realizados/Experimentos}
 \include{Cap5_Conclusao/Conclusao}
+
+\endgroup
 
 \include{referencias}
 
