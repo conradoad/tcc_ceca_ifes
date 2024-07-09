@@ -4,10 +4,12 @@
 
 \documentclass[12pt, openright, oneside, a4paper, english, french, spanish, brazil]{abntex2}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % Selecao de codigos de fonte.
 
-\usepackage{lmodern}			% Usa a fonte Latin Modern			
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+% Use Arial
+\usepackage{uarial} % Usa a fonte Arial
+\renewcommand{\familydefault}{\sfdefault} % Define Arial como a fonte padrão
+
 \usepackage{lastpage}			% Usado pela Ficha catalográfica
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color,soul}			% Controle das cores
@@ -18,22 +20,17 @@
 \usepackage{subcaption}
 \usepackage{textcomp}
 \usepackage{hyperref}
-%\usepackage{subfig}
 \usepackage{gensymb}
-
 \usepackage{float}
-
 \usepackage{pdfpages}
 \usepackage[section]{placeins}
 \usepackage{amsfonts}
-
 \usepackage{listings}           % Python Code
 \usepackage{newfloat,tocloft}
 \usepackage{caption}
 \usepackage{enumitem}
 \setlist{leftmargin=5.5mm}
 \usepackage[explicit,nobottomtitles*]{titlesec}
-
 \usepackage[brazilian,hyperpageref]{backref}	 % Páginas com as citações na bibl
 \usepackage[alf, bibjustif]{abntex2cite}	% Citações padrão ABNT
 
@@ -46,10 +43,6 @@
  bottom=20mm,
  right=20mm
 }
-
-% Formatação de Fonte
-\renewcommand{\rmdefault}{phv} % Arial
-\renewcommand{\sfdefault}{phv} % Arial
 
 % Numeração
 \makeevenfoot{plain}{}{}{\thepage}
@@ -65,9 +58,6 @@
 \data{2024} %deixar apenas o ano
 \local{Serra -- ES}
 \orientador{Prof. Rafael Emerick Z de Oliveira}
-%\orientador[Orientadora:]{Prof\textsuperscript{a}. Dr\textsuperscript{a}. Nome da Orientadora}
-%\coorientador{Prof. Dr. Nome do Coorientador}
-%\coorientador[Coorientadora:]{Prof\textsuperscript{a}. Dr\textsuperscript{a}. Nome da Coorientadora}
 \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
 
 \begin{document}
@@ -96,7 +86,7 @@
 \include{Elementos_Pretextuais/fichaCatalografica}
 
 \setcounter{page}{1}
-\pagenumbering{arabic}                % arabic numbers <-----------------(style 1,2,...)
+\pagenumbering{arabic}
 \pagestyle{empty}
 
 \include{Elementos_Pretextuais/folhaAprovacao}
@@ -111,9 +101,13 @@
 %\listoftables
 %\newpage
 
+% Alterar o tamanho do título da lista de figuras
+\renewcommand{\listfigurename}{\normalsize\bfseries{LISTA DE ILUSTRAÇÕES}}
+
 \listoffigures
 \newpage
 
+\renewcommand{\contentsname}{\normalsize\bfseries{SUMÁRIO}}
 \tableofcontents
 
 \graphicspath{{Figuras/}}
@@ -132,8 +126,9 @@
 
 \endgroup
 
+% Alterar o tamanho do título das referências
+\renewcommand{\bibname}{\normalsize\bfseries{REFERÊNCIAS}}
+
 \include{referencias}
-
-
 
 \end{document}
