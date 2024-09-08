@@ -1,7 +1,3 @@
-% Modelo Original a partir do template do trabalho do Aluno Tiago Augusto Gomes da Costa
-% Prof Orientador Dr. Flávio Garcia Pereira
-% 22/08/2019
-
 \documentclass[12pt, openright, oneside, a4paper, english, french, spanish, brazil]{abntex2}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} % Selecao de codigos de fonte.
@@ -10,11 +6,11 @@
 \usepackage{uarial} % Usa a fonte Arial
 \renewcommand{\familydefault}{\sfdefault} % Define Arial como a fonte padrão
 
-\usepackage{lastpage}			% Usado pela Ficha catalográfica
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{color,soul}			% Controle das cores
-\usepackage{graphicx}			% Inclusão de gráficos
-\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{lastpage}            % Usado pela Ficha catalográfica
+\usepackage{indentfirst}        % Indenta o primeiro parágrafo de cada seção.
+\usepackage{color,soul}            % Controle das cores
+\usepackage{graphicx}            % Inclusão de gráficos
+\usepackage{microtype}             % para melhorias de justificação
 \usepackage{amsmath}
 \usepackage{afterpage}
 \usepackage{subcaption}
@@ -31,8 +27,12 @@
 \usepackage{enumitem}
 \setlist{leftmargin=5.5mm}
 \usepackage[explicit,nobottomtitles*]{titlesec}
-\usepackage[brazilian,hyperpageref]{backref}	 % Páginas com as citações na bibl
-\usepackage[alf, bibjustif]{abntex2cite}	% Citações padrão ABNT
+\usepackage{titletoc}
+\usepackage[brazilian,hyperpageref]{backref}     % Páginas com as citações na bibl
+\usepackage[alf, bibjustif]{abntex2cite}    % Citações padrão ABNT
+
+\listfiles
+
 
 % Formatação de Página
 \usepackage[a4paper]{geometry}
@@ -49,8 +49,13 @@
 \makeoddfoot{plain}{}{}{\thepage}
 
 % Parágrafo
-\setlength{\parskip}{1em}
-\renewcommand{\baselinestretch}{1.5}
+\setlength{\parskip}{1em} % Espaço entre parágrafos
+\renewcommand{\baselinestretch}{1.5} % Espaçamento entre linhas
+
+% Remover o recuo dos parágrafos e justificar o texto
+\setlength{\parindent}{0pt} % Remove o recuo dos parágrafos
+\renewcommand{\familydefault}{\sfdefault} % Define Arial como a fonte padrão
+\setlength{\emergencystretch}{3em} % Melhora a justificação do texto
 
  % Início do TCC
 \titulo{Ensaios de detec\c cão facial em dispositivos de borda, para monitoramento e controle de acesso em espa\c cos abertos e inteligentes}
@@ -64,19 +69,33 @@
 
 \begingroup
 
-%% Formatação de Capítulo
-\titleformat{\chapter}
-  {\normalfont\normalsize\bfseries}{\thechapter \quad \MakeUppercase{#1}}{.5em}{\vspace{.5ex}}
-  \titlespacing*{\chapter}      
-    {0pt}{0pt}{12pt}
+% Formatação de Capítulo
+\renewcommand{\chaptitlefont}{\normalfont\normalsize\bfseries}
+\setlength{\cftbeforechapterskip}{0pt} % Controla o espaçamento antes dos capítulos
     
 % Formatação de Seção
 \titleformat{\section}
-  {\normalfont\normalsize}{\thesection \quad #1}{.5em}{\vspace{.5ex}}
-
+  {\normalfont\normalsize}{\thesection \quad #1}{0.5em}{\vspace{-1em}}
+  
 % Formatação de Subseção
 \titleformat{\subsection}
-  {\normalfont\normalsize}{\thesubsection \quad #1}{.5em}{\vspace{.5ex}}  
+{\normalfont\normalsize}{\thesubsection \quad #1}{0.5em}{\vspace{-1em}}  
+
+% Formatação de Subsub1seção
+\titleformat{\subsubsection}
+{\normalfont\normalsize}{\thesubsubsection \quad #1}{0.5em}{\vspace{-1em}}  
+
+\titlecontents{section}[5em]{}
+  {\contentslabel{5em}\MakeUppercase}{\hspace{0pc}\MakeUppercase}
+  {\titlerule*[1pc]{.}\contentspage}
+
+\titlecontents{subsection}[5em]{\normalsize\bfseries}
+  {\contentslabel{5em}}{\hspace{0pc}}
+  {\titlerule*[1pc]{.}\contentspage}
+
+ \titlecontents{subsubsection}[5em]{}
+  {\contentslabel{5em}}{\hspace{0pc}}
+  {\titlerule*[1pc]{.}\contentspage}
 
 \include{Elementos_Pretextuais/capaDissertacao}
 
@@ -91,24 +110,29 @@
 
 \include{Elementos_Pretextuais/folhaAprovacao}
 \include{Elementos_Pretextuais/declaracaoAutor}
-%\include{Elementos_Pretextuais/dedicatoria}
-%\include{Elementos_Pretextuais/agradecimentos}
-%\include{Elementos_Pretextuais/epigrafe}
 
 \include{Elementos_Pretextuais/resumo}
 \include{Elementos_Pretextuais/abstract}
 
-%\listoftables
-%\newpage
+% Excluir a lista de figuras do sumário temporariamente
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
 
 % Alterar o tamanho do título da lista de figuras
 \renewcommand{\listfigurename}{\normalsize\bfseries{LISTA DE ILUSTRAÇÕES}}
 
+% Lista de Figuras
 \listoffigures
 \newpage
 
+% Restaurar a profundidade do sumário
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+
+% Alterar o tamanho do título do sumário
 \renewcommand{\contentsname}{\normalsize\bfseries{SUMÁRIO}}
-\tableofcontents
+\tableofcontents*
+\settocdepth{subsubsection}
+\setsecnumdepth{subsubsection}
+
 
 \graphicspath{{Figuras/}}
 
@@ -126,9 +150,7 @@
 
 \endgroup
 
-% Alterar o tamanho do título das referências
-\renewcommand{\bibname}{\normalsize\bfseries{REFERÊNCIAS}}
-
+\renewcommand{\bibname}{\normalsize\bfseries\MakeUppercase{Referências}}
 \include{referencias}
 
 \end{document}
