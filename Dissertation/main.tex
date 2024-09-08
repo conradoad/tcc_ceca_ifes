@@ -30,29 +30,31 @@
 \usepackage{titletoc}
 \usepackage[brazilian,hyperpageref]{backref}     % Páginas com as citações na bibl
 \usepackage[alf, bibjustif]{abntex2cite}    % Citações padrão ABNT
+\usepackage{fancyhdr} % Para personalização de cabeçalhos e rodapés
 
 \listfiles
 
-
 % Formatação de Página
-\usepackage[a4paper]{geometry}
-\geometry{
- a4paper,
- left=30mm,
- top=30mm,
- bottom=20mm,
- right=20mm
+\usepackage[a4paper, left=3cm, top=3cm, right=2cm, bottom=2cm]{geometry}
+
+% Configuração do cabeçalho para numeração de páginas
+\fancypagestyle{plain}{
+    \fancyhf{} % Limpa os campos do cabeçalho e rodapé
+    \fancyhead[R]{\thepage} % Número da página à direita no cabeçalho
+    \renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal do cabeçalho
 }
 
-% Numeração
-\makeevenfoot{plain}{}{}{\thepage}
-\makeoddfoot{plain}{}{}{\thepage}
+% Define o espaçamento do cabeçalho
+\pagestyle{plain}
+\addtolength{\headheight}{-1em} % Adiciona altura extra para o cabeçalho
 
-% Parágrafo
-\setlength{\parskip}{1em} % Espaço entre parágrafos
-\renewcommand{\baselinestretch}{1.5} % Espaçamento entre linhas
+% Espaçamento da numeração das páginas
+\setlength{\headsep}{1cm} % Espaçamento entre o texto e o cabeçalho
+\setlength{\footskip}{0cm} % Espaçamento entre o rodapé e o texto
 
 % Remover o recuo dos parágrafos e justificar o texto
+\setlength{\parskip}{1em} % Espaço entre parágrafos
+\renewcommand{\baselinestretch}{1.5} % Espaçamento entre linhas
 \setlength{\parindent}{0pt} % Remove o recuo dos parágrafos
 \renewcommand{\familydefault}{\sfdefault} % Define Arial como a fonte padrão
 \setlength{\emergencystretch}{3em} % Melhora a justificação do texto
@@ -81,7 +83,7 @@
 \titleformat{\subsection}
 {\normalfont\normalsize}{\thesubsection \quad #1}{0.5em}{\vspace{-1em}}  
 
-% Formatação de Subsub1seção
+% Formatação de Subsubseção
 \titleformat{\subsubsection}
 {\normalfont\normalsize}{\thesubsubsection \quad #1}{0.5em}{\vspace{-1em}}  
 
@@ -105,8 +107,7 @@
 \include{Elementos_Pretextuais/fichaCatalografica}
 
 \setcounter{page}{1}
-\pagenumbering{arabic}
-\pagestyle{empty}
+\pagestyle{empty} % Remove a numeração das páginas
 
 \include{Elementos_Pretextuais/folhaAprovacao}
 \include{Elementos_Pretextuais/declaracaoAutor}
@@ -133,10 +134,11 @@
 \settocdepth{subsubsection}
 \setsecnumdepth{subsubsection}
 
+% Página em branco após o sumário
+\clearpage
+\pagestyle{plain}
 
 \graphicspath{{Figuras/}}
-
-\pagestyle{plain}
 
 \interfootnotelinepenalty=10000
 
